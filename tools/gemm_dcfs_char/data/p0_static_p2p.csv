@@ -1,0 +1,5 @@
+freq,wall,power_w,power_min_w,power_max_w,clock_sm_med,clock_sm_min,clock_sm_max,temp_c,throttle_bits,throttle,pstate,n_samples
+1410,20.0,83.522,83.195,83.522,1410,1410,1410,35,0,none,0,379
+1200,20.0,69.022,69.022,69.022,1200,1200,1200,34,0,none,0,379
+900,20.0,61.066,60.785,61.066,900,900,900,33,0,none,0,379
+300,20.0,56.339,56.066,56.339,300,300,300,33,0,none,0,379

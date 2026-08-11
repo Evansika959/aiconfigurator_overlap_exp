@@ -146,8 +146,18 @@ class PowerMonitor:
         self._thread.start()
         return True
 
-    def stop_sampling(self) -> dict | None:
-        """Stop sampling and return statistics."""
+    def stop_sampling(self, window_s: float | None = None) -> dict | None:
+        """Stop sampling and return statistics.
+
+        Args:
+            window_s: When set, average only the samples taken in the trailing
+                ``window_s`` seconds instead of the whole sampling period. Use
+                it when the sampled region spends a large fraction of its life
+                in setup (e.g. the ~2.5s NCCL bootstrap of an nccl-tests
+                subprocess) that would otherwise pull the average toward idle.
+                Falls back to the full sample set if the window is empty.
+                Default ``None`` preserves the whole-period average.
+        """
         if self._thread is None:
             return None
 
@@ -159,14 +169,30 @@ class PowerMonitor:
         with self._lock:
             if not self._samples:
                 return None
-            power_values_w = [p_mw / 1000.0 for _, p_mw in self._samples]
+            samples = list(self._samples)
+
+        if window_s is not None and window_s > 0:
+            cutoff = samples[-1][0] - window_s
+            windowed = [s for s in samples if s[0] >= cutoff]
+            if windowed:
+                samples = windowed
+
+        power_values_w = [s[1] / 1000.0 for s in samples]
+        clocks = [s[2] for s in samples if len(s) > 2 and s[2] is not None]
 
         import numpy as np
 
-        return {
+        stats = {
             "power": float(np.mean(power_values_w)),
             "power_limit": float(self._power_limit_mw / 1000.0) if self._power_limit_mw else None,
         }
+        if clocks:
+            # Achieved SM clock over the same window. clock_sm_min is the one that
+            # matters: it is what exposes a lock that was overridden under load.
+            stats["clock_sm_mean"] = round(float(np.mean(clocks)), 1)
+            stats["clock_sm_min"] = int(min(clocks))
+            stats["clock_sm_max"] = int(max(clocks))
+        return stats
 
     def _monitoring_loop(self):
         """Background thread function that samples power every 100ms."""
@@ -176,9 +202,17 @@ class PowerMonitor:
             try:
                 timestamp = time.time()
                 power_mw = nvml.nvmlDeviceGetPowerUsage(self._nvml_handle)
+                # Sample the SM clock alongside power. A clock LOCK is a request, not a
+                # guarantee: the board can still clamp below it on power or thermal
+                # limits, and a run that silently ran at a different frequency than the
+                # one recorded is wrong data, not noisy data.
+                try:
+                    clock_mhz = nvml.nvmlDeviceGetClockInfo(self._nvml_handle, nvml.NVML_CLOCK_SM)
+                except Exception:
+                    clock_mhz = None
 
                 with self._lock:
-                    self._samples.append((timestamp, power_mw))
+                    self._samples.append((timestamp, power_mw, clock_mhz))
             except Exception:
                 # Skip failed samples silently
                 pass
@@ -722,7 +756,8 @@ def log_perf(
                 fieldnames += list(item_list[0].keys())
             # Add power_stats keys if present
             if power_stats:
-                for key in ["power", "power_limit"]:
+                ordered = ["power", "power_limit"] + [k for k in power_stats if k not in ("power", "power_limit")]
+                for key in ordered:
                     if key not in fieldnames:
                         fieldnames.append(key)
 
@@ -735,7 +770,7 @@ def log_perf(
                 row = base_data | item
                 # Add power_stats values if present
                 if power_stats:
-                    for key in ["power", "power_limit"]:
+                    for key in power_stats:
                         row[key] = power_stats.get(key, "")
                 writer.writerow(row)
 

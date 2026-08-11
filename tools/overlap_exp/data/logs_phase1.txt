@@ -1,0 +1,77 @@
+Skipping import of cpp extensions due to incompatible torch version 2.10.0+cu130 for torchao version 0.15.0             Please see https://github.com/pytorch/ao/issues/2919 for more info
+Skipping import of cpp extensions due to incompatible torch version 2.10.0+cu130 for torchao version 0.15.0             Please see https://github.com/pytorch/ao/issues/2919 for more info
+/home/xinting/trtllm_venv/lib/python3.12/site-packages/modelopt/torch/__init__.py:36: UserWarning: transformers version 4.57.3 is incompatible with nvidia-modelopt and may cause issues. Please install recommended version with `pip install nvidia-modelopt[hf]` if working with HF models.
+  _warnings.warn(
+/home/xinting/trtllm_venv/lib/python3.12/site-packages/modelopt/torch/__init__.py:36: UserWarning: transformers version 4.57.3 is incompatible with nvidia-modelopt and may cause issues. Please install recommended version with `pip install nvidia-modelopt[hf]` if working with HF models.
+  _warnings.warn(
+🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
+🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
+🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
+🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
+🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
+🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
+[TensorRT-LLM] TensorRT LLM version: 1.3.0rc10
+[TensorRT-LLM] TensorRT LLM version: 1.3.0rc10
+  CTA= 2   low_occ  64MiB         serial | g   0.663 c   2.863 span    3.530 ovl   0.000 | iter   3.535ms  P  280.5W  Edyn    499.0mJ
+  CTA= 2   low_occ  64MiB     comm_first | g   0.753 c   3.023 span    3.023 ovl   0.753 | iter   3.075ms  P  294.9W  Edyn    478.6mJ
+  CTA= 2   low_occ  64MiB     gemm_first | g   0.681 c   3.244 span    3.345 ovl   0.580 | iter   3.418ms  P  283.6W  Edyn    493.2mJ
+  CTA= 2   low_occ  64MiB  gemm_first_p0 | g   0.674 c   3.544 span    3.640 ovl   0.578 | iter   3.700ms  P  277.5W  Edyn    511.1mJ
+  CTA= 2   low_occ 256MiB         serial | g   0.667 c  11.306 span   11.977 ovl   0.000 | iter  11.990ms  P  216.6W  Edyn    926.6mJ
+  CTA= 2   low_occ 256MiB     comm_first | g   0.750 c  11.455 span   11.455 ovl   0.750 | iter  11.539ms  P  217.9W  Edyn    907.2mJ
+  CTA= 2   low_occ 256MiB     gemm_first | g   0.677 c  12.329 span   12.419 ovl   0.587 | iter  12.479ms  P  211.8W  Edyn    903.9mJ
+  CTA= 2   low_occ 256MiB  gemm_first_p0 | g   0.672 c  12.624 span   12.717 ovl   0.579 | iter  12.888ms  P  215.5W  Edyn    982.2mJ
+  CTA= 2  high_occ  64MiB         serial | g   1.238 c   2.833 span    4.076 ovl   0.000 | iter   4.098ms  P  333.3W  Edyn    795.0mJ
+  CTA= 2  high_occ  64MiB     comm_first | g   1.243 c   3.068 span    3.068 ovl   1.243 | iter   3.223ms  P  385.1W  Edyn    792.2mJ
+  CTA= 2  high_occ  64MiB     gemm_first | g   1.246 c   3.330 span    3.420 ovl   1.156 | iter   3.710ms  P  356.8W  Edyn    806.9mJ
+  CTA= 2  high_occ  64MiB  gemm_first_p0 | g   1.249 c   4.090 span    4.182 ovl   1.157 | iter   4.243ms  P  330.3W  Edyn    810.3mJ
+  CTA= 2  high_occ 256MiB         serial | g   1.242 c  11.297 span   12.543 ovl   0.000 | iter  12.570ms  P  240.9W  Edyn   1277.0mJ
+  CTA= 2  high_occ 256MiB     comm_first | g   1.248 c  11.534 span   11.534 ovl   1.248 | iter  12.128ms  P  245.9W  Edyn   1293.1mJ
+  CTA= 2  high_occ 256MiB     gemm_first | g   1.248 c  12.346 span   12.438 ovl   1.157 | iter  12.982ms  P  239.5W  Edyn   1300.1mJ
+mpirun: Forwarding signal 18 to job
+[instance-4a100-anhang:44030] *** Process received signal ***
+[instance-4a100-anhang:44030] Signal: Segmentation fault (11)
+[instance-4a100-anhang:44030] Signal code: Address not mapped (1)
+[instance-4a100-anhang:44030] Failing at address: (nil)
+[instance-4a100-anhang:44030] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x45330)[0x7c8801845330]
+[instance-4a100-anhang:44030] [ 1] /lib/x86_64-linux-gnu/libpmix.so.2(PMIx_server_finalize+0xa89)[0x7c87e8a74619]
+[instance-4a100-anhang:44030] [ 2] /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_pmix_ext3x.so(ext3x_server_finalize+0x38e)[0x7c8800dd9d4e]
+[instance-4a100-anhang:44030] [ 3] /lib/x86_64-linux-gnu/libopen-rte.so.40(pmix_server_finalize+0xb2)[0x7c8801c47f02]
+[instance-4a100-anhang:44030] [ 4] /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_ess_hnp.so(+0x5736)[0x7c88016e7736]
+[instance-4a100-anhang:44030] [ 5] /lib/x86_64-linux-gnu/libopen-rte.so.40(orte_finalize+0x64)[0x7c8801c1c8f4]
+[instance-4a100-anhang:44030] [ 6] mpirun(+0x134f)[0x624c4ed1d34f]
+[instance-4a100-anhang:44030] [ 7] /lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca)[0x7c880182a1ca]
+[instance-4a100-anhang:44030] [ 8] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b)[0x7c880182a28b]
+[instance-4a100-anhang:44030] [ 9] mpirun(+0x1415)[0x624c4ed1d415]
+[instance-4a100-anhang:44030] *** End of error message ***
+timeout: the monitored command dumped core
+Skipping import of cpp extensions due to incompatible torch version 2.10.0+cu130 for torchao version 0.15.0             Please see https://github.com/pytorch/ao/issues/2919 for more info
+Skipping import of cpp extensions due to incompatible torch version 2.10.0+cu130 for torchao version 0.15.0             Please see https://github.com/pytorch/ao/issues/2919 for more info
+/home/xinting/trtllm_venv/lib/python3.12/site-packages/modelopt/torch/__init__.py:36: UserWarning: transformers version 4.57.3 is incompatible with nvidia-modelopt and may cause issues. Please install recommended version with `pip install nvidia-modelopt[hf]` if working with HF models.
+  _warnings.warn(
+/home/xinting/trtllm_venv/lib/python3.12/site-packages/modelopt/torch/__init__.py:36: UserWarning: transformers version 4.57.3 is incompatible with nvidia-modelopt and may cause issues. Please install recommended version with `pip install nvidia-modelopt[hf]` if working with HF models.
+  _warnings.warn(
+🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
+🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
+🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
+🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
+🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
+🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
+[TensorRT-LLM] TensorRT LLM version: 1.3.0rc10
+[TensorRT-LLM] TensorRT LLM version: 1.3.0rc10
+  CTA= 4   low_occ  64MiB         serial | g   0.664 c   1.485 span    2.152 ovl   0.000 | iter   2.169ms  P  343.2W  Edyn    442.3mJ
+  CTA= 4   low_occ  64MiB     comm_first | g   0.773 c   1.655 span    1.655 ovl   0.773 | iter   1.704ms  P  393.4W  Edyn    433.0mJ
+  CTA= 4   low_occ  64MiB     gemm_first | g   0.752 c   1.913 span    2.008 ovl   0.656 | iter   2.035ms  P  356.9W  Edyn    442.8mJ
+  CTA= 4   low_occ  64MiB  gemm_first_p0 | g   0.669 c   2.181 span    2.270 ovl   0.580 | iter   2.334ms  P  334.5W  Edyn    455.6mJ
+  CTA= 4   low_occ 256MiB         serial | g   0.673 c   6.531 span    7.208 ovl   0.000 | iter   7.154ms  P  242.6W  Edyn    738.5mJ
+  CTA= 4   low_occ 256MiB     comm_first | g   0.765 c   6.148 span    6.148 ovl   0.765 | iter   6.208ms  P  254.0W  Edyn    712.1mJ
+  CTA= 4   low_occ 256MiB     gemm_first | g   0.755 c   7.182 span    7.281 ovl   0.656 | iter   7.290ms  P  243.4W  Edyn    758.4mJ
+  CTA= 4   low_occ 256MiB  gemm_first_p0 | g   0.674 c   7.674 span    7.769 ovl   0.579 | iter   7.916ms  P  239.0W  Edyn    789.3mJ
+  CTA= 4  high_occ  64MiB         serial | g   1.241 c   1.496 span    2.741 ovl   0.000 | iter   2.744ms  P  420.9W  Edyn    772.6mJ
+  CTA= 4  high_occ  64MiB     comm_first | g   1.354 c   1.712 span    1.712 ovl   1.354 | iter   1.886ms  P  520.8W  Edyn    719.6mJ
+  CTA= 4  high_occ  64MiB     gemm_first | g   1.249 c   1.916 span    2.005 ovl   1.160 | iter   2.447ms  P  415.4W  Edyn    675.6mJ
+  CTA= 4  high_occ  64MiB  gemm_first_p0 | g   1.244 c   2.737 span    2.822 ovl   1.159 | iter   2.870ms  P  330.5W  Edyn    548.6mJ
+  CTA= 4  high_occ 256MiB         serial | g   1.240 c   7.090 span    8.334 ovl   0.000 | iter   7.531ms  P  284.8W  Edyn   1095.5mJ
+  CTA= 4  high_occ 256MiB     comm_first | g   1.353 c   6.185 span    6.185 ovl   1.353 | iter   6.973ms  P  293.0W  Edyn   1071.8mJ
+  CTA= 4  high_occ 256MiB     gemm_first | g   1.251 c   7.152 span    7.247 ovl   1.156 | iter   7.939ms  P  276.7W  Edyn   1090.7mJ
+Abort is in progress...hit ctrl-c again within 5 seconds to forcibly terminate
+

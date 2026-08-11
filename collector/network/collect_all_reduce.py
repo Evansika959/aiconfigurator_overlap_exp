@@ -66,6 +66,11 @@ def _init_process_group_with_device_id(backend: str, init_method: str, world_siz
     dist.init_process_group(**params)
 
 
+# Upper bound on how long one power measurement may run. Replaces a flat
+# iteration-count cap, which truncated the sampling window for fast collectives.
+_POWER_MAX_MEASURE_S = 12.0
+
+
 def get_input_shape_and_comm_size(size, token_dim=4096):
     """Convert size to appropriate input shape for AllReduce operations"""
     if size <= token_dim:
@@ -116,6 +121,8 @@ def benchmark_trtllm_allreduce(
     perf_filename: str,
     measure_power: bool = False,
     power_min_duration: float = 1.0,
+    sizes: Optional[list] = None,
+    strategy: str = "AUTO",
 ):
     """Benchmark TensorRT-LLM AllReduce implementation"""
     # Disable the autotuner so that the strategy lookup table (selectImplementation)
@@ -142,13 +149,27 @@ def benchmark_trtllm_allreduce(
     trtllm_mods["cudart"].cudaSetDevice(local_rank)
     mapping = trtllm_mods["Mapping"](world_size=world_size, rank=rank, gpus_per_node=gpus_per_node, tp_size=world_size)
 
-    # Parse test range
-    min_size, max_size, ratio = [int(i) for i in test_range.split(",")]
+    # Parse test range. `sizes` (explicit ELEMENT counts) takes precedence so a
+    # non-geometric set can be swept in one launch -- e.g. matching the byte-indexed
+    # sizes of the NCCL sweep, where 25 MiB is not a power of two. Importing
+    # tensorrt_llm across 4 ranks costs ~30s, so one launch per size is expensive.
+    if sizes:
+        size_list = list(sizes)
+    else:
+        min_size, max_size, ratio = [int(i) for i in test_range.split(",")]
+        size_list = []
+        size = min_size
+        while size < max_size:
+            size_list.append(size)
+            size *= ratio
     torch_dtype = tllm._utils.str_dtype_to_torch(dtype)
 
-    # AllReduce parameters
+    # AllReduce parameters. Default AUTO = whatever selectImplementation picks for the
+    # (world_size, size, SM) triple, i.e. what serving would run. An explicit strategy
+    # pins one implementation instead, which is how the strategy axis is swept; an
+    # unsupported choice raises here rather than silently falling back.
     all_reduce_params = trtllm_mods["TorchAllReduceParams"](
-        strategy=trtllm_mods["AllReduceStrategy"].AUTO,
+        strategy=getattr(trtllm_mods["AllReduceStrategy"], strategy),
         fusion_op=trtllm_mods["AllReduceFusionOp"].NONE,
         residual=None,
         norm_weight=None,
@@ -162,14 +183,18 @@ def benchmark_trtllm_allreduce(
     num_warmups = 3
     num_runs = 20
 
-    size = min_size
-    while size < max_size:
+    for size in size_list:
         input_shape = get_input_shape_and_comm_size(size)
         input_tensor = torch.ones(input_shape, dtype=torch_dtype, device="cuda")
 
         op_list = []
         for i in range(repeat_n):
-            allreduce = trtllm_mods["AllReduce"](mapping=mapping).cuda()
+            # Strategy is selected by the AllReduce CONSTRUCTOR; the `strategy` field on
+            # AllReduceParams does NOT drive selectImplementation. Setting only the
+            # latter silently leaves every run on AUTO.
+            allreduce = trtllm_mods["AllReduce"](
+                mapping=mapping, strategy=getattr(trtllm_mods["AllReduceStrategy"], strategy)
+            ).cuda()
             allreduce(input_tensor, all_reduce_params=all_reduce_params)  # dry run to init
             op_list.append(allreduce)
 
@@ -196,7 +221,22 @@ def benchmark_trtllm_allreduce(
 
                 single_iter_time = start_warmup.elapsed_time(end_warmup) / num_warmups / 1000.0  # seconds
                 actual_num_runs = max(num_runs, int(power_min_duration / (single_iter_time * repeat_n)) + 1)
-                actual_num_runs = min(actual_num_runs, 1000)  # Cap at 1000 to avoid excessive runtime
+                # Bound the measurement by WALL TIME, not by a fixed iteration count.
+                # A flat cap silently truncates the sampling window for fast collectives:
+                # a 256 KiB all_reduce needs ~21000 replays to fill 2s, so a cap of 1000
+                # left a 95ms window -- and NVML samples every 100ms, i.e. ~1 sample.
+                # That, not any hardware effect, is why comm power violated physical
+                # monotonicity in 12% of frequency steps while GEMM (whose slower kernels
+                # rarely hit its cap) violated 0%.
+                max_runs = int(_POWER_MAX_MEASURE_S / (single_iter_time * repeat_n)) + 1
+                actual_num_runs = min(actual_num_runs, max_runs)
+                window_s = actual_num_runs * single_iter_time * repeat_n
+                if window_s < 10 * 0.1:  # < 10 NVML samples at the fixed 100ms interval
+                    print(
+                        f"  WARNING: power window {window_s * 1000:.0f}ms holds only "
+                        f"~{window_s / 0.1:.0f} NVML samples; power reading is unreliable",
+                        flush=True,
+                    )
             else:
                 # Other ranks do warmup but don't calculate
                 torch.cuda.synchronize()
@@ -267,8 +307,6 @@ def benchmark_trtllm_allreduce(
         # Synchronize all ranks after each iteration to prevent hanging
         torch.cuda.synchronize()
         mpi_comm.Barrier()  # MPI barrier to ensure all ranks complete this iteration
-
-        size *= ratio
 
     # Synchronize all ranks before exit to prevent hanging
     torch.cuda.synchronize()
@@ -940,6 +978,8 @@ def allreduce_benchmark(
     rank: Optional[int] = None,
     measure_power: bool = False,
     power_min_duration: float = 1.0,
+    sizes: Optional[list] = None,
+    strategy: str = "AUTO",
 ):
     """
     CUDA Graph based AllReduce benchmark method supporting multiple backends
@@ -972,7 +1012,8 @@ def allreduce_benchmark(
             raise RuntimeError("Benchmark must run with world_size > 1")
 
         benchmark_trtllm_allreduce(
-            dtype, test_range, world_size, rank, use_slurm, perf_filename, measure_power, power_min_duration
+            dtype, test_range, world_size, rank, use_slurm, perf_filename, measure_power, power_min_duration,
+            sizes, strategy,
         )
 
     elif backend == "vllm":
@@ -1061,6 +1102,21 @@ if __name__ == "__main__":
         help="Minimum duration for benchmark runs when power measurement is enabled (default: 1.0s)",
     )
 
+    parser.add_argument(
+        "--sizes",
+        default=None,
+        help="Explicit comma-separated sizes in ELEMENTS (not bytes), e.g. '1048576,13107200'. "
+        "Takes precedence over --range. Lets one launch cover a non-geometric set, which "
+        "matters because importing tensorrt_llm across N ranks costs ~30s per launch.",
+    )
+    parser.add_argument(
+        "--strategy",
+        default="AUTO",
+        help="AllReduceStrategy to pin (AUTO, ONESHOT, TWOSHOT, MIN_LATENCY, NCCL, ...). "
+        "AUTO = whatever the framework's selectImplementation picks, i.e. what serving runs. "
+        "trtllm backend only.",
+    )
+
     args = parser.parse_args()
 
     allreduce_benchmark(
@@ -1073,4 +1129,6 @@ if __name__ == "__main__":
         args.rank,
         args.measure_power,
         args.power_test_duration_sec,
+        [int(s) for s in args.sizes.split(",")] if args.sizes else None,
+        args.strategy,
     )
