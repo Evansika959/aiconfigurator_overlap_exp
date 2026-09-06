@@ -1,0 +1,46 @@
+device NVIDIA A100-SXM4-40GB  SM=108
+grid: 12 shapes x 4 clocks x 5 SM points x 2 reps = 480 rows -> data/gemm_squat_knee.csv
+warmup (outside any squatter): probe module + all shapes ...
+warmup done
+  rep1 f=1140 n_sq= 27 ->  81 SM  ok=12 fail=0  0.4 min
+  rep1 f=1140 n_sq= 81 ->  27 SM  ok=24 fail=0  0.9 min
+  rep1 f=1140 n_sq= 94 ->  14 SM  ok=36 fail=0  1.3 min
+  rep1 f=1140 n_sq=  0 -> 108 SM  ok=48 fail=0  1.8 min
+  rep1 f=1140 n_sq= 54 ->  54 SM  ok=60 fail=0  2.2 min
+  rep1 f= 960 n_sq= 94 ->  14 SM  ok=72 fail=0  2.7 min
+  rep1 f= 960 n_sq= 81 ->  27 SM  ok=84 fail=0  3.1 min
+  rep1 f= 960 n_sq=  0 -> 108 SM  ok=96 fail=0  3.5 min
+  rep1 f= 960 n_sq= 54 ->  54 SM  ok=108 fail=0  4.0 min
+  rep1 f= 960 n_sq= 27 ->  81 SM  ok=120 fail=0  4.4 min
+  rep1 f=1080 n_sq= 27 ->  81 SM  ok=132 fail=0  4.8 min
+  rep1 f=1080 n_sq=  0 -> 108 SM  ok=144 fail=0  5.2 min
+  rep1 f=1080 n_sq= 81 ->  27 SM  ok=156 fail=0  5.7 min
+  rep1 f=1080 n_sq= 94 ->  14 SM  ok=168 fail=0  6.2 min
+  rep1 f=1080 n_sq= 54 ->  54 SM  ok=180 fail=0  6.6 min
+  rep1 f=1020 n_sq= 94 ->  14 SM  ok=192 fail=0  7.1 min
+  rep1 f=1020 n_sq= 81 ->  27 SM  ok=204 fail=0  7.5 min
+  rep1 f=1020 n_sq=  0 -> 108 SM  ok=216 fail=0  7.9 min
+  rep1 f=1020 n_sq= 27 ->  81 SM  ok=228 fail=0  8.4 min
+  rep1 f=1020 n_sq= 54 ->  54 SM  ok=240 fail=0  8.8 min
+  rep2 f=1140 n_sq= 27 ->  81 SM  ok=252 fail=0  9.2 min
+  rep2 f=1140 n_sq=  0 -> 108 SM  ok=264 fail=0  9.6 min
+  rep2 f=1140 n_sq= 81 ->  27 SM  ok=276 fail=0  10.1 min
+  rep2 f=1140 n_sq= 54 ->  54 SM  ok=288 fail=0  10.5 min
+  rep2 f=1140 n_sq= 94 ->  14 SM  ok=300 fail=0  11.0 min
+  rep2 f=1020 n_sq= 54 ->  54 SM  ok=312 fail=0  11.4 min
+  rep2 f=1020 n_sq=  0 -> 108 SM  ok=324 fail=0  11.8 min
+  rep2 f=1020 n_sq= 94 ->  14 SM  ok=336 fail=0  12.3 min
+  rep2 f=1020 n_sq= 27 ->  81 SM  ok=348 fail=0  12.7 min
+  rep2 f=1020 n_sq= 81 ->  27 SM  ok=360 fail=0  13.2 min
+  rep2 f= 960 n_sq= 94 ->  14 SM  ok=372 fail=0  13.6 min
+  rep2 f= 960 n_sq= 27 ->  81 SM  ok=384 fail=0  14.1 min
+  rep2 f= 960 n_sq=  0 -> 108 SM  ok=396 fail=0  14.5 min
+  rep2 f= 960 n_sq= 81 ->  27 SM  ok=408 fail=0  14.9 min
+  rep2 f= 960 n_sq= 54 ->  54 SM  ok=420 fail=0  15.4 min
+  rep2 f=1080 n_sq= 94 ->  14 SM  ok=432 fail=0  15.8 min
+  rep2 f=1080 n_sq=  0 -> 108 SM  ok=444 fail=0  16.3 min
+  rep2 f=1080 n_sq= 27 ->  81 SM  ok=456 fail=0  16.7 min
+  rep2 f=1080 n_sq= 81 ->  27 SM  ok=468 fail=0  17.1 min
+  rep2 f=1080 n_sq= 54 ->  54 SM  ok=480 fail=0  17.6 min
+[clocks] reset -> ok
+DONE in 17.6 min   ok=480 fail=0 skip=0  -> /home/xinting/aiconfigurator_overlap_exp/tools/gemm_dcfs_char/data/gemm_squat_knee.csv

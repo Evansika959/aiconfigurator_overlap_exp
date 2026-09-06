@@ -1,0 +1,183 @@
+world=4  2 clocks x 5 shapes x 6 CTAs = 60 concurrent cases   (persistence was Disabled)
+
+=== 1 CTA  [0 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W827 05:53:34.429379527 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+   1CTA 1410MHz    0x    0   comm_only |    6.045 ms   112.2 W/GPU  clk 1410
+   1CTA 1410MHz 1024x 4096   gemm_only |    0.235 ms   333.0 W/GPU  clk 1410
+   1CTA 1410MHz 1024x 4096      serial |    6.268 ms   127.2 W/GPU  clk 1410
+   1CTA 1410MHz 1024x 4096  concurrent |    6.148 ms   123.3 W/GPU  clk 1410
+   1CTA 1410MHz 1280x 4096   gemm_only |    0.237 ms   398.4 W/GPU  clk 1365
+   1CTA 1410MHz 1280x 4096      serial |    6.251 ms   129.4 W/GPU  clk 1410
+   1CTA 1410MHz 1280x 4096  concurrent |    6.158 ms   127.4 W/GPU  clk 1410
+   1CTA 1410MHz 1792x 4096   gemm_only |    0.338 ms   394.6 W/GPU  clk 1380
+   1CTA 1410MHz 1792x 4096      serial |    6.345 ms   133.1 W/GPU  clk 1410
+   1CTA 1410MHz 1792x 4096  concurrent |    6.144 ms   132.9 W/GPU  clk 1410
+   1CTA 1410MHz 2048x 4096   gemm_only |    0.347 ms   399.3 W/GPU  clk 1320
+   1CTA 1410MHz 2048x 4096      serial |    6.352 ms   136.6 W/GPU  clk 1410
+   1CTA 1410MHz 2048x 4096  concurrent |    6.159 ms   136.0 W/GPU  clk 1410
+   1CTA 1410MHz 1536x 4096   gemm_only |    0.248 ms   400.0 W/GPU  clk 1290
+   1CTA 1410MHz 1536x 4096      serial |    6.254 ms   134.5 W/GPU  clk 1410
+   1CTA 1410MHz 1536x 4096  concurrent |    6.144 ms   133.2 W/GPU  clk 1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   1CTA 1200MHz    0x    0   comm_only |    6.990 ms    97.5 W/GPU  clk 1200
+   1CTA 1200MHz 1024x 4096   gemm_only |    0.272 ms   219.7 W/GPU  clk 1200
+   1CTA 1200MHz 1024x 4096      serial |    7.242 ms   103.2 W/GPU  clk 1200
+   1CTA 1200MHz 1024x 4096  concurrent |    7.093 ms   103.4 W/GPU  clk 1200
+   1CTA 1200MHz 1280x 4096   gemm_only |    0.272 ms   262.3 W/GPU  clk 1200
+   1CTA 1200MHz 1280x 4096      serial |    7.238 ms   105.1 W/GPU  clk 1200
+   1CTA 1200MHz 1280x 4096  concurrent |    7.106 ms   104.4 W/GPU  clk 1200
+   1CTA 1200MHz 1792x 4096   gemm_only |    0.390 ms   254.1 W/GPU  clk 1200
+   1CTA 1200MHz 1792x 4096      serial |    7.363 ms   107.4 W/GPU  clk 1200
+   1CTA 1200MHz 1792x 4096  concurrent |    7.112 ms   106.8 W/GPU  clk 1200
+   1CTA 1200MHz 2048x 4096   gemm_only |    0.392 ms   275.4 W/GPU  clk 1200
+   1CTA 1200MHz 2048x 4096      serial |    7.367 ms   108.4 W/GPU  clk 1200
+   1CTA 1200MHz 2048x 4096  concurrent |    7.124 ms   108.2 W/GPU  clk 1200
+   1CTA 1200MHz 1536x 4096   gemm_only |    0.273 ms   295.6 W/GPU  clk 1200
+   1CTA 1200MHz 1536x 4096      serial |    7.237 ms   107.2 W/GPU  clk 1200
+   1CTA 1200MHz 1536x 4096  concurrent |    7.107 ms   106.8 W/GPU  clk 1200
+=== 2 CTA  [1 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W827 05:54:50.748803427 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+   2CTA 1410MHz    0x    0   comm_only |    3.048 ms   119.8 W/GPU  clk 1410
+   2CTA 1410MHz 1024x 4096      serial |    3.268 ms   136.4 W/GPU  clk 1410
+   2CTA 1410MHz 1024x 4096  concurrent |    3.159 ms   138.3 W/GPU  clk 1410
+   2CTA 1410MHz 1280x 4096      serial |    3.270 ms   140.6 W/GPU  clk 1410
+   2CTA 1410MHz 1280x 4096  concurrent |    3.170 ms   142.9 W/GPU  clk 1410
+   2CTA 1410MHz 1792x 4096      serial |    3.367 ms   149.6 W/GPU  clk 1410
+   2CTA 1410MHz 1792x 4096  concurrent |    3.178 ms   150.8 W/GPU  clk 1410
+   2CTA 1410MHz 2048x 4096      serial |    3.367 ms   153.4 W/GPU  clk 1410
+   2CTA 1410MHz 2048x 4096  concurrent |    3.188 ms   155.4 W/GPU  clk 1410
+   2CTA 1410MHz 1536x 4096      serial |    3.269 ms   144.3 W/GPU  clk 1410
+   2CTA 1410MHz 1536x 4096  concurrent |    3.168 ms   148.3 W/GPU  clk 1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   2CTA 1200MHz    0x    0   comm_only |    3.523 ms    99.7 W/GPU  clk 1200
+   2CTA 1200MHz 1024x 4096      serial |    3.772 ms   109.6 W/GPU  clk 1200
+   2CTA 1200MHz 1024x 4096  concurrent |    3.631 ms   110.3 W/GPU  clk 1200
+   2CTA 1200MHz 1280x 4096      serial |    3.774 ms   112.7 W/GPU  clk 1200
+   2CTA 1200MHz 1280x 4096  concurrent |    3.646 ms   113.1 W/GPU  clk 1200
+   2CTA 1200MHz 1792x 4096      serial |    3.901 ms   116.4 W/GPU  clk 1200
+   2CTA 1200MHz 1792x 4096  concurrent |    3.659 ms   117.9 W/GPU  clk 1200
+   2CTA 1200MHz 2048x 4096      serial |    3.905 ms   118.5 W/GPU  clk 1200
+   2CTA 1200MHz 2048x 4096  concurrent |    3.671 ms   120.1 W/GPU  clk 1200
+   2CTA 1200MHz 1536x 4096      serial |    3.776 ms   114.4 W/GPU  clk 1200
+   2CTA 1200MHz 1536x 4096  concurrent |    3.651 ms   115.4 W/GPU  clk 1200
+=== 4 CTA  [2 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W827 05:55:55.435490640 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+   4CTA 1410MHz    0x    0   comm_only |    1.625 ms   127.2 W/GPU  clk 1410
+   4CTA 1410MHz 1024x 4096      serial |    1.847 ms   155.8 W/GPU  clk 1410
+   4CTA 1410MHz 1024x 4096  concurrent |    1.726 ms   159.4 W/GPU  clk 1410
+   4CTA 1410MHz 1280x 4096      serial |    1.848 ms   165.2 W/GPU  clk 1410
+   4CTA 1410MHz 1280x 4096  concurrent |    1.733 ms   170.1 W/GPU  clk 1410
+   4CTA 1410MHz 1792x 4096      serial |    1.946 ms   177.3 W/GPU  clk 1410
+   4CTA 1410MHz 1792x 4096  concurrent |    1.741 ms   187.2 W/GPU  clk 1410
+   4CTA 1410MHz 2048x 4096      serial |    1.949 ms   184.2 W/GPU  clk 1410
+   4CTA 1410MHz 2048x 4096  concurrent |    1.743 ms   192.6 W/GPU  clk 1410
+   4CTA 1410MHz 1536x 4096      serial |    1.847 ms   174.7 W/GPU  clk 1410
+   4CTA 1410MHz 1536x 4096  concurrent |    1.732 ms   178.5 W/GPU  clk 1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   4CTA 1200MHz    0x    0   comm_only |    1.860 ms   106.1 W/GPU  clk 1200
+   4CTA 1200MHz 1024x 4096      serial |    2.113 ms   122.6 W/GPU  clk 1200
+   4CTA 1200MHz 1024x 4096  concurrent |    1.961 ms   125.8 W/GPU  clk 1200
+   4CTA 1200MHz 1280x 4096      serial |    2.116 ms   128.1 W/GPU  clk 1200
+   4CTA 1200MHz 1280x 4096  concurrent |    1.967 ms   131.0 W/GPU  clk 1200
+   4CTA 1200MHz 1792x 4096      serial |    2.242 ms   134.8 W/GPU  clk 1200
+   4CTA 1200MHz 1792x 4096  concurrent |    1.980 ms   139.9 W/GPU  clk 1200
+   4CTA 1200MHz 2048x 4096      serial |    2.244 ms   138.3 W/GPU  clk 1200
+   4CTA 1200MHz 2048x 4096  concurrent |    1.984 ms   144.4 W/GPU  clk 1200
+   4CTA 1200MHz 1536x 4096      serial |    2.111 ms   132.7 W/GPU  clk 1200
+   4CTA 1200MHz 1536x 4096  concurrent |    1.968 ms   135.5 W/GPU  clk 1200
+=== 8 CTA  [3 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W827 05:57:00.289651258 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+   8CTA 1410MHz    0x    0   comm_only |    0.931 ms   142.7 W/GPU  clk 1410
+   8CTA 1410MHz 1024x 4096      serial |    1.150 ms   186.9 W/GPU  clk 1410
+   8CTA 1410MHz 1024x 4096  concurrent |    1.000 ms   199.0 W/GPU  clk 1410
+   8CTA 1410MHz 1280x 4096      serial |    1.151 ms   201.5 W/GPU  clk 1410
+   8CTA 1410MHz 1280x 4096  concurrent |    1.000 ms   216.0 W/GPU  clk 1410
+   8CTA 1410MHz 1792x 4096      serial |    1.253 ms   219.5 W/GPU  clk 1410
+   8CTA 1410MHz 1792x 4096  concurrent |    1.005 ms   245.0 W/GPU  clk 1410
+   8CTA 1410MHz 2048x 4096      serial |    1.253 ms   231.3 W/GPU  clk 1410
+   8CTA 1410MHz 2048x 4096  concurrent |    1.006 ms   259.2 W/GPU  clk 1410
+   8CTA 1410MHz 1536x 4096      serial |    1.153 ms   218.6 W/GPU  clk 1410
+   8CTA 1410MHz 1536x 4096  concurrent |    1.009 ms   233.8 W/GPU  clk 1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   8CTA 1200MHz    0x    0   comm_only |    1.057 ms   119.1 W/GPU  clk 1200
+   8CTA 1200MHz 1024x 4096      serial |    1.306 ms   143.9 W/GPU  clk 1200
+   8CTA 1200MHz 1024x 4096  concurrent |    1.118 ms   152.4 W/GPU  clk 1200
+   8CTA 1200MHz 1280x 4096      serial |    1.309 ms   152.2 W/GPU  clk 1200
+   8CTA 1200MHz 1280x 4096  concurrent |    1.124 ms   161.7 W/GPU  clk 1200
+   8CTA 1200MHz 1792x 4096      serial |    1.423 ms   160.7 W/GPU  clk 1200
+   8CTA 1200MHz 1792x 4096  concurrent |    1.131 ms   177.6 W/GPU  clk 1200
+   8CTA 1200MHz 2048x 4096      serial |    1.426 ms   166.8 W/GPU  clk 1200
+   8CTA 1200MHz 2048x 4096  concurrent |    1.134 ms   185.2 W/GPU  clk 1200
+   8CTA 1200MHz 1536x 4096      serial |    1.313 ms   159.0 W/GPU  clk 1200
+   8CTA 1200MHz 1536x 4096  concurrent |    1.136 ms   169.8 W/GPU  clk 1200
+=== 16 CTA  [4 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W827 05:58:04.272358166 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  16CTA 1410MHz    0x    0   comm_only |    0.623 ms   157.8 W/GPU  clk 1410
+  16CTA 1410MHz 1024x 4096      serial |    0.834 ms   216.0 W/GPU  clk 1410
+  16CTA 1410MHz 1024x 4096  concurrent |    0.690 ms   239.1 W/GPU  clk 1410
+  16CTA 1410MHz 1280x 4096      serial |    0.837 ms   237.3 W/GPU  clk 1410
+  16CTA 1410MHz 1280x 4096  concurrent |    0.704 ms   265.2 W/GPU  clk 1410
+  16CTA 1410MHz 1792x 4096      serial |    0.940 ms   255.6 W/GPU  clk 1410
+  16CTA 1410MHz 1792x 4096  concurrent |    0.703 ms   305.8 W/GPU  clk 1410
+  16CTA 1410MHz 2048x 4096      serial |    0.940 ms   273.7 W/GPU  clk 1410
+  16CTA 1410MHz 2048x 4096  concurrent |    0.705 ms   332.1 W/GPU  clk 1410
+  16CTA 1410MHz 1536x 4096      serial |    0.836 ms   254.7 W/GPU  clk 1410
+  16CTA 1410MHz 1536x 4096  concurrent |    0.712 ms   290.1 W/GPU  clk 1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA 1200MHz    0x    0   comm_only |    0.673 ms   132.2 W/GPU  clk 1200
+  16CTA 1200MHz 1024x 4096      serial |    0.929 ms   164.8 W/GPU  clk 1200
+  16CTA 1200MHz 1024x 4096  concurrent |    0.741 ms   183.0 W/GPU  clk 1200
+  16CTA 1200MHz 1280x 4096      serial |    0.929 ms   176.8 W/GPU  clk 1200
+  16CTA 1200MHz 1280x 4096  concurrent |    0.753 ms   197.6 W/GPU  clk 1200
+  16CTA 1200MHz 1792x 4096      serial |    1.049 ms   185.5 W/GPU  clk 1200
+  16CTA 1200MHz 1792x 4096  concurrent |    0.749 ms   221.5 W/GPU  clk 1200
+  16CTA 1200MHz 2048x 4096      serial |    1.051 ms   193.8 W/GPU  clk 1200
+  16CTA 1200MHz 2048x 4096  concurrent |    0.756 ms   235.5 W/GPU  clk 1200
+  16CTA 1200MHz 1536x 4096      serial |    0.930 ms   186.2 W/GPU  clk 1200
+  16CTA 1200MHz 1536x 4096  concurrent |    0.755 ms   209.9 W/GPU  clk 1200
+=== 32 CTA  [6 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W827 05:59:08.358738896 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  32CTA 1410MHz    0x    0   comm_only |    0.549 ms   168.3 W/GPU  clk 1410
+  32CTA 1410MHz 1024x 4096      serial |    0.758 ms   232.7 W/GPU  clk 1410
+  32CTA 1410MHz 1024x 4096  concurrent |    0.609 ms   262.4 W/GPU  clk 1410
+  32CTA 1410MHz 1280x 4096      serial |    0.756 ms   257.1 W/GPU  clk 1410
+  32CTA 1410MHz 1280x 4096  concurrent |    0.619 ms   297.4 W/GPU  clk 1410
+  32CTA 1410MHz 1792x 4096      serial |    0.860 ms   273.7 W/GPU  clk 1410
+  32CTA 1410MHz 1792x 4096  concurrent |    0.691 ms   315.2 W/GPU  clk 1410
+  32CTA 1410MHz 2048x 4096      serial |    0.859 ms   295.4 W/GPU  clk 1410
+  32CTA 1410MHz 2048x 4096  concurrent |    0.700 ms   339.3 W/GPU  clk 1410
+  32CTA 1410MHz 1536x 4096      serial |    0.757 ms   281.9 W/GPU  clk 1410
+  32CTA 1410MHz 1536x 4096  concurrent |    0.689 ms   303.9 W/GPU  clk 1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  32CTA 1200MHz    0x    0   comm_only |    0.578 ms   140.0 W/GPU  clk 1200
+  32CTA 1200MHz 1024x 4096      serial |    0.825 ms   173.6 W/GPU  clk 1200
+  32CTA 1200MHz 1024x 4096  concurrent |    0.639 ms   199.3 W/GPU  clk 1200
+  32CTA 1200MHz 1280x 4096      serial |    0.825 ms   188.1 W/GPU  clk 1200
+  32CTA 1200MHz 1280x 4096  concurrent |    0.670 ms   218.7 W/GPU  clk 1200
+  32CTA 1200MHz 1792x 4096      serial |    0.946 ms   197.5 W/GPU  clk 1200
+  32CTA 1200MHz 1792x 4096  concurrent |    0.746 ms   226.4 W/GPU  clk 1200
+  32CTA 1200MHz 2048x 4096      serial |    0.946 ms   207.3 W/GPU  clk 1200
+  32CTA 1200MHz 2048x 4096  concurrent |    0.781 ms   233.4 W/GPU  clk 1200
+  32CTA 1200MHz 1536x 4096      serial |    0.824 ms   199.8 W/GPU  clk 1200
+  32CTA 1200MHz 1536x 4096  concurrent |    0.731 ms   220.5 W/GPU  clk 1200
+[clocks] restored
+
+DONE in 6.7 min -> data/throttle_gap.csv  (142 rows)

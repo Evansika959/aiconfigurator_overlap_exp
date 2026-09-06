@@ -1,0 +1,80 @@
+[clocks] locked 1200 MHz, idle read-back 1200 MHz
+
+--- 4 CTA, 1 shapes, fresh processes ---
+  M=1024 N= 4096 K=16384  4CTA   gemm_only | iter   0.666 ms  clk 1200/1200 held= True  P  621.0 W
+  M=1024 N= 4096 K=16384  4CTA   comm_only | iter   5.784 ms  clk 1200/1200 held= True  P  204.0 W
+  M=1024 N= 4096 K=16384  4CTA      serial | iter   6.433 ms  clk 1200/1200 held= True  P  250.8 W
+  M=1024 N= 4096 K=16384  4CTA  concurrent | iter   5.928 ms  clk 1200/1200 held= True  P  258.6 W
+--- 8 CTA, 5 shapes, fresh processes ---
+  M=1024 N= 4096 K=16384  8CTA   gemm_only | iter   0.655 ms  clk 1200/1200 held= True  P  623.7 W
+  M=1024 N= 4096 K=16384  8CTA   comm_only | iter   3.179 ms  clk 1200/1200 held= True  P  228.1 W
+  M=1024 N= 4096 K=16384  8CTA      serial | iter   3.819 ms  clk 1200/1200 held= True  P  301.7 W
+  M=1024 N= 4096 K=16384  8CTA  concurrent | iter   3.287 ms  clk 1200/1200 held= True  P  321.5 W
+  M=1024 N= 4096 K= 4096  8CTA   gemm_only | iter   0.274 ms  clk 1200/1200 held= True  P  421.1 W
+  M=1024 N= 4096 K= 4096  8CTA   comm_only | iter   3.178 ms  clk 1200/1200 held= True  P  227.5 W
+  M=1024 N= 4096 K= 4096  8CTA      serial | iter   3.428 ms  clk 1200/1200 held= True  P  247.0 W
+  M=1024 N= 4096 K= 4096  8CTA  concurrent | iter   3.237 ms  clk 1200/1200 held= True  P  251.1 W
+  M=1024 N= 8192 K= 8192  8CTA   gemm_only | iter   0.658 ms  clk 1200/1200 held= True  P  612.5 W
+  M=1024 N= 8192 K= 8192  8CTA   comm_only | iter   3.193 ms  clk 1200/1200 held= True  P  230.1 W
+  M=1024 N= 8192 K= 8192  8CTA      serial | iter   3.828 ms  clk 1200/1200 held= True  P  302.3 W
+  M=1024 N= 8192 K= 8192  8CTA  concurrent | iter   3.299 ms  clk 1200/1200 held= True  P  320.2 W
+  M=2048 N= 4096 K=16384  8CTA   gemm_only | iter   1.224 ms  clk 1200/1200 held= True  P  637.1 W
+  M=2048 N= 4096 K=16384  8CTA   comm_only | iter   3.199 ms  clk 1200/1200 held= True  P  231.6 W
+  M=2048 N= 4096 K=16384  8CTA      serial | iter   4.399 ms  clk 1200/1200 held= True  P  353.3 W
+  M=2048 N= 4096 K=16384  8CTA  concurrent | iter   3.339 ms  clk 1200/1200 held= True  P  408.3 W
+  M=8192 N= 4096 K= 4096  8CTA   gemm_only | iter   1.231 ms  clk 1200/1200 held= True  P  642.1 W
+  M=8192 N= 4096 K= 4096  8CTA   comm_only | iter   3.196 ms  clk 1200/1200 held= True  P  233.2 W
+  M=8192 N= 4096 K= 4096  8CTA      serial | iter   4.401 ms  clk 1200/1200 held= True  P  356.1 W
+  M=8192 N= 4096 K= 4096  8CTA  concurrent | iter   3.341 ms  clk 1200/1200 held= True  P  412.9 W
+--- 16 CTA, 3 shapes, fresh processes ---
+  M=1024 N= 4096 K=16384 16CTA   gemm_only | iter   0.652 ms  clk 1200/1200 held= True  P  636.4 W
+  M=1024 N= 4096 K=16384 16CTA   comm_only | iter   1.947 ms  clk 1200/1200 held= True  P  259.8 W
+  M=1024 N= 4096 K=16384 16CTA      serial | iter   2.589 ms  clk 1200/1200 held= True  P  363.3 W
+  M=1024 N= 4096 K=16384 16CTA  concurrent | iter   2.046 ms  clk 1200/1200 held= True  P  412.8 W
+  M=1024 N= 4096 K= 4096 16CTA   gemm_only | iter   0.274 ms  clk 1200/1200 held= True  P  425.2 W
+  M=1024 N= 4096 K= 4096 16CTA   comm_only | iter   1.947 ms  clk 1200/1200 held= True  P  260.1 W
+  M=1024 N= 4096 K= 4096 16CTA      serial | iter   2.201 ms  clk 1200/1200 held= True  P  285.5 W
+  M=1024 N= 4096 K= 4096 16CTA  concurrent | iter   2.008 ms  clk 1200/1200 held= True  P  293.5 W
+  M=8192 N= 4096 K= 4096 16CTA   gemm_only | iter   1.231 ms  clk 1200/1200 held= True  P  646.8 W
+  M=8192 N= 4096 K= 4096 16CTA   comm_only | iter   1.947 ms  clk 1200/1200 held= True  P  260.6 W
+  M=8192 N= 4096 K= 4096 16CTA      serial | iter   3.167 ms  clk 1200/1200 held= True  P  419.2 W
+  M=8192 N= 4096 K= 4096 16CTA  concurrent | iter   2.065 ms  clk 1200/1200 held= True  P  555.9 W
+--- 32 CTA, 4 shapes, fresh processes ---
+  M=1024 N= 4096 K=16384 32CTA   gemm_only | iter   0.654 ms  clk 1200/1200 held= True  P  638.0 W
+  M=1024 N= 4096 K=16384 32CTA   comm_only | iter   1.554 ms  clk 1200/1200 held= True  P  277.0 W
+  M=1024 N= 4096 K=16384 32CTA      serial | iter   2.175 ms  clk 1200/1200 held= True  P  397.2 W
+  M=1024 N= 4096 K=16384 32CTA  concurrent | iter   1.665 ms  clk 1200/1200 held= True  P  464.2 W
+  M=1024 N= 4096 K= 4096 32CTA   gemm_only | iter   0.274 ms  clk 1200/1200 held= True  P  428.9 W
+  M=1024 N= 4096 K= 4096 32CTA   comm_only | iter   1.551 ms  clk 1200/1200 held= True  P  277.0 W
+  M=1024 N= 4096 K= 4096 32CTA      serial | iter   1.799 ms  clk 1200/1200 held= True  P  306.4 W
+  M=1024 N= 4096 K= 4096 32CTA  concurrent | iter   1.606 ms  clk 1200/1200 held= True  P  322.2 W
+  M=1024 N= 8192 K= 8192 32CTA   gemm_only | iter   0.657 ms  clk 1200/1200 held= True  P  624.5 W
+  M=1024 N= 8192 K= 8192 32CTA   comm_only | iter   1.550 ms  clk 1200/1200 held= True  P  278.0 W
+  M=1024 N= 8192 K= 8192 32CTA      serial | iter   2.179 ms  clk 1200/1200 held= True  P  394.9 W
+  M=1024 N= 8192 K= 8192 32CTA  concurrent | iter   1.641 ms  clk 1200/1200 held= True  P  468.6 W
+  M=2048 N= 4096 K=16384 32CTA   gemm_only | iter   1.224 ms  clk 1200/1200 held= True  P  649.7 W
+  M=2048 N= 4096 K=16384 32CTA   comm_only | iter   1.552 ms  clk 1200/1200 held= True  P  279.1 W
+  M=2048 N= 4096 K=16384 32CTA      serial | iter   2.744 ms  clk 1200/1200 held= True  P  460.1 W
+  M=2048 N= 4096 K=16384 32CTA  concurrent | iter   2.287 ms  clk 1200/1200 held= True  P  528.5 W
+[clocks] restored
+
+wrote /home/xinting/aiconfigurator_overlap_exp/tools/overlap_exp/data/peak_vs_mean.csv  (52 rows)
+
+VERDICT per configuration
+
+    M     N     K CTA |  peak pred mean pred |   gemm  comm serial concur |                      outcome
+ 1024  4096 16384   4 |       404W      287W |      ok     ok     ok     ok | MEAN model right (no throttle)
+ 1024  4096 16384   8 |       413W      296W |      ok     ok     ok     ok | MEAN model right (no throttle)
+ 1024  4096  4096   8 |       401W      284W |      ok     ok     ok     ok | MEAN model right (no throttle)
+ 1024  8192  8192   8 |       413W      353W |      ok     ok     ok     ok | MEAN model right (no throttle)
+ 2048  4096 16384   8 |       413W      353W |      ok     ok     ok     ok | MEAN model right (no throttle)
+ 8192  4096  4096   8 |       401W      386W |      ok     ok     ok     ok | MEAN model right (no throttle)
+ 1024  4096 16384  16 |       423W      306W |      ok     ok     ok     ok | MEAN model right (no throttle)
+ 1024  4096  4096  16 |       411W      294W |      ok     ok     ok     ok | MEAN model right (no throttle)
+ 8192  4096  4096  16 |       411W      396W |      ok     ok     ok     ok | MEAN model right (no throttle)
+ 1024  4096 16384  32 |       432W      315W |      ok     ok     ok     ok | MEAN model right (no throttle)
+ 1024  4096  4096  32 |       420W      303W |      ok     ok     ok     ok | MEAN model right (no throttle)
+ 1024  8192  8192  32 |       432W      372W |      ok     ok     ok     ok | MEAN model right (no throttle)
+ 2048  4096 16384  32 |       432W      372W |      ok     ok     ok     ok | MEAN model right (no throttle)
+
+  13 x MEAN model right (no throttle)

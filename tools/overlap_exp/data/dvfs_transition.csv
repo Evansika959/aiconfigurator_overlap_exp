@@ -1,0 +1,8 @@
+f_from,f_to,n,api_call_us,settle_ms,total_ms,path,under_load
+600,900,8,10914.6,27.288,38.202,nvml_api,True
+900,600,8,10850.2,26.188,37.039,nvml_api,True
+900,1200,8,9438.9,27.905,37.344,nvml_api,True
+1200,900,8,11371.0,28.906,40.277,nvml_api,True
+705,1200,8,9927.0,27.019,36.946,nvml_api,True
+1200,705,8,9771.7,28.327,38.098,nvml_api,True
+,900,1,73628.6,,73.629,nvidia_smi_cli,True

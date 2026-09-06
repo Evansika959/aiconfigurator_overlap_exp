@@ -1,0 +1,177 @@
+[clocks] 1200 MHz on GPUs 0,1,2,3, idle read-back 1200 MHz (persistence was Enabled)
+
+--- 2 CTA, fresh processes ---
+    low_occ  64MiB  2CTA   gemm_only | iter    0.652 ms  P/GPU  317.1 W  clk 1200
+    low_occ  64MiB  2CTA   comm_only | iter    3.533 ms  P/GPU   94.8 W  clk 1200
+    low_occ  64MiB  2CTA      serial | iter    4.166 ms  P/GPU  132.0 W  clk 1200
+    low_occ  64MiB  2CTA  concurrent | iter    3.716 ms  P/GPU  139.2 W  clk 1200
+    low_occ 256MiB  2CTA   gemm_only | iter    0.651 ms  P/GPU  319.3 W  clk 1200
+    low_occ 256MiB  2CTA   comm_only | iter   13.900 ms  P/GPU   95.7 W  clk 1200
+    low_occ 256MiB  2CTA      serial | iter   14.527 ms  P/GPU  105.6 W  clk 1200
+    low_occ 256MiB  2CTA  concurrent | iter   14.084 ms  P/GPU  106.3 W  clk 1200
+   high_occ  64MiB  2CTA   gemm_only | iter    1.230 ms  P/GPU  323.8 W  clk 1200
+   high_occ  64MiB  2CTA   comm_only | iter    3.533 ms  P/GPU   96.0 W  clk 1200
+   high_occ  64MiB  2CTA      serial | iter    4.729 ms  P/GPU  160.2 W  clk 1200
+   high_occ  64MiB  2CTA  concurrent | iter    3.788 ms  P/GPU  178.1 W  clk 1200
+   high_occ 256MiB  2CTA   gemm_only | iter    1.232 ms  P/GPU  325.8 W  clk 1200
+   high_occ 256MiB  2CTA   comm_only | iter   13.899 ms  P/GPU   96.6 W  clk 1200
+   high_occ 256MiB  2CTA      serial | iter   15.081 ms  P/GPU  116.0 W  clk 1200
+   high_occ 256MiB  2CTA  concurrent | iter   14.163 ms  P/GPU  116.6 W  clk 1200
+--- 4 CTA, fresh processes ---
+    low_occ  64MiB  4CTA   gemm_only | iter    0.651 ms  P/GPU  320.1 W  clk 1200
+    low_occ  64MiB  4CTA   comm_only | iter    1.864 ms  P/GPU  102.7 W  clk 1200
+    low_occ  64MiB  4CTA      serial | iter    2.496 ms  P/GPU  164.8 W  clk 1200
+    low_occ  64MiB  4CTA  concurrent | iter    2.027 ms  P/GPU  182.9 W  clk 1200
+    low_occ 256MiB  4CTA   gemm_only | iter    0.651 ms  P/GPU  321.6 W  clk 1200
+    low_occ 256MiB  4CTA   comm_only | iter    7.208 ms  P/GPU  103.5 W  clk 1200
+    low_occ 256MiB  4CTA      serial | iter    7.845 ms  P/GPU  122.3 W  clk 1200
+    low_occ 256MiB  4CTA  concurrent | iter    7.391 ms  P/GPU  125.2 W  clk 1200
+   high_occ  64MiB  4CTA   gemm_only | iter    1.230 ms  P/GPU  326.7 W  clk 1200
+   high_occ  64MiB  4CTA   comm_only | iter    1.859 ms  P/GPU  103.1 W  clk 1200
+   high_occ  64MiB  4CTA      serial | iter    3.066 ms  P/GPU  198.7 W  clk 1200
+   high_occ  64MiB  4CTA  concurrent | iter    2.100 ms  P/GPU  251.6 W  clk 1200
+   high_occ 256MiB  4CTA   gemm_only | iter    1.230 ms  P/GPU  328.2 W  clk 1200
+   high_occ 256MiB  4CTA   comm_only | iter    7.217 ms  P/GPU  104.2 W  clk 1200
+   high_occ 256MiB  4CTA      serial | iter    8.425 ms  P/GPU  138.5 W  clk 1200
+   high_occ 256MiB  4CTA  concurrent | iter    7.459 ms  P/GPU  145.4 W  clk 1200
+--- 8 CTA, fresh processes ---
+    low_occ  64MiB  8CTA   gemm_only | iter    0.651 ms  P/GPU  321.5 W  clk 1200
+    low_occ  64MiB  8CTA   comm_only | iter    1.053 ms  P/GPU  114.7 W  clk 1200
+    low_occ  64MiB  8CTA      serial | iter    1.693 ms  P/GPU  201.3 W  clk 1200
+    low_occ  64MiB  8CTA  concurrent | iter    1.172 ms  P/GPU  251.1 W  clk 1200
+    low_occ 256MiB  8CTA   gemm_only | iter    0.650 ms  P/GPU  323.9 W  clk 1200
+    low_occ 256MiB  8CTA   comm_only | iter    3.990 ms  P/GPU  116.4 W  clk 1200
+    low_occ 256MiB  8CTA      serial | iter    4.629 ms  P/GPU  147.3 W  clk 1200
+    low_occ 256MiB  8CTA  concurrent | iter    4.106 ms  P/GPU  154.3 W  clk 1200
+   high_occ  64MiB  8CTA   gemm_only | iter    1.230 ms  P/GPU  328.6 W  clk 1200
+   high_occ  64MiB  8CTA   comm_only | iter    1.052 ms  P/GPU  115.5 W  clk 1200
+   high_occ  64MiB  8CTA      serial | iter    2.287 ms  P/GPU  238.9 W  clk 1200
+   high_occ  64MiB  8CTA  concurrent | iter    1.519 ms  P/GPU  316.2 W  clk 1200
+   high_occ 256MiB  8CTA   gemm_only | iter    1.230 ms  P/GPU  330.8 W  clk 1200
+   high_occ 256MiB  8CTA   comm_only | iter    3.992 ms  P/GPU  116.8 W  clk 1200
+   high_occ 256MiB  8CTA      serial | iter    5.222 ms  P/GPU  170.0 W  clk 1200
+   high_occ 256MiB  8CTA  concurrent | iter    4.152 ms  P/GPU  190.9 W  clk 1200
+--- 16 CTA, fresh processes ---
+    low_occ  64MiB 16CTA   gemm_only | iter    0.653 ms  P/GPU  323.4 W  clk 1200
+    low_occ  64MiB 16CTA   comm_only | iter    0.684 ms  P/GPU  125.6 W  clk 1200
+    low_occ  64MiB 16CTA      serial | iter    1.322 ms  P/GPU  231.4 W  clk 1200
+    low_occ  64MiB 16CTA  concurrent | iter    1.021 ms  P/GPU  275.1 W  clk 1200
+    low_occ 256MiB 16CTA   gemm_only | iter    0.650 ms  P/GPU  325.8 W  clk 1200
+    low_occ 256MiB 16CTA   comm_only | iter    2.386 ms  P/GPU  132.5 W  clk 1200
+    low_occ 256MiB 16CTA      serial | iter    3.015 ms  P/GPU  177.5 W  clk 1200
+    low_occ 256MiB 16CTA  concurrent | iter    2.481 ms  P/GPU  196.0 W  clk 1200
+   high_occ  64MiB 16CTA   gemm_only | iter    1.230 ms  P/GPU  330.4 W  clk 1200
+   high_occ  64MiB 16CTA   comm_only | iter    0.686 ms  P/GPU  126.5 W  clk 1200
+   high_occ  64MiB 16CTA      serial | iter    1.902 ms  P/GPU  265.4 W  clk 1200
+   high_occ  64MiB 16CTA  concurrent | iter    1.523 ms  P/GPU  314.3 W  clk 1200
+   high_occ 256MiB 16CTA   gemm_only | iter    1.229 ms  P/GPU  332.0 W  clk 1200
+   high_occ 256MiB 16CTA   comm_only | iter    2.387 ms  P/GPU  133.0 W  clk 1200
+   high_occ 256MiB 16CTA      serial | iter    3.593 ms  P/GPU  207.5 W  clk 1200
+   high_occ 256MiB 16CTA  concurrent | iter    2.501 ms  P/GPU  256.6 W  clk 1200
+[clocks] restored
+
+wrote /home/xinting/aiconfigurator_overlap_exp/tools/overlap_exp/data/overlap_w4.csv  (64 rows)
+
+A. Collective latency, world=4 fit at world=4 -- no rescaling
+     MiB  CTA  measured  predicted     err
+      64    2     3.533      3.506   -0.8%
+      64    4     1.859      1.853   -0.3%
+      64    8     1.052      1.035   -1.6%
+      64   16     0.686      0.638   -7.1%
+     256    2    13.899     13.883   -0.1%
+     256    4     7.217      7.280    0.9%
+     256    8     3.992      3.966   -0.7%
+     256   16     2.387      2.320   -2.8%
+   median |err| 0.8%
+
+B. Composed power, model vs measured, per GPU
+       shape  MiB CTA       mode  iter ms    meas   model     err
+    high_occ   64   2  comm_only    3.533    96.0    99.3    3.4%
+    high_occ   64   2 concurrent    3.788   178.1   186.0    4.4%
+    high_occ   64   2  gemm_only    1.230   323.8   342.8    5.9%
+    high_occ   64   2     serial    4.729   160.2   162.8    1.6%
+    high_occ   64   4  comm_only    1.859   103.1   103.8    0.7%
+    high_occ   64   4 concurrent    2.100   251.6   259.9    3.3%
+    high_occ   64   4  gemm_only    1.230   326.7   342.8    4.9%
+    high_occ   64   4     serial    3.066   198.7   200.0    0.6%
+    high_occ   64   8  comm_only    1.052   115.5   112.0   -3.1%
+    high_occ   64   8 concurrent    1.518   316.2   320.3    1.3%
+    high_occ   64   8  gemm_only    1.230   328.6   342.8    4.3%
+    high_occ   64   8     serial    2.287   238.9   236.1   -1.2%
+    high_occ   64  16  comm_only    0.686   126.5   125.1   -1.0%
+    high_occ   64  16 concurrent    1.524   314.3   315.2    0.3%
+    high_occ   64  16  gemm_only    1.230   330.4   342.8    3.8%
+    high_occ   64  16     serial    1.902   265.4   266.3    0.3%
+    high_occ  256   2  comm_only   13.899    96.6    99.3    2.7%
+    high_occ  256   2 concurrent   14.163   116.6   122.5    5.0%
+    high_occ  256   2  gemm_only    1.232   325.8   342.8    5.2%
+    high_occ  256   2     serial   15.081   116.0   119.3    2.8%
+    high_occ  256   4  comm_only    7.217   104.2   103.8   -0.3%
+    high_occ  256   4 concurrent    7.459   145.4   147.8    1.6%
+    high_occ  256   4  gemm_only    1.230   328.2   342.8    4.5%
+    high_occ  256   4     serial    8.425   138.5   138.8    0.3%
+    high_occ  256   8  comm_only    3.992   116.8   112.0   -4.1%
+    high_occ  256   8 concurrent    4.152   190.9   191.3    0.2%
+    high_occ  256   8  gemm_only    1.230   330.8   342.8    3.7%
+    high_occ  256   8     serial    5.222   170.0   166.4   -2.2%
+    high_occ  256  16  comm_only    2.387   133.0   125.1   -5.9%
+    high_occ  256  16 concurrent    2.501   256.6   256.9    0.1%
+    high_occ  256  16  gemm_only    1.229   332.0   342.8    3.3%
+    high_occ  256  16     serial    3.593   207.5   200.0   -3.6%
+     low_occ   64   2  comm_only    3.533    94.8    99.3    4.7%
+     low_occ   64   2 concurrent    3.716   139.2   129.8   -6.7%
+     low_occ   64   2  gemm_only    0.652   317.1   252.4  -20.4%
+     low_occ   64   2     serial    4.166   132.0   123.3   -6.5%
+     low_occ   64   4  comm_only    1.864   102.7   103.8    1.1%
+     low_occ   64   4 concurrent    2.027   182.9   159.8  -12.6%
+     low_occ   64   4  gemm_only    0.651   320.1   252.4  -21.2%
+     low_occ   64   4     serial    2.496   164.8   142.8  -13.3%
+     low_occ   64   8  comm_only    1.053   114.7   112.0   -2.4%
+     low_occ   64   8 concurrent    1.172   251.1   209.2  -16.7%
+     low_occ   64   8  gemm_only    0.651   321.5   252.4  -21.5%
+     low_occ   64   8     serial    1.693   201.3   166.2  -17.4%
+     low_occ   64  16  comm_only    0.684   125.6   125.1   -0.3%
+     low_occ   64  16 concurrent    1.020   275.1   223.7  -18.7%
+     low_occ   64  16  gemm_only    0.653   323.4   252.4  -22.0%
+     low_occ   64  16     serial    1.322   231.4   188.6  -18.5%
+     low_occ  256   2  comm_only   13.900    95.7    99.3    3.7%
+     low_occ  256   2 concurrent   14.084   106.3   107.3    0.9%
+     low_occ  256   2  gemm_only    0.651   319.3   252.4  -21.0%
+     low_occ  256   2     serial   14.527   105.6   106.2    0.5%
+     low_occ  256   4  comm_only    7.208   103.5   103.8    0.3%
+     low_occ  256   4 concurrent    7.391   125.2   119.1   -4.9%
+     low_occ  256   4  gemm_only    0.651   321.6   252.4  -21.5%
+     low_occ  256   4     serial    7.845   122.3   116.2   -5.0%
+     low_occ  256   8  comm_only    3.990   116.4   112.0   -3.8%
+     low_occ  256   8 concurrent    4.106   154.3   139.7   -9.4%
+     low_occ  256   8  gemm_only    0.650   323.9   252.4  -22.1%
+     low_occ  256   8     serial    4.629   147.3   131.8  -10.5%
+     low_occ  256  16  comm_only    2.386   132.5   125.1   -5.6%
+     low_occ  256  16 concurrent    2.481   196.0   170.9  -12.8%
+     low_occ  256  16  gemm_only    0.650   325.8   252.4  -22.5%
+     low_occ  256  16     serial    3.015   177.5   153.0  -13.8%
+
+     gemm_only: median |err|  13.1%  max  22.5%  n=16
+     comm_only: median |err|   2.9%  max   5.9%  n=16
+        serial: median |err|   3.2%  max  18.5%  n=16
+    concurrent: median |err|   4.6%  max  18.7%  n=16
+       overall: median |err|   4.2%  n=64
+
+C. Overlap payoff (concurrent vs serial)
+       shape  MiB CTA  speedup  E/iter serial  concurrent   change
+    high_occ   64   2    1.248          757.7       674.8   -10.9%
+    high_occ   64   4    1.460          609.3       528.3   -13.3%
+    high_occ   64   8    1.506          546.3       480.1   -12.1%
+    high_occ   64  16    1.249          504.8       478.9    -5.1%
+    high_occ  256   2    1.065         1749.0      1651.8    -5.6%
+    high_occ  256   4    1.130         1166.7      1084.8    -7.0%
+    high_occ  256   8    1.258          888.0       792.6   -10.7%
+    high_occ  256  16    1.437          745.6       641.6   -13.9%
+     low_occ   64   2    1.121          549.8       517.4    -5.9%
+     low_occ   64   4    1.231          411.2       370.7    -9.8%
+     low_occ   64   8    1.445          340.8       294.2   -13.7%
+     low_occ   64  16    1.295          305.9       280.7    -8.2%
+     low_occ  256   2    1.031         1534.5      1497.7    -2.4%
+     low_occ  256   4    1.061          959.6       925.4    -3.6%
+     low_occ  256   8    1.127          682.0       633.5    -7.1%
+     low_occ  256  16    1.215          535.2       486.2    -9.1%

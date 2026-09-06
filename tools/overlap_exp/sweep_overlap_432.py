@@ -66,17 +66,36 @@ GPUS = "0,1,2,3"
 CLOCKS = [1410, 1200, 900, 705, 510, 300]
 CTAS = [1, 2, 4, 8, 16, 32]
 SHAPES = [(m, nk, nk) for nk in (4096, 8192, 16384) for m in (1024, 2048, 4096, 8192)]
-# spawn re-imports this module in every child, so a smoke run has to shrink the axes
-# through the environment -- assigning to the globals in the parent would not carry
+AR_MIB = 64
+# spawn re-imports this module in every child, so any axis override has to arrive
+# through the environment -- assigning to the globals in the parent would not carry.
+# SWEEP_* let one harness serve several campaigns instead of forking the file, which
+# matters because every trap this script handles (NCCL env caching, identical iteration
+# counts across ranks, persistence mode) would otherwise have to be re-handled.
 if os.environ.get("SMOKE"):
     CLOCKS, CTAS, SHAPES = [1200, 900], [2, 8], SHAPES[:1] + SHAPES[4:5]
-AR_MIB = 64
+if os.environ.get("SWEEP_CLOCKS"):
+    CLOCKS = [int(x) for x in os.environ["SWEEP_CLOCKS"].split(",")]
+if os.environ.get("SWEEP_CTAS"):
+    CTAS = [int(x) for x in os.environ["SWEEP_CTAS"].split(",")]
+if os.environ.get("SWEEP_SHAPES"):
+    SHAPES = [tuple(int(v) for v in t.split("x"))
+              for t in os.environ["SWEEP_SHAPES"].split(",")]
+if os.environ.get("SWEEP_MIB"):
+    AR_MIB = int(os.environ["SWEEP_MIB"])
+# SWEEP_CLOCKS=0 means DO NOT LOCK -- let the GPU's own governor choose. Every other
+# measurement here locks the clock so an effect can be attributed to frequency; this
+# one exists to record what frequency the hardware picks when nobody asks, which is
+# what a deployment actually gets and therefore the only baseline a saving can honestly
+# be quoted against.
+AUTO_CLOCK = CLOCKS == [0]
+MODES = [m for m in os.environ.get("SWEEP_MODES", "").split(",") if m] or None
 TOTAL_SM = 108
 CLOCK_TOL = 20
 WINDOW_S = 2.0
 DISCARD_S = 0.6
 HERE = os.path.dirname(os.path.abspath(__file__))
-GRIDS = json.load(open("/tmp/claude-1013/-home-xinting/b2d7b7e5-61f6-442d-8ca6-fa6405055f67/scratchpad/grid12.json"))
+GRIDS = json.load(open(os.path.join(HERE, "data", "grid12.json")))
 
 FIELDS = ["ctas", "clock", "m", "n", "k", "mode", "grid", "waves", "s_eff", "ar_mib",
           "iter_ms", "iters", "clock_min", "clock_held", "power_node_w",
@@ -172,7 +191,8 @@ def worker(rank, port, ctas, do_gemm_only, done, out_path, q):
             row = dict(dict.fromkeys(FIELDS, ""), **meta)
             row.update(mode=mode, iter_ms=round(wall, 5), iters=iters, ar_mib=AR_MIB,
                        world=WORLD, clock_min=s["clock_min"],
-                       clock_held=s["clock_min"] >= meta["clock"] - CLOCK_TOL,
+                       clock_held=(True if AUTO_CLOCK
+                                   else s["clock_min"] >= meta["clock"] - CLOCK_TOL),
                        power_node_w=s["power_node_w"],
                        power_per_gpu_w=s["power_per_gpu_w"], n_samples=s["n_samples"])
             wr.writerow(row); fh.flush()
@@ -182,11 +202,15 @@ def worker(rank, port, ctas, do_gemm_only, done, out_path, q):
 
     for clock in CLOCKS:
         if rank == 0:
-            sh(["sudo", "nvidia-smi", "-i", GPUS, "-lgc", f"{clock},{clock}"])
+            if AUTO_CLOCK:
+                sh(["sudo", "nvidia-smi", "-i", GPUS, "-rgc"])
+            else:
+                sh(["sudo", "nvidia-smi", "-i", GPUS, "-lgc", f"{clock},{clock}"])
             time.sleep(0.6)
         dist.barrier()
 
-        if ("comm_only", ctas, clock, 0, 0) not in done:
+        if ("comm_only", ctas, clock, 0, 0) not in done and (
+                MODES is None or "comm_only" in MODES):
             for _ in range(5):
                 ar()
             torch.cuda.synchronize()
@@ -199,7 +223,8 @@ def worker(rank, port, ctas, do_gemm_only, done, out_path, q):
             meta = dict(clock=clock, m=m, n=n, k=k, grid=g, waves=w_,
                         s_eff=round(g / w_, 2), ctas=ctas)
             todo = [mo for mo in (("gemm_only",) if do_gemm_only else ()) + ("serial", "concurrent")
-                    if (mo, ctas, clock, m, n) not in done]
+                    if (mo, ctas, clock, m, n) not in done
+                    and (MODES is None or mo in MODES)]
             if not todo:
                 continue
             x = torch.randn((m, k), dtype=torch.bfloat16, device="cuda")
@@ -256,15 +281,32 @@ def main():
     try:
         mp.set_start_method("spawn", force=True)
         for i, c in enumerate(CTAS):
-            with socket.socket() as sk:
-                sk.bind(("127.0.0.1", 0)); port = str(sk.getsockname()[1])
             print(f"=== {c} CTA  [{(time.time() - t0) / 60:.0f} min elapsed] ===", flush=True)
-            q = mp.Queue()
-            ps = [mp.Process(target=worker,
-                             args=(r, port, c, i == 0, done, a.out, q))
-                  for r in range(WORLD)]
-            for p in ps:
-                p.start()
+            # RETRY THE WHOLE BATCH ON A PORT COLLISION. Picking a free port by binding
+            # to 0, reading it back and closing leaves a window in which something else
+            # can take it -- a 128 MiB run lost its entire 16-CTA batch to EADDRINUSE
+            # that way, and the loop simply moved on. The window cannot be closed (the
+            # port has to be free for the children to bind), so the fix is to notice and
+            # try again rather than silently drop 78 measurements.
+            for attempt in range(4):
+                with socket.socket() as sk:
+                    sk.bind(("127.0.0.1", 0)); port = str(sk.getsockname()[1])
+                q = mp.Queue()
+                ps = [mp.Process(target=worker,
+                                 args=(r, port, c, i == 0, done, a.out, q))
+                      for r in range(WORLD)]
+                for p in ps:
+                    p.start()
+                time.sleep(3)
+                if all(p.is_alive() for p in ps):
+                    break
+                for p in ps:
+                    if p.is_alive():
+                        p.terminate()
+                    p.join(timeout=20)
+                print(f"  !! rank died at startup (attempt {attempt + 1}), new port",
+                      flush=True)
+                time.sleep(5)
             # poll rather than one long q.get(): if a rank dies, notice in seconds
             # instead of blocking the whole night on a timeout
             while True:

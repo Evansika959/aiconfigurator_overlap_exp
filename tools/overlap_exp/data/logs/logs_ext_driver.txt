@@ -1,0 +1,24 @@
+### auto 128 MiB -> data/ext_auto_128mib.csv  01:16:39
+### auto 128 MiB -> data/ext_auto_128mib.csv  01:19:27
+### auto 128 MiB done 01:21:00  rows=54
+### auto 256 MiB -> data/ext_auto_256mib.csv  01:21:00
+### auto 256 MiB done 01:24:21  rows=54
+### auto 512 MiB -> data/ext_auto_512mib.csv  01:24:21
+### auto 512 MiB done 01:27:43  rows=54
+### auto 64 MiB -> data/ext_auto_64mib.csv  01:27:43
+### auto 64 MiB done 01:31:04  rows=54
+### split 128 MiB -> data/ext_128mib.csv  01:31:04
+### split 128 MiB done 01:43:10  rows=246
+### split 256 MiB -> data/ext_256mib.csv  01:43:10
+### split 256 MiB done 01:55:00  rows=246
+### split 512 MiB -> data/ext_512mib.csv  01:55:00
+### split 512 MiB done 02:07:13  rows=246
+### clock 128 MiB -> data/ext_128mib.csv  02:07:13
+### clock 128 MiB done 02:14:15  rows=384
+### clock 256 MiB -> data/ext_256mib.csv  02:14:15
+### clock 256 MiB done 02:21:29  rows=384
+### clock 512 MiB -> data/ext_512mib.csv  02:21:29
+### clock 512 MiB done 02:28:40  rows=384
+### 64 MiB full -> data/ext_64mib.csv  02:28:40
+### 64 MiB full done 02:54:23  rows=552
+ALL DONE 02:54:23

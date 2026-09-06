@@ -21,6 +21,14 @@ DTYPE = "bfloat16"
 M_LIST = [1024, 2048, 4096, 8192]
 NK_LIST = [(4096, 4096), (8192, 8192), (16384, 16384)]
 FREQS = [1410, 1200, 900, 705, 510, 300]
+# The 900-1200 gap is where every throttled overlap row lands, where the energy optimum
+# sits, and where P_static's two-point interpolation was measured to be 6% off and
+# CONVEX rather than linear. kappa = a/f is flat to 0.5% below 900 and +33% by 1200, so
+# the voltage knee is inside a span with no calibration points at all. GEMM_FREQS fills
+# it without disturbing the original grid, which stays the default so existing data
+# regenerates identically.
+if os.environ.get("GEMM_FREQS"):
+    FREQS = [int(x) for x in os.environ["GEMM_FREQS"].split(",")]
 # (squatter blocks, SMs left to the GEMM)
 SQUAT = [(0, 108), (27, 81), (54, 54), (81, 27), (94, 14)]
 

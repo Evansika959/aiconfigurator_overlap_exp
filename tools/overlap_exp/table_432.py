@@ -51,7 +51,7 @@ COLS = ["clock", "clock_achieved", "throttled", "m", "nk", "ar_mib", "ctas",
         "err_throttled_pct", "speedup", "dE_pct"]
 
 
-GRIDS = json.load(open("/tmp/claude-1013/-home-xinting/b2d7b7e5-61f6-442d-8ca6-fa6405055f67/scratchpad/grid12.json"))
+GRIDS = json.load(open(os.path.join(HERE, "data", "grid12.json")))
 
 
 def gemm_latency_fit():
