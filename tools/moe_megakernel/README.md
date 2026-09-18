@@ -99,7 +99,7 @@ re-derive.
 | **fig19** `tile_size` | `make_tile_fig.py` | a smaller tile costs 50% more energy, and why |
 | **fig20** `expert_routed_dvfs` | `make_expert_dvfs_fig.py` | the scheme, the curves that kill it, the kernel's price (+ `_appendix` with all four splits) |
 | **fig21** `same_knee` | `make_knee_fig.py` | cold and hot differ in level (1.77x), not in shape or knee |
-| **fig22** `sweep_heatmap` | `make_sweep_heatmap.py` | every enumerated (f_hot, f_cold, split), coloured by gain |
+| **fig22** `sweep_heatmap` | `make_sweep_3d.py` | every enumerated (f_hot, f_cold, split) as a 3D surface: height = energy vs the deployed governor, colour = the latency it costs |
 | fig16 `skew_across_models` | `make_skew_fig.py` | routing skew across five MoE models |
 | fig15 `excess_gini`, fig11 `routing_shapes` | `make_gini_fig.py`, `make_routing_dist_fig.py` | the skew distributions behind it |
 | fig4, fig5, fig14 | `make_kappa_fig.py`, `make_kappa_sweep_fig.py`, `make_knee_full_fig.py` | the voltage floor: kappa is flat below the knee |
