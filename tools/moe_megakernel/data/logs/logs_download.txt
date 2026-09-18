@@ -1,0 +1,2 @@
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files:  11%|█         | 1/9 [00:00<00:02,  2.67it/s]Fetching 9 files:  33%|███▎      | 3/9 [00:45<01:40, 16.81s/it]Fetching 9 files: 100%|██████████| 9/9 [00:45<00:00,  5.06s/it]
+DOWNLOADED /home/xinting/.cache/huggingface/hub/models--allenai--OLMoE-1B-7B-0924/snapshots/6d84c48581ece794365f2b8e9cfb043c68ade9c5

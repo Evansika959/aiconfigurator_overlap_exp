@@ -1,0 +1,10 @@
+Loading checkpoint shards:   0%|          | 0/16 [00:00<?, ?it/s]Loading checkpoint shards:   6%|▋         | 1/16 [00:01<00:18,  1.26s/it]Loading checkpoint shards:  12%|█▎        | 2/16 [00:02<00:18,  1.30s/it]Loading checkpoint shards:  19%|█▉        | 3/16 [00:03<00:17,  1.31s/it]Loading checkpoint shards:  25%|██▌       | 4/16 [00:05<00:15,  1.32s/it]Loading checkpoint shards:  31%|███▏      | 5/16 [00:06<00:14,  1.32s/it]Loading checkpoint shards:  38%|███▊      | 6/16 [00:07<00:13,  1.32s/it]Loading checkpoint shards:  44%|████▍     | 7/16 [00:09<00:11,  1.32s/it]Loading checkpoint shards:  50%|█████     | 8/16 [00:10<00:10,  1.32s/it]Loading checkpoint shards:  56%|█████▋    | 9/16 [00:11<00:09,  1.32s/it]Loading checkpoint shards:  62%|██████▎   | 10/16 [00:13<00:07,  1.32s/it]Loading checkpoint shards:  69%|██████▉   | 11/16 [00:14<00:06,  1.32s/it]Loading checkpoint shards:  75%|███████▌  | 12/16 [00:15<00:05,  1.32s/it]Loading checkpoint shards:  81%|████████▏ | 13/16 [00:17<00:03,  1.32s/it]Loading checkpoint shards:  88%|████████▊ | 14/16 [00:18<00:02,  1.32s/it]Loading checkpoint shards:  94%|█████████▍| 15/16 [00:19<00:01,  1.32s/it]Loading checkpoint shards: 100%|██████████| 16/16 [00:20<00:00,  1.02s/it]Loading checkpoint shards: 100%|██████████| 16/16 [00:20<00:00,  1.26s/it]
+Qwen/Qwen3-30B-A3B: 48 layers, 128 experts, top-8
+  sharded over 4 devices
+
+  B=1   prefill     17 real tokens (17 padded len, 100% real)   decode 64 steps   [20s]
+  B=8   prefill   1004 real tokens (512 padded len, 25% real)   decode 64 steps   [64s]
+  B=32  prefill   3427 real tokens (512 padded len, 21% real)   decode 64 steps   [117s]
+  B=64  prefill   7744 real tokens (512 padded len, 24% real)   decode 64 steps   [151s]
+
+wrote data/routing_qwen.npz  (8 arrays, 48 MoE layers)

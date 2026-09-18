@@ -1,0 +1,11 @@
+   300 MHz  18 shapes   held=True
+   510 MHz  18 shapes   held=True
+   705 MHz  18 shapes   held=True
+   900 MHz  18 shapes   held=True
+  1050 MHz  18 shapes   held=True
+  1200 MHz  18 shapes   held=True
+  1305 MHz  18 shapes   held=False
+  1410 MHz  18 shapes   held=False
+  [clocks reset]
+
+wrote /home/xinting/aiconfigurator_overlap_exp/tools/moe_megakernel/data/expert_clock.csv  (144 rows)

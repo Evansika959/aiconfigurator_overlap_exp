@@ -1,0 +1,11 @@
+# folder-local pip --target directory: 486 MB of transformers/torch deps, rebuilt by
+# the pip commands documented in env.sh. Never commit.
+pylibs/
+__pycache__/
+*.pyc
+
+# raw stdout captures from long runs; the CSVs in data/ are the record
+data/logs_*.txt
+
+# resolved path to the local ShareGPT download, machine-specific
+data/_sharegpt_path.txt

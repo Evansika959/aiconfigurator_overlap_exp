@@ -1,0 +1,38 @@
+3 workloads, 33 clocks, graph of 64 GEMMs
+
+  1380 MHz  idle  81.03 W   large:232.1  n955:147.5  n7652:233.2   THROTTLED
+  1335 MHz  idle  80.43 W   large:240.1  n955:132.2  n7652:211.9   THROTTLED
+  1290 MHz  idle  79.09 W   large:250.7  n955:120.2  n7652:192.8
+  1245 MHz  idle  76.56 W   large:241.0  n955:111.2  n7652:179.2
+  1200 MHz  idle  74.63 W   large:227.5  n955:105.3  n7652:169.8
+  1155 MHz  idle  71.90 W   large:207.0  n955:97.1  n7652:157.4
+  1140 MHz  idle  71.20 W   large:202.4  n955:94.9  n7652:154.5
+  1125 MHz  idle  70.51 W   large:198.5  n955:93.0  n7652:151.7
+  1110 MHz  idle  69.97 W   large:193.5  n955:91.0  n7652:148.7
+  1095 MHz  idle  68.97 W   large:191.0  n955:89.1  n7652:145.8
+  1080 MHz  idle  68.43 W   large:188.0  n955:87.1  n7652:144.1
+  1065 MHz  idle  67.56 W   large:183.8  n955:85.3  n7652:140.3
+  1050 MHz  idle  67.31 W   large:179.4  n955:82.9  n7652:136.8
+  1035 MHz  idle  66.64 W   large:180.4  n955:83.6  n7652:137.4
+  1020 MHz  idle  66.44 W   large:181.5  n955:83.9  n7652:137.6
+  1005 MHz  idle  66.37 W   large:179.7  n955:83.8  n7652:137.4
+   990 MHz  idle  66.10 W   large:180.1  n955:83.8  n7652:137.4
+   975 MHz  idle  66.10 W   large:179.2  n955:83.6  n7652:137.1
+   960 MHz  idle  65.57 W   large:179.6  n955:84.0  n7652:137.1
+   945 MHz  idle  65.57 W   large:179.2  n955:83.8  n7652:137.1
+   930 MHz  idle  65.50 W   large:179.5  n955:84.0  n7652:136.8
+   915 MHz  idle  65.57 W   large:178.5  n955:83.0  n7652:136.2
+   870 MHz  idle  65.57 W   large:179.0  n955:82.9  n7652:136.2
+   825 MHz  idle  64.98 W   large:178.6  n955:82.9  n7652:135.5
+   780 MHz  idle  64.38 W   large:179.2  n955:82.8  n7652:135.5
+   735 MHz  idle  63.84 W   large:180.9  n955:82.7  n7652:135.4
+   690 MHz  idle  63.51 W   large:180.6  n955:84.3  n7652:137.9
+   645 MHz  idle  63.24 W   large:180.5  n955:84.3  n7652:138.1
+   600 MHz  idle  62.64 W   large:179.1  n955:84.6  n7652:137.8
+   555 MHz  idle  62.37 W   large:180.4  n955:85.1  n7652:137.9
+   510 MHz  idle  62.37 W   large:179.7  n955:84.5  n7652:138.1
+   405 MHz  idle  61.78 W   large:181.5  n955:85.7  n7652:139.0
+   300 MHz  idle  61.18 W   large:182.8  n955:87.5  n7652:141.0
+  [clocks reset]
+
+wrote /home/xinting/aiconfigurator_overlap_exp/tools/moe_megakernel/data/kappa_sweep.csv  (99 rows)

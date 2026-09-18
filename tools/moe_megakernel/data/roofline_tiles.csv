@@ -1,0 +1,17 @@
+active_experts,intensity,intensity_lower,kind,median_ne,mem_over_math,regime,ridge,smtime_vs_128_pct,t_math_us,t_mem_us,tile_m,verdict,wasted_rows_pct,waves,weight_mb,weight_mb_upper
+,626.75,,roofline,7652.0,,prefill_b128,200.6,,,,,compute,,,,
+,398.09,,roofline,955.0,,prefill_b16,200.6,,,,,compute,,,,
+,14.68,,roofline,15.0,,decode_b128,200.6,,,,,memory,,,,
+,6.93,,roofline,7.0,,decode_b64,200.6,,,,,memory,,,,
+,1.99,,roofline,2.0,,decode_b16,200.6,,,,,memory,,,,
+52.1,,,layer_decode,,81.7,decode_b16,,,5.16,421.8,,,,,655.8,
+61.8,,,layer_decode,,24.2,decode_b64,,,20.65,500.2,,,,,777.8,
+63.0,,,layer_decode,,12.4,decode_b128,,,41.3,510.2,,,,,793.3,
+,,102.4,tile,,,prefill_b16,,0.0,,,128,,6.24,41,,2281.4
+,,57.0,tile,,,prefill_b16,,-3.89,,,64,,3.0,79,,4423.7
+,,30.1,tile,,,prefill_b16,,-5.76,,,32,,1.5,154,,8718.6
+,,15.5,tile,,,prefill_b16,,-6.56,,,16,,0.7,306,,17301.0
+,,107.1,tile,,,prefill_b128,,0.0,,,128,,0.78,306,,17313.3
+,,58.3,tile,,,prefill_b128,,-0.37,,,64,,0.38,610,,34491.3
+,,30.5,tile,,,prefill_b128,,-0.66,,,32,,0.18,1216,,68845.0
+,,15.6,tile,,,prefill_b128,,-0.76,,,16,,0.09,2430,,137564.3

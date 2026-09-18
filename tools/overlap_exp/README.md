@@ -4,7 +4,8 @@
 **when a GEMM and a collective share a GPU, what SM split and what clock(s) minimise
 energy — and how much would a second voltage/frequency domain be worth?**
 
-Every figure is matplotlib at NeurIPS camera-ready spec, PNG only, regenerated from the
+Every figure is matplotlib at NeurIPS camera-ready spec, emitted as PDF (the
+deliverable for LaTeX) plus a 600 dpi PNG companion, regenerated from the
 data by the script named beside it. Nothing here is hand-drawn.
 
 ## Layout
@@ -15,7 +16,7 @@ data by the script named beside it. Nothing here is hand-drawn.
 |---|---|
 | `*.py`, `run_*.sh` | the live pipeline — measurement, model, analysis, figures |
 | `data/` | measurements and derived tables (`data/README.md` maps them) |
-| `figs/` | generated PNGs, one per `make_*` entry below |
+| `figs/` | generated PDFs and PNGs, one pair per `make_*` entry below |
 | `docs/` | narrative write-ups and the rendered 432-case table |
 | `archive/` | superseded scripts, kept for provenance. Nothing live imports them. |
 
@@ -61,7 +62,7 @@ data by the script named beside it. Nothing here is hand-drawn.
 | `make_split_fig.py` | fig11 — split-commit cost, one line per message size |
 | `make_summary_fig.py` | fig12 — the three findings of the extension campaign |
 | `make_err_figs.py` | fig14 — the matrix with per-cell uncertainty; fig15 — one cell as bars |
-| `build_cell_fig.py --ctas N` | fig16 — any cell as power x time, from its 10 repeats |
+| `build_cell_fig.py --ctas N` | fig16 — any cell as power x time, from its 10 repeats. Only `--ctas 4` and `--ctas 8` regenerate: `data/repeat_cta32/` was not kept, so the committed `fig16_cell_4096x4096_32cta.png` predates the current data layout and has no PDF. |
 
 ## Reproduce a result
 

@@ -1,0 +1,11 @@
+clock_grid,static_rule,kernel,wins,deadlines,best_gain_mj,best_gain_pct,range_shortfall_pct,unbounded_deadline_gain_mj
+45MHz,hi,free,41,42,-41.95,-3.4,0.157,-0.0
+45MHz,mix,free,41,42,-48.62,-3.94,0.129,-0.0
+15MHz,hi,free,41,42,-17.95,-1.45,0.157,-0.0
+15MHz,mix,free,41,42,-20.63,-1.67,0.129,-0.0
+5MHz,hi,free,40,42,-5.7,-0.46,0.064,-0.0
+5MHz,mix,free,40,42,-7.45,-0.6,0.06,-0.0
+45MHz,hi,with build cost,0,31,85.12,7.06,3.881,41.85
+15MHz,hi,with build cost,0,31,85.12,7.06,3.881,41.85
+5MHz,hi,with build cost,0,31,84.96,7.08,3.717,41.85
+scaling,mix,fitted exponent (mean over anchors),,,,0.7294,,

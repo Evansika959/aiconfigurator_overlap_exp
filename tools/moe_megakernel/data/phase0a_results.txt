@@ -1,0 +1,46 @@
+allenai/OLMoE-1B-7B-0924
+16 layers, 64 experts, top-8, prefill 512 tok, 128 decode steps
+
+  regime                active      max     mean max/mean    gini slack(all)slack(act)      p90
+  ------------------------------------------------------------------------------------
+  prefill B=1            64/64      229     64.0     3.58    0.38      72.0%      71.8%     77.9%
+  prefill B=4            64/64      877    256.0     3.43    0.34      70.8%      70.5%     76.8%
+  prefill B=16           64/64     3024   1024.0     2.95    0.30      66.1%      66.1%     73.4%
+  prefill B=64           64/64    11668   4096.0     2.85    0.30      64.9%      64.9%     72.8%
+  prefill B=128          64/64    22985   8192.0     2.81    0.30      64.4%      64.4%     72.9%
+
+  decode B=1              8/64        1      0.1     8.00    0.88      87.5%       0.0%      0.0%
+  decode B=4             25/64        3      0.5     6.00    0.67      83.3%      46.7%     59.3%
+  decode B=16            52/64        7      2.0     3.50    0.44      71.4%      64.1%     71.6%
+  decode B=64            62/64       26      8.0     3.25    0.36      69.2%      67.5%     75.0%
+  decode B=128           63/64       48     16.0     3.00    0.33      66.7%      66.3%     74.2%
+
+  per-layer slack(active), decode B=64  (median over 128 steps)
+
+   L0  L1  L2  L3  L4  L5  L6  L7  L8  L9  L10 L11 L12 L13 L14 L15
+    63  57  60  64  73  73  70  65  71  70  69  70  75  66  64  66
+
+   spread across layers: 57% .. 75%  (median 67%)
+
+  step-to-step correlation of the expert-load vector (decode B=64): median r = 0.835
+   lag:   1   2   4   8  16  32  64
+   r  :  0.83  0.81  0.80  0.80  0.79  0.79  0.74
+
+
+  AFTER the free fix: SMs allocated in proportion to load, S = 108
+
+  regime              equal-share  proportional   what DVFS
+                            slackresidual slack  could sell
+  ---------------------------------------------------------
+  prefill B=1               72.0%         42.5%       29.5 pp
+  prefill B=4               70.8%         40.9%       29.9 pp
+  prefill B=16              66.1%         40.9%       25.2 pp
+  prefill B=64              64.9%         40.5%       24.4 pp
+  prefill B=128             64.4%         41.4%       22.9 pp
+
+  decode B=1                87.5%          3.7%       83.8 pp
+  decode B=4                83.3%         11.1%       72.2 pp
+  decode B=16               71.4%         40.7%       30.7 pp
+  decode B=64               69.2%         40.7%       28.5 pp
+  decode B=128              66.7%         40.7%       25.9 pp
+

@@ -1,0 +1,10 @@
+quantity,value
+exponent,0.72944
+anchor_spread_sd,0.02833
+pass_bootstrap_sd,0.03863
+unweighted_sd_over_distinct_resamples,0.04643
+combined_sd,0.04791
+exponent_min_over_all_refits,0.51593
+exponent_max_over_all_refits,0.85023
+n_pass_resamples,462
+n_anchors,18

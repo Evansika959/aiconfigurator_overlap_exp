@@ -1,0 +1,11 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:01<00:03,  1.54s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:03<00:01,  1.54s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:04<00:00,  1.37s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:04<00:00,  1.42s/it]
+allenai/OLMoE-1B-7B-0924: 16 layers, 64 experts, top-8
+
+  B=1   prefill    512 tok/layer   decode 128 steps x 1 tok   [34.9s]
+  B=4   prefill   2048 tok/layer   decode 128 steps x 4 tok   [40.8s]
+  B=16  prefill   8192 tok/layer   decode 128 steps x 16 tok   [51.7s]
+  B=64  prefill  32768 tok/layer   decode 128 steps x 64 tok   [57.6s]
+  B=128 prefill  65536 tok/layer   decode 128 steps x 128 tok   [60.2s]
+
+wrote data/routing_olmoe.npz  (10 arrays)

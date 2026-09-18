@@ -1,0 +1,130 @@
+### mixtral  mistralai/Mixtral-8x7B-v0.1  00:04:00
+mistralai/Mixtral-8x7B-v0.1: 32 layers, 8 experts, top-2
+  sharded over 4 devices
+
+  hooked 32 routers
+
+  B=64  rep 1/24    9088 real tokens (28% of the padded batch)   [7s]
+  B=64  rep 2/24   10140 real tokens (31% of the padded batch)   [7s]
+  B=64  rep 3/24    8160 real tokens (25% of the padded batch)   [7s]
+  B=64  rep 4/24   10163 real tokens (31% of the padded batch)   [7s]
+  B=64  rep 5/24   10634 real tokens (32% of the padded batch)   [7s]
+  B=64  rep 6/24    8737 real tokens (27% of the padded batch)   [7s]
+  B=64  rep 7/24    9546 real tokens (29% of the padded batch)   [7s]
+  B=64  rep 8/24    6106 real tokens (19% of the padded batch)   [7s]
+  B=64  rep 9/24    7735 real tokens (24% of the padded batch)   [7s]
+  B=64  rep 10/24    9821 real tokens (30% of the padded batch)   [7s]
+  B=64  rep 11/24    8661 real tokens (26% of the padded batch)   [7s]
+  B=64  rep 12/24   12598 real tokens (38% of the padded batch)   [7s]
+  B=64  rep 13/24    8393 real tokens (26% of the padded batch)   [7s]
+  B=64  rep 14/24   11207 real tokens (34% of the padded batch)   [7s]
+  B=64  rep 15/24   10911 real tokens (33% of the padded batch)   [7s]
+  B=64  rep 16/24    9029 real tokens (28% of the padded batch)   [7s]
+  B=64  rep 17/24    9819 real tokens (30% of the padded batch)   [7s]
+  B=64  rep 18/24    7192 real tokens (22% of the padded batch)   [7s]
+  B=64  rep 19/24    9978 real tokens (30% of the padded batch)   [7s]
+  B=64  rep 20/24   11296 real tokens (34% of the padded batch)   [7s]
+  B=64  rep 21/24    7244 real tokens (22% of the padded batch)   [7s]
+  B=64  rep 22/24    8279 real tokens (25% of the padded batch)   [7s]
+  B=64  rep 23/24   10327 real tokens (32% of the padded batch)   [7s]
+  B=64  rep 24/24   11489 real tokens (35% of the padded batch)   [7s]
+
+wrote data/routing_mixtral.npz  (2 arrays, 32 MoE layers)
+### granite  ibm-granite/granite-3.0-3b-a800m-instruct  00:08:37
+ibm-granite/granite-3.0-3b-a800m-instruct: 32 layers, 40 experts, top-8
+  sharded over 4 devices
+
+  hooked 32 routers
+
+  B=64  rep 1/24    7989 real tokens (24% of the padded batch)   [3s]
+  B=64  rep 2/24    9807 real tokens (30% of the padded batch)   [3s]
+  B=64  rep 3/24    7832 real tokens (24% of the padded batch)   [3s]
+  B=64  rep 4/24    9707 real tokens (30% of the padded batch)   [3s]
+  B=64  rep 5/24   10536 real tokens (32% of the padded batch)   [3s]
+  B=64  rep 6/24    8193 real tokens (25% of the padded batch)   [3s]
+  B=64  rep 7/24    8508 real tokens (26% of the padded batch)   [3s]
+  B=64  rep 8/24    5651 real tokens (17% of the padded batch)   [3s]
+  B=64  rep 9/24    6240 real tokens (19% of the padded batch)   [3s]
+  B=64  rep 10/24    9479 real tokens (29% of the padded batch)   [3s]
+  B=64  rep 11/24    7913 real tokens (24% of the padded batch)   [3s]
+  B=64  rep 12/24   11341 real tokens (35% of the padded batch)   [3s]
+  B=64  rep 13/24    7938 real tokens (24% of the padded batch)   [3s]
+  B=64  rep 14/24    8936 real tokens (27% of the padded batch)   [3s]
+  B=64  rep 15/24    9471 real tokens (29% of the padded batch)   [3s]
+  B=64  rep 16/24    7944 real tokens (24% of the padded batch)   [3s]
+  B=64  rep 17/24    9166 real tokens (28% of the padded batch)   [3s]
+  B=64  rep 18/24    6654 real tokens (20% of the padded batch)   [3s]
+  B=64  rep 19/24    8254 real tokens (25% of the padded batch)   [3s]
+  B=64  rep 20/24    9592 real tokens (29% of the padded batch)   [3s]
+  B=64  rep 21/24    7017 real tokens (21% of the padded batch)   [3s]
+  B=64  rep 22/24    7974 real tokens (24% of the padded batch)   [3s]
+  B=64  rep 23/24    8788 real tokens (27% of the padded batch)   [3s]
+  B=64  rep 24/24   10072 real tokens (31% of the padded batch)   [3s]
+
+wrote data/routing_granite.npz  (2 arrays, 32 MoE layers)
+### qwen15moe  Qwen/Qwen1.5-MoE-A2.7B  00:11:21
+Qwen/Qwen1.5-MoE-A2.7B: 24 layers, 60 experts, top-4
+  sharded over 4 devices
+
+  hooked 24 routers
+
+  B=64  rep 1/24    8265 real tokens (25% of the padded batch)   [8s]
+  B=64  rep 2/24    9890 real tokens (30% of the padded batch)   [8s]
+  B=64  rep 3/24    7873 real tokens (24% of the padded batch)   [8s]
+  B=64  rep 4/24    9684 real tokens (30% of the padded batch)   [8s]
+  B=64  rep 5/24   10014 real tokens (31% of the padded batch)   [8s]
+  B=64  rep 6/24    8350 real tokens (25% of the padded batch)   [8s]
+  B=64  rep 7/24    8751 real tokens (27% of the padded batch)   [8s]
+  B=64  rep 8/24    5987 real tokens (18% of the padded batch)   [8s]
+  B=64  rep 9/24    6317 real tokens (19% of the padded batch)   [8s]
+  B=64  rep 10/24    9322 real tokens (28% of the padded batch)   [8s]
+  B=64  rep 11/24    7664 real tokens (23% of the padded batch)   [8s]
+  B=64  rep 12/24   11218 real tokens (34% of the padded batch)   [8s]
+  B=64  rep 13/24    7761 real tokens (24% of the padded batch)   [8s]
+  B=64  rep 14/24    8975 real tokens (27% of the padded batch)   [8s]
+  B=64  rep 15/24    9491 real tokens (29% of the padded batch)   [8s]
+  B=64  rep 16/24    8047 real tokens (25% of the padded batch)   [8s]
+  B=64  rep 17/24    9235 real tokens (28% of the padded batch)   [8s]
+  B=64  rep 18/24    6883 real tokens (21% of the padded batch)   [7s]
+  B=64  rep 19/24    8362 real tokens (26% of the padded batch)   [8s]
+  B=64  rep 20/24    9586 real tokens (29% of the padded batch)   [8s]
+  B=64  rep 21/24    6486 real tokens (20% of the padded batch)   [8s]
+  B=64  rep 22/24    8109 real tokens (25% of the padded batch)   [7s]
+  B=64  rep 23/24    8920 real tokens (27% of the padded batch)   [8s]
+  B=64  rep 24/24   10326 real tokens (32% of the padded batch)   [8s]
+
+wrote data/routing_qwen15moe.npz  (2 arrays, 24 MoE layers)
+### olmoe already done
+### olmoe_it  allenai/OLMoE-1B-7B-0924-Instruct  00:16:15
+allenai/OLMoE-1B-7B-0924-Instruct: 16 layers, 64 experts, top-8
+  sharded over 4 devices
+
+  hooked 16 routers
+
+  B=64  rep 1/24    8133 real tokens (25% of the padded batch)   [6s]
+  B=64  rep 2/24    9744 real tokens (30% of the padded batch)   [5s]
+  B=64  rep 3/24    7842 real tokens (24% of the padded batch)   [5s]
+  B=64  rep 4/24    9619 real tokens (29% of the padded batch)   [5s]
+  B=64  rep 5/24    9823 real tokens (30% of the padded batch)   [5s]
+  B=64  rep 6/24    8238 real tokens (25% of the padded batch)   [5s]
+  B=64  rep 7/24    8665 real tokens (26% of the padded batch)   [5s]
+  B=64  rep 8/24    5800 real tokens (18% of the padded batch)   [5s]
+  B=64  rep 9/24    6105 real tokens (19% of the padded batch)   [5s]
+  B=64  rep 10/24    9189 real tokens (28% of the padded batch)   [5s]
+  B=64  rep 11/24    7229 real tokens (22% of the padded batch)   [5s]
+  B=64  rep 12/24   11191 real tokens (34% of the padded batch)   [5s]
+  B=64  rep 13/24    7627 real tokens (23% of the padded batch)   [5s]
+  B=64  rep 14/24    9005 real tokens (27% of the padded batch)   [5s]
+  B=64  rep 15/24    9507 real tokens (29% of the padded batch)   [5s]
+  B=64  rep 16/24    8086 real tokens (25% of the padded batch)   [5s]
+  B=64  rep 17/24    9139 real tokens (28% of the padded batch)   [5s]
+  B=64  rep 18/24    6519 real tokens (20% of the padded batch)   [5s]
+  B=64  rep 19/24    8267 real tokens (25% of the padded batch)   [5s]
+  B=64  rep 20/24    9530 real tokens (29% of the padded batch)   [5s]
+  B=64  rep 21/24    6376 real tokens (19% of the padded batch)   [5s]
+  B=64  rep 22/24    7996 real tokens (24% of the padded batch)   [5s]
+  B=64  rep 23/24    8723 real tokens (27% of the padded batch)   [5s]
+  B=64  rep 24/24   10099 real tokens (31% of the padded batch)   [5s]
+
+wrote data/routing_olmoe_it.npz  (2 arrays, 16 MoE layers)
+ALL DONE 00:20:04

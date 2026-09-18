@@ -30,6 +30,14 @@ import pynvml, torch
 DEV, GPUS = 0, "0"
 CLOCKS = [510, 705, 780] + list(range(855, 1246, 15))
 SHAPES = [(1024, 4096, 4096), (4096, 8192, 8192), (8192, 16384, 16384)]
+# The original run stopped at 1245 because the largest shape hit the 400 W cap there and
+# throttled. Smaller shapes still had headroom (262 W at 1245), so the ceiling is the
+# WORKLOAD's, not the sweep's -- these overrides let the range be pushed per shape.
+if os.environ.get("KNEE_CLOCKS"):
+    CLOCKS = [int(x) for x in os.environ["KNEE_CLOCKS"].split(",")]
+if os.environ.get("KNEE_SHAPES"):
+    SHAPES = [tuple(int(v) for v in t.split("x"))
+              for t in os.environ["KNEE_SHAPES"].split(",")]
 SM = 108
 WINDOW_S, DISCARD_S = 2.0, 0.5
 HERE = os.path.dirname(os.path.abspath(__file__))
