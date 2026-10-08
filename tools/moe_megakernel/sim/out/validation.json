@@ -1,0 +1,1573 @@
+{
+ "sm_corun_scan_solo": {
+  "rung": "1 fitted",
+  "label": "scan, 930-1410 MHz: solo",
+  "fit": "yes",
+  "time": {
+   "n": 622,
+   "rms": 2.81,
+   "bias": 0.2,
+   "worst": -12.8
+  },
+  "power": {
+   "n": 622,
+   "rms": 2.16,
+   "bias": -0.09,
+   "worst": 7.6
+  },
+  "power_dyn": {
+   "n": 622,
+   "rms": 3.65,
+   "bias": -0.24,
+   "worst": 12.1
+  }
+ },
+ "sm_corun_scan_corun": {
+  "rung": "1 fitted",
+  "label": "scan, 930-1410 MHz: co-run",
+  "fit": "yes",
+  "time": {
+   "n": 548,
+   "rms": 3.17,
+   "bias": -0.66,
+   "worst": -8.6
+  },
+  "power": {
+   "n": 274,
+   "rms": 2.49,
+   "bias": -0.71,
+   "worst": 9.0
+  },
+  "power_dyn": {
+   "n": 274,
+   "rms": 3.41,
+   "bias": -0.94,
+   "worst": 12.0
+  }
+ },
+ "sm_corun_holdout_solo": {
+  "rung": "1 fitted",
+  "label": "holdout, 990-1380 MHz: solo",
+  "fit": "yes",
+  "time": {
+   "n": 520,
+   "rms": 3.92,
+   "bias": 0.95,
+   "worst": -15.2
+  },
+  "power": {
+   "n": 520,
+   "rms": 2.86,
+   "bias": -0.31,
+   "worst": 7.8
+  },
+  "power_dyn": {
+   "n": 520,
+   "rms": 4.75,
+   "bias": -0.59,
+   "worst": -13.7
+  }
+ },
+ "sm_corun_holdout_corun": {
+  "rung": "1 fitted",
+  "label": "holdout, 990-1380 MHz: co-run",
+  "fit": "yes",
+  "time": {
+   "n": 474,
+   "rms": 3.28,
+   "bias": 0.12,
+   "worst": 11.7
+  },
+  "power": {
+   "n": 237,
+   "rms": 3.36,
+   "bias": -0.27,
+   "worst": 14.0
+  },
+  "power_dyn": {
+   "n": 237,
+   "rms": 4.62,
+   "bias": -0.28,
+   "worst": 20.2
+  }
+ },
+ "sm_corun_lowclk_solo": {
+  "rung": "1 fitted",
+  "label": "lowclk, 510-870 MHz: solo",
+  "fit": "yes",
+  "time": {
+   "n": 416,
+   "rms": 2.71,
+   "bias": -0.23,
+   "worst": -9.0
+  },
+  "power": {
+   "n": 416,
+   "rms": 1.54,
+   "bias": 0.23,
+   "worst": 5.7
+  },
+  "power_dyn": {
+   "n": 416,
+   "rms": 3.35,
+   "bias": 0.39,
+   "worst": 10.6
+  }
+ },
+ "sm_corun_lowclk_corun": {
+  "rung": "1 fitted",
+  "label": "lowclk, 510-870 MHz: co-run",
+  "fit": "yes",
+  "time": {
+   "n": 384,
+   "rms": 2.12,
+   "bias": -0.24,
+   "worst": -6.9
+  },
+  "power": {
+   "n": 192,
+   "rms": 2.3,
+   "bias": -0.71,
+   "worst": 7.9
+  },
+  "power_dyn": {
+   "n": 192,
+   "rms": 3.75,
+   "bias": -1.08,
+   "worst": 14.7
+  }
+ },
+ "partition_kappa_qwen": {
+  "rung": "2 other days",
+  "label": "prefill, BM16-128, 54 SMs, 600-1290 MHz",
+  "fit": "no",
+  "time": {
+   "n": 55,
+   "rms": 6.1,
+   "bias": 3.75,
+   "worst": 12.4
+  },
+  "power": {
+   "n": 55,
+   "rms": 5.51,
+   "bias": 1.04,
+   "worst": 11.1
+  },
+  "power_dyn": {
+   "n": 55,
+   "rms": 10.39,
+   "bias": 1.49,
+   "worst": 17.7
+  }
+ },
+ "partition_kappa_qwen_decode1024": {
+  "rung": "2 other days",
+  "label": "decode 1024, BM16-128, 600-1290 MHz",
+  "fit": "no",
+  "time": {
+   "n": 94,
+   "rms": 3.39,
+   "bias": 2.93,
+   "worst": 6.7
+  },
+  "power": {
+   "n": 94,
+   "rms": 2.16,
+   "bias": -1.63,
+   "worst": -5.1
+  },
+  "power_dyn": {
+   "n": 94,
+   "rms": 3.71,
+   "bias": -2.78,
+   "worst": -8.3
+  }
+ },
+ "partition_kappa_qwen_decode2048": {
+  "rung": "2 other days",
+  "label": "decode 2048, BM16-128, 600-1290 MHz",
+  "fit": "no",
+  "time": {
+   "n": 106,
+   "rms": 3.03,
+   "bias": 2.56,
+   "worst": 6.4
+  },
+  "power": {
+   "n": 106,
+   "rms": 2.69,
+   "bias": -2.41,
+   "worst": -5.0
+  },
+  "power_dyn": {
+   "n": 106,
+   "rms": 4.76,
+   "bias": -4.14,
+   "worst": -11.2
+  }
+ },
+ "partition_kappa_L8": {
+  "rung": "2 other days",
+  "label": "prefill, 8 cold experts",
+  "fit": "no",
+  "time": {
+   "n": 13,
+   "rms": 0.48,
+   "bias": 0.19,
+   "worst": 1.0
+  },
+  "power": {
+   "n": 13,
+   "rms": 1.41,
+   "bias": -0.41,
+   "worst": 3.0
+  },
+  "power_dyn": {
+   "n": 13,
+   "rms": 2.49,
+   "bias": -0.9,
+   "worst": 4.6
+  }
+ },
+ "partition_kappa_L32": {
+  "rung": "2 other days",
+  "label": "prefill, 32 cold experts",
+  "fit": "no",
+  "time": {
+   "n": 25,
+   "rms": 1.13,
+   "bias": 0.65,
+   "worst": 2.5
+  },
+  "power": {
+   "n": 25,
+   "rms": 2.07,
+   "bias": -1.08,
+   "worst": -4.1
+  },
+  "power_dyn": {
+   "n": 25,
+   "rms": 3.79,
+   "bias": -2.07,
+   "worst": -7.2
+  }
+ },
+ "partition_kappa_L64": {
+  "rung": "2 other days",
+  "label": "prefill, 64 cold experts",
+  "fit": "no",
+  "time": {
+   "n": 26,
+   "rms": 0.62,
+   "bias": 0.19,
+   "worst": 1.5
+  },
+  "power": {
+   "n": 26,
+   "rms": 1.7,
+   "bias": -0.47,
+   "worst": -3.1
+  },
+  "power_dyn": {
+   "n": 26,
+   "rms": 3.09,
+   "bias": -1.02,
+   "worst": -5.6
+  }
+ },
+ "partition_kappa_L96": {
+  "rung": "2 other days",
+  "label": "prefill, 96 cold experts",
+  "fit": "no",
+  "time": {
+   "n": 26,
+   "rms": 0.64,
+   "bias": -0.0,
+   "worst": 1.3
+  },
+  "power": {
+   "n": 26,
+   "rms": 1.81,
+   "bias": -0.0,
+   "worst": 3.7
+  },
+  "power_dyn": {
+   "n": 26,
+   "rms": 3.18,
+   "bias": -0.22,
+   "worst": 5.8
+  }
+ },
+ "partition_kappa_qwen_hiclk54": {
+  "rung": "2 other days",
+  "label": "prefill, 54 SMs, 1050-1410 MHz",
+  "fit": "partly",
+  "time": {
+   "n": 32,
+   "rms": 0.83,
+   "bias": 0.78,
+   "worst": 1.3
+  },
+  "power": {
+   "n": 32,
+   "rms": 2.95,
+   "bias": 2.17,
+   "worst": 5.8
+  },
+  "power_dyn": {
+   "n": 32,
+   "rms": 4.36,
+   "bias": 3.21,
+   "worst": 8.7
+  }
+ },
+ "first_solo": {
+  "rung": "2 other days",
+  "label": "first co-run campaign: solo",
+  "fit": "no",
+  "time": {
+   "n": 96,
+   "rms": 3.11,
+   "bias": 0.93,
+   "worst": -7.5
+  },
+  "power": {
+   "n": 96,
+   "rms": 1.67,
+   "bias": -0.69,
+   "worst": -4.5
+  },
+  "power_dyn": {
+   "n": 96,
+   "rms": 2.86,
+   "bias": -1.18,
+   "worst": -7.8
+  }
+ },
+ "first_corun": {
+  "rung": "2 other days",
+  "label": "first co-run campaign: 54+54, 32+76",
+  "fit": "no",
+  "time": {
+   "n": 96,
+   "rms": 2.87,
+   "bias": -0.13,
+   "worst": 7.1
+  },
+  "power": {
+   "n": 48,
+   "rms": 2.19,
+   "bias": -0.74,
+   "worst": -5.1
+  },
+  "power_dyn": {
+   "n": 48,
+   "rms": 3.11,
+   "bias": -1.05,
+   "worst": -7.5
+  }
+ },
+ "sm_corun_holdout_L6_qwen_solo": {
+  "rung": "3 other workloads",
+  "label": "MoE layer 6: solo",
+  "fit": "no",
+  "time": {
+   "n": 154,
+   "rms": 3.41,
+   "bias": 1.27,
+   "worst": -10.6
+  },
+  "power": {
+   "n": 154,
+   "rms": 2.7,
+   "bias": 0.03,
+   "worst": 6.9
+  },
+  "power_dyn": {
+   "n": 154,
+   "rms": 4.43,
+   "bias": -0.06,
+   "worst": -12.3
+  }
+ },
+ "sm_corun_holdout_L6_qwen_corun": {
+  "rung": "3 other workloads",
+  "label": "MoE layer 6: co-run",
+  "fit": "no",
+  "time": {
+   "n": 122,
+   "rms": 3.52,
+   "bias": 0.32,
+   "worst": -10.0
+  },
+  "power": {
+   "n": 61,
+   "rms": 2.4,
+   "bias": -0.94,
+   "worst": 6.4
+  },
+  "power_dyn": {
+   "n": 61,
+   "rms": 3.25,
+   "bias": -1.21,
+   "worst": 9.2
+  }
+ },
+ "sm_corun_holdout_L24_qwen_solo": {
+  "rung": "3 other workloads",
+  "label": "MoE layer 24: solo",
+  "fit": "no",
+  "time": {
+   "n": 154,
+   "rms": 3.8,
+   "bias": 1.4,
+   "worst": 11.5
+  },
+  "power": {
+   "n": 154,
+   "rms": 3.08,
+   "bias": 0.02,
+   "worst": -8.5
+  },
+  "power_dyn": {
+   "n": 154,
+   "rms": 4.94,
+   "bias": -0.09,
+   "worst": 12.9
+  }
+ },
+ "sm_corun_holdout_L24_qwen_corun": {
+  "rung": "3 other workloads",
+  "label": "MoE layer 24: co-run",
+  "fit": "no",
+  "time": {
+   "n": 124,
+   "rms": 4.12,
+   "bias": 0.84,
+   "worst": -11.6
+  },
+  "power": {
+   "n": 62,
+   "rms": 2.46,
+   "bias": -0.75,
+   "worst": -5.2
+  },
+  "power_dyn": {
+   "n": 62,
+   "rms": 3.31,
+   "bias": -0.91,
+   "worst": 6.7
+  }
+ },
+ "sm_corun_holdout_L36_qwen_solo": {
+  "rung": "3 other workloads",
+  "label": "MoE layer 36: solo",
+  "fit": "no",
+  "time": {
+   "n": 154,
+   "rms": 3.49,
+   "bias": 1.19,
+   "worst": -11.2
+  },
+  "power": {
+   "n": 154,
+   "rms": 2.9,
+   "bias": -0.13,
+   "worst": -8.9
+  },
+  "power_dyn": {
+   "n": 154,
+   "rms": 4.7,
+   "bias": -0.26,
+   "worst": -12.8
+  }
+ },
+ "sm_corun_holdout_L36_qwen_corun": {
+  "rung": "3 other workloads",
+  "label": "MoE layer 36: co-run",
+  "fit": "no",
+  "time": {
+   "n": 124,
+   "rms": 3.6,
+   "bias": 0.14,
+   "worst": -10.5
+  },
+  "power": {
+   "n": 62,
+   "rms": 2.51,
+   "bias": -0.73,
+   "worst": -5.5
+  },
+  "power_dyn": {
+   "n": 62,
+   "rms": 3.35,
+   "bias": -0.89,
+   "worst": 7.0
+  }
+ },
+ "sm_corun_holdout_L47_qwen_solo": {
+  "rung": "3 other workloads",
+  "label": "MoE layer 47: solo",
+  "fit": "no",
+  "time": {
+   "n": 154,
+   "rms": 4.37,
+   "bias": 1.73,
+   "worst": 17.2
+  },
+  "power": {
+   "n": 154,
+   "rms": 4.99,
+   "bias": 1.48,
+   "worst": 27.3
+  },
+  "power_dyn": {
+   "n": 154,
+   "rms": 9.35,
+   "bias": 2.71,
+   "worst": 55.9
+  }
+ },
+ "sm_corun_holdout_L47_qwen_corun": {
+  "rung": "3 other workloads",
+  "label": "MoE layer 47: co-run",
+  "fit": "no",
+  "time": {
+   "n": 126,
+   "rms": 5.76,
+   "bias": 2.12,
+   "worst": 19.7
+  },
+  "power": {
+   "n": 63,
+   "rms": 3.3,
+   "bias": 0.1,
+   "worst": 13.8
+  },
+  "power_dyn": {
+   "n": 63,
+   "rms": 4.68,
+   "bias": 0.27,
+   "worst": 20.3
+  }
+ },
+ "pinned_layer": {
+  "rung": "3 other workloads",
+  "label": "pinned layer END TO END, six SM splits",
+  "fit": "no",
+  "time": {
+   "n": 108,
+   "rms": 1.38,
+   "bias": -0.2,
+   "worst": 4.2
+  },
+  "power": {
+   "n": 108,
+   "rms": 2.32,
+   "bias": 1.71,
+   "worst": 5.5
+  },
+  "power_dyn": {
+   "n": 108,
+   "rms": 3.48,
+   "bias": 2.54,
+   "worst": 9.2
+  }
+ },
+ "pinned_layer_seen": {
+  "rung": "3 other workloads",
+  "label": "  the pair was also swept side by side",
+  "fit": "no",
+  "time": {
+   "n": 94,
+   "rms": 1.46,
+   "bias": -0.19,
+   "worst": 4.2
+  },
+  "power": {
+   "n": 94,
+   "rms": 1.94,
+   "bias": 1.41,
+   "worst": 4.8
+  },
+  "power_dyn": {
+   "n": 94,
+   "rms": 3.0,
+   "bias": 2.14,
+   "worst": 7.9
+  }
+ },
+ "pinned_layer_new": {
+  "rung": "3 other workloads",
+  "label": "  the pair was not",
+  "fit": "no",
+  "time": {
+   "n": 14,
+   "rms": 0.7,
+   "bias": -0.29,
+   "worst": -1.9
+  },
+  "power": {
+   "n": 14,
+   "rms": 4.01,
+   "bias": 3.76,
+   "worst": 5.5
+  },
+  "power_dyn": {
+   "n": 14,
+   "rms": 5.75,
+   "bias": 5.26,
+   "worst": 9.2
+  }
+ },
+ "pinned_layer_c0_bm128_n16": {
+  "rung": "3 other workloads",
+  "label": "  prefill, BM128, 16 cold experts",
+  "fit": "no",
+  "time": {
+   "n": 18,
+   "rms": 0.57,
+   "bias": -0.26,
+   "worst": -1.1
+  },
+  "power": {
+   "n": 18,
+   "rms": 3.54,
+   "bias": 3.31,
+   "worst": 5.5
+  },
+  "power_dyn": {
+   "n": 18,
+   "rms": 5.26,
+   "bias": 4.94,
+   "worst": 9.2
+  }
+ },
+ "pinned_layer_c0_bm128_n64": {
+  "rung": "3 other workloads",
+  "label": "  prefill, BM128, 64 cold experts",
+  "fit": "no",
+  "time": {
+   "n": 18,
+   "rms": 0.87,
+   "bias": -0.57,
+   "worst": -1.9
+  },
+  "power": {
+   "n": 18,
+   "rms": 2.66,
+   "bias": 2.35,
+   "worst": 5.5
+  },
+  "power_dyn": {
+   "n": 18,
+   "rms": 3.91,
+   "bias": 3.45,
+   "worst": 8.3
+  }
+ },
+ "pinned_layer_c16_bm64_n64": {
+  "rung": "3 other workloads",
+  "label": "  1024 tokens, BM64, 64 cold experts",
+  "fit": "no",
+  "time": {
+   "n": 18,
+   "rms": 0.98,
+   "bias": -0.57,
+   "worst": -1.9
+  },
+  "power": {
+   "n": 18,
+   "rms": 1.35,
+   "bias": 1.01,
+   "worst": 2.9
+  },
+  "power_dyn": {
+   "n": 18,
+   "rms": 1.99,
+   "bias": 1.48,
+   "worst": 4.2
+  }
+ },
+ "pinned_layer_c32_bm16_n64": {
+  "rung": "3 other workloads",
+  "label": "  2048 tokens, BM16, 64 cold experts",
+  "fit": "no",
+  "time": {
+   "n": 18,
+   "rms": 2.38,
+   "bias": 1.67,
+   "worst": 4.2
+  },
+  "power": {
+   "n": 18,
+   "rms": 1.81,
+   "bias": 0.78,
+   "worst": 4.0
+  },
+  "power_dyn": {
+   "n": 18,
+   "rms": 2.9,
+   "bias": 1.1,
+   "worst": 5.9
+  }
+ },
+ "pinned_layer_c32_bm64_n64": {
+  "rung": "3 other workloads",
+  "label": "  2048 tokens, BM64, 64 cold experts",
+  "fit": "no",
+  "time": {
+   "n": 18,
+   "rms": 1.27,
+   "bias": -0.62,
+   "worst": -3.0
+  },
+  "power": {
+   "n": 18,
+   "rms": 1.64,
+   "bias": 1.05,
+   "worst": 4.1
+  },
+  "power_dyn": {
+   "n": 18,
+   "rms": 2.47,
+   "bias": 1.59,
+   "worst": 6.6
+  }
+ },
+ "pinned_layer_c64_bm64_n64": {
+  "rung": "3 other workloads",
+  "label": "  4096 tokens, BM64, 64 cold experts",
+  "fit": "no",
+  "time": {
+   "n": 18,
+   "rms": 1.46,
+   "bias": -0.87,
+   "worst": -3.0
+  },
+  "power": {
+   "n": 18,
+   "rms": 2.19,
+   "bias": 1.78,
+   "worst": 4.8
+  },
+  "power_dyn": {
+   "n": 18,
+   "rms": 3.34,
+   "bias": 2.71,
+   "worst": 7.9
+  }
+ },
+ "xmodel_olmoe_solo": {
+  "rung": "3b other models",
+  "label": "OLMoE, 64 experts, I=1024: solo",
+  "fit": "no",
+  "time": {
+   "n": 104,
+   "rms": 2.74,
+   "bias": 1.97,
+   "worst": 7.2
+  },
+  "power": {
+   "n": 104,
+   "rms": 2.61,
+   "bias": 1.27,
+   "worst": -5.7
+  },
+  "power_dyn": {
+   "n": 104,
+   "rms": 4.34,
+   "bias": 2.28,
+   "worst": 9.4
+  }
+ },
+ "xmodel_olmoe_corun": {
+  "rung": "3b other models",
+  "label": "OLMoE, 64 experts, I=1024: co-run",
+  "fit": "no",
+  "time": {
+   "n": 96,
+   "rms": 2.86,
+   "bias": 2.04,
+   "worst": 6.8
+  },
+  "power": {
+   "n": 48,
+   "rms": 2.96,
+   "bias": -2.1,
+   "worst": -6.5
+  },
+  "power_dyn": {
+   "n": 48,
+   "rms": 3.92,
+   "bias": -2.77,
+   "worst": -8.9
+  }
+ },
+ "xmodel_olmoe_layers": {
+  "rung": "3b other models",
+  "label": "OLMoE, 64 experts, I=1024: whole layers, both kernels",
+  "fit": "no",
+  "time": {
+   "n": 14,
+   "rms": 1.92,
+   "bias": 1.34,
+   "worst": 4.0
+  },
+  "power": {
+   "n": 14,
+   "rms": 2.7,
+   "bias": 2.18,
+   "worst": 4.1
+  },
+  "power_dyn": {
+   "n": 14,
+   "rms": 3.61,
+   "bias": 2.9,
+   "worst": 5.4
+  }
+ },
+ "xmodel_granite_solo": {
+  "rung": "3b other models",
+  "label": "Granite, 40 experts, K=1536: solo",
+  "fit": "no",
+  "time": {
+   "n": 92,
+   "rms": 8.08,
+   "bias": -7.73,
+   "worst": -15.1
+  },
+  "power": {
+   "n": 92,
+   "rms": 6.12,
+   "bias": 5.42,
+   "worst": 17.1
+  },
+  "power_dyn": {
+   "n": 92,
+   "rms": 9.86,
+   "bias": 8.98,
+   "worst": 25.7
+  }
+ },
+ "xmodel_granite_corun": {
+  "rung": "3b other models",
+  "label": "Granite, 40 experts, K=1536: co-run",
+  "fit": "no",
+  "time": {
+   "n": 72,
+   "rms": 5.86,
+   "bias": -5.28,
+   "worst": -9.6
+  },
+  "power": {
+   "n": 36,
+   "rms": 6.11,
+   "bias": 5.59,
+   "worst": 11.3
+  },
+  "power_dyn": {
+   "n": 36,
+   "rms": 8.47,
+   "bias": 7.71,
+   "worst": 16.3
+  }
+ },
+ "xmodel_granite_l2_resident": {
+  "rung": "3b other models",
+  "label": "Granite, 40 experts, K=1536: a partition that fits in L2",
+  "fit": "no",
+  "time": {
+   "n": 36,
+   "rms": 4.43,
+   "bias": -3.72,
+   "worst": -7.6
+  },
+  "power": {
+   "n": 24,
+   "rms": 19.23,
+   "bias": 17.68,
+   "worst": 33.3
+  },
+  "power_dyn": {
+   "n": 24,
+   "rms": 36.64,
+   "bias": 32.46,
+   "worst": 60.3
+  }
+ },
+ "xmodel_granite_layers": {
+  "rung": "3b other models",
+  "label": "Granite, 40 experts, K=1536: whole layers, both kernels",
+  "fit": "no",
+  "time": {
+   "n": 14,
+   "rms": 5.1,
+   "bias": -4.4,
+   "worst": -7.0
+  },
+  "power": {
+   "n": 14,
+   "rms": 7.37,
+   "bias": 7.0,
+   "worst": 10.1
+  },
+  "power_dyn": {
+   "n": 14,
+   "rms": 10.14,
+   "bias": 9.58,
+   "worst": 13.9
+  }
+ },
+ "xmodel_qwen3next_solo": {
+  "rung": "3b other models",
+  "label": "Qwen3-Next, 512 experts, top-10: solo",
+  "fit": "no",
+  "time": {
+   "n": 104,
+   "rms": 2.72,
+   "bias": -1.03,
+   "worst": -6.2
+  },
+  "power": {
+   "n": 104,
+   "rms": 2.64,
+   "bias": -0.62,
+   "worst": 9.6
+  },
+  "power_dyn": {
+   "n": 104,
+   "rms": 4.31,
+   "bias": -1.28,
+   "worst": 13.7
+  }
+ },
+ "xmodel_qwen3next_corun": {
+  "rung": "3b other models",
+  "label": "Qwen3-Next, 512 experts, top-10: co-run",
+  "fit": "no",
+  "time": {
+   "n": 96,
+   "rms": 3.43,
+   "bias": -1.72,
+   "worst": -6.8
+  },
+  "power": {
+   "n": 48,
+   "rms": 4.6,
+   "bias": 3.17,
+   "worst": 11.7
+  },
+  "power_dyn": {
+   "n": 48,
+   "rms": 6.44,
+   "bias": 4.41,
+   "worst": 16.8
+  }
+ },
+ "xmodel_qwen3next_layers": {
+  "rung": "3b other models",
+  "label": "Qwen3-Next, 512 experts, top-10: whole layers, both kernels",
+  "fit": "no",
+  "time": {
+   "n": 14,
+   "rms": 2.36,
+   "bias": -1.2,
+   "worst": -5.1
+  },
+  "power": {
+   "n": 14,
+   "rms": 3.34,
+   "bias": 2.96,
+   "worst": 6.1
+  },
+  "power_dyn": {
+   "n": 14,
+   "rms": 4.56,
+   "bias": 4.01,
+   "worst": 8.6
+  }
+ },
+ "layer_persistent_other_layers_(never_fitted)": {
+  "rung": "4 whole layers",
+  "label": "persistent kernel, other layers (never fitted)",
+  "fit": "no",
+  "time": {
+   "n": 40,
+   "rms": 1.17,
+   "bias": 0.75,
+   "worst": 2.2
+  },
+  "power": {
+   "n": 40,
+   "rms": 2.56,
+   "bias": 2.37,
+   "worst": 4.5
+  },
+  "power_dyn": {
+   "n": 40,
+   "rms": 3.55,
+   "bias": 3.29,
+   "worst": 6.1
+  }
+ },
+ "layer_persistent_training_sweeps": {
+  "rung": "4 whole layers",
+  "label": "persistent kernel, training sweeps",
+  "fit": "yes",
+  "time": {
+   "n": 118,
+   "rms": 2.18,
+   "bias": 1.11,
+   "worst": 6.5
+  },
+  "power": {
+   "n": 118,
+   "rms": 1.84,
+   "bias": 0.94,
+   "worst": 7.2
+  },
+  "power_dyn": {
+   "n": 118,
+   "rms": 2.66,
+   "bias": 1.4,
+   "worst": 10.3
+  }
+ },
+ "layer_queue_other_layers_(never_fitted)": {
+  "rung": "4 whole layers",
+  "label": "queue kernel, other layers (never fitted)",
+  "fit": "no",
+  "time": {
+   "n": 25,
+   "rms": 1.24,
+   "bias": 0.51,
+   "worst": -2.7
+  },
+  "power": {
+   "n": 25,
+   "rms": 1.92,
+   "bias": 1.58,
+   "worst": 3.2
+  },
+  "power_dyn": {
+   "n": 25,
+   "rms": 2.51,
+   "bias": 2.06,
+   "worst": 4.2
+  }
+ },
+ "layer_queue_training_sweeps": {
+  "rung": "4 whole layers",
+  "label": "queue kernel, training sweeps",
+  "fit": "yes",
+  "time": {
+   "n": 56,
+   "rms": 2.0,
+   "bias": -0.09,
+   "worst": -4.7
+  },
+  "power": {
+   "n": 56,
+   "rms": 2.16,
+   "bias": 1.43,
+   "worst": 4.8
+  },
+  "power_dyn": {
+   "n": 56,
+   "rms": 2.98,
+   "bias": 1.99,
+   "worst": 6.2
+  }
+ },
+ "layer_queue_sweeps": {
+  "rung": "4 whole layers",
+  "label": "queue kernel, 64-7744 tokens, 510-1410 MHz",
+  "fit": "yes",
+  "time": {
+   "n": 141,
+   "rms": 1.79,
+   "bias": -0.03,
+   "worst": -5.3
+  },
+  "power": {
+   "n": 141,
+   "rms": 1.68,
+   "bias": -0.66,
+   "worst": 4.0
+  },
+  "power_dyn": {
+   "n": 141,
+   "rms": 2.24,
+   "bias": -0.89,
+   "worst": -5.3
+  }
+ },
+ "layer_queue_big": {
+  "rung": "4 whole layers",
+  "label": "queue kernel, 512-12288 tokens, 1290 MHz",
+  "fit": "no",
+  "time": {
+   "n": 8,
+   "rms": 2.1,
+   "bias": -0.55,
+   "worst": -4.0
+  },
+  "power": {
+   "n": 8,
+   "rms": 2.04,
+   "bias": 0.65,
+   "worst": 4.2
+  },
+  "power_dyn": {
+   "n": 8,
+   "rms": 2.61,
+   "bias": 0.85,
+   "worst": 5.3
+  }
+ },
+ "layer_occupancy_persistent": {
+  "rung": "4 whole layers",
+  "label": "persistent, BM64 and BM128, 512-7744 tokens (never fitted)",
+  "fit": "no",
+  "time": {
+   "n": 28,
+   "rms": 2.44,
+   "bias": 0.94,
+   "worst": -5.0
+  },
+  "power": {
+   "n": 28,
+   "rms": 2.23,
+   "bias": 0.19,
+   "worst": 6.7
+  },
+  "power_dyn": {
+   "n": 28,
+   "rms": 3.0,
+   "bias": 0.33,
+   "worst": 9.4
+  }
+ },
+ "layer_occupancy_queue": {
+  "rung": "4 whole layers",
+  "label": "queue kernel, 512-7744 tokens (never fitted)",
+  "fit": "no",
+  "time": {
+   "n": 12,
+   "rms": 2.47,
+   "bias": -0.82,
+   "worst": -4.3
+  },
+  "power": {
+   "n": 12,
+   "rms": 2.7,
+   "bias": 1.84,
+   "worst": 4.9
+  },
+  "power_dyn": {
+   "n": 12,
+   "rms": 3.5,
+   "bias": 2.4,
+   "worst": 6.4
+  }
+ },
+ "layer_pin_vs_queue": {
+  "rung": "4 whole layers",
+  "label": "prefill at 1200 MHz, both kernels (Sep 17)",
+  "fit": "no",
+  "time": {
+   "n": 2,
+   "rms": 0.93,
+   "bias": 0.89,
+   "worst": 1.1
+  },
+  "power": {
+   "n": 2,
+   "rms": 1.82,
+   "bias": -1.72,
+   "worst": -2.3
+  },
+  "power_dyn": {
+   "n": 2,
+   "rms": 2.3,
+   "bias": -2.18,
+   "worst": -2.9
+  }
+ },
+ "governor": [
+  {
+   "tokens": 512,
+   "meas_clock": 1410.0,
+   "meas_w": 362.8166666666666,
+   "meas_ms": 1.0060399999999998,
+   "sim_clock": 1410.0,
+   "sim_w": 373.5,
+   "sim_ms": 0.9662
+  },
+  {
+   "tokens": 1024,
+   "meas_clock": 1410.0,
+   "meas_w": 397.7033333333333,
+   "meas_ms": 1.15649,
+   "sim_clock": 1399.8,
+   "sim_w": 400.1,
+   "sim_ms": 1.1073
+  },
+  {
+   "tokens": 2048,
+   "meas_clock": 1340.0,
+   "meas_w": 396.7966666666667,
+   "meas_ms": 1.4702766666666667,
+   "sim_clock": 1352.4,
+   "sim_w": 399.7,
+   "sim_ms": 1.4795
+  },
+  {
+   "tokens": 4096,
+   "meas_clock": 1320.0,
+   "meas_w": 399.53000000000003,
+   "meas_ms": 2.2408966666666665,
+   "sim_clock": 1326.7,
+   "sim_w": 400.3,
+   "sim_ms": 2.2633
+  },
+  {
+   "tokens": 6144,
+   "meas_clock": 1320.0,
+   "meas_w": 399.7866666666667,
+   "meas_ms": 3.1072633333333335,
+   "sim_clock": 1321.6,
+   "sim_w": 399.7,
+   "sim_ms": 3.1308
+  },
+  {
+   "tokens": 8192,
+   "meas_clock": 1320.0,
+   "meas_w": 399.1133333333333,
+   "meas_ms": 3.96233,
+   "sim_clock": 1317.9,
+   "sim_w": 399.8,
+   "sim_ms": 3.9658
+  },
+  {
+   "tokens": 10240,
+   "meas_clock": 1320.0,
+   "meas_w": 399.15000000000003,
+   "meas_ms": 4.83964,
+   "sim_clock": 1317.6,
+   "sim_w": 400.2,
+   "sim_ms": 4.8363
+  },
+  {
+   "tokens": 12288,
+   "meas_clock": 1317.3333333333333,
+   "meas_w": 397.2,
+   "meas_ms": 5.685983333333334,
+   "sim_clock": 1314.7,
+   "sim_w": 399.9,
+   "sim_ms": 5.6628
+  }
+ ],
+ "traces": {
+  "dynamics": {
+   "tag": "dynamics",
+   "runs": 3,
+   "segments": 21,
+   "latency_rms_pct": 2.72739912404683,
+   "latency_worst_pct": -4.105672230280706,
+   "power_rms_pct": 0.9080101592382958,
+   "power_worst_pct": 2.314219824215069,
+   "clock_rms_mhz": 9.433632015532602,
+   "clock_worst_mhz": -19.213047626451726,
+   "power_rms_pct_same_window": 1.4258366585607127,
+   "clock_rms_mhz_same_window": 6.602333197728726,
+   "clock_worst_mhz_same_window": -12.951061209739919,
+   "energy_err_pct": [
+    -0.7299825682658412,
+    -0.9114162383238367,
+    -1.1193822159147548
+   ],
+   "transient_rms_pct": {
+    "wake": 2.3964894356655506,
+    "load change": 0.6310573846920132
+   },
+   "transient_replays": {
+    "wake": 444,
+    "load change": 727
+   },
+   "peak_reading_w": {
+    "sim": 431.71,
+    "meas": 469.522
+   }
+  },
+  "trace": {
+   "tag": "trace",
+   "runs": 3,
+   "segments": 33,
+   "latency_rms_pct": 2.2212163085459045,
+   "latency_worst_pct": -4.232222667336688,
+   "power_rms_pct": 1.2787681163153901,
+   "power_worst_pct": 3.9813952940692454,
+   "clock_rms_mhz": 11.97971751694569,
+   "clock_worst_mhz": -41.99470539484082,
+   "power_rms_pct_same_window": 1.9039441434944153,
+   "clock_rms_mhz_same_window": 7.127675329751221,
+   "clock_worst_mhz_same_window": -18.975371303288057,
+   "energy_err_pct": [
+    -0.49071427355136255,
+    -0.33039668236662934,
+    -0.40627421121014473
+   ],
+   "transient_rms_pct": {
+    "wake": 4.641539414593709,
+    "load change": 0.7598303176456633,
+    "short idle": 0.627412181783002
+   },
+   "transient_replays": {
+    "wake": 363,
+    "load change": 1044,
+    "short idle": 393
+   },
+   "peak_reading_w": {
+    "sim": 434.16,
+    "meas": 448.049
+   }
+  },
+  "trace2": {
+   "tag": "trace2",
+   "runs": 2,
+   "segments": 22,
+   "latency_rms_pct": 2.7223953341193736,
+   "latency_worst_pct": -4.352512874394025,
+   "power_rms_pct": 1.6696623325291633,
+   "power_worst_pct": 4.058525548377512,
+   "clock_rms_mhz": 14.847723092076322,
+   "clock_worst_mhz": -38.131972307295655,
+   "power_rms_pct_same_window": 2.276714294261817,
+   "clock_rms_mhz_same_window": 11.56398566733679,
+   "clock_worst_mhz_same_window": 23.28491425944526,
+   "energy_err_pct": [
+    -0.4218097665362186,
+    -0.6720811290898188
+   ],
+   "transient_rms_pct": {
+    "wake": 6.546622008461827,
+    "load change": 0.5596187299040801,
+    "short idle": 0.703853818553141
+   },
+   "transient_replays": {
+    "wake": 107,
+    "load change": 860,
+    "short idle": 376
+   },
+   "peak_reading_w": {
+    "sim": 421.35,
+    "meas": 412.353
+   }
+  },
+  "forward": {
+   "tag": "forward",
+   "runs": 3,
+   "segments": 21,
+   "latency_rms_pct": 1.0086731056407627,
+   "latency_worst_pct": -2.150692147707718,
+   "power_rms_pct": 0.6708538084584437,
+   "power_worst_pct": -1.431342896219534,
+   "clock_rms_mhz": 11.103778351093561,
+   "clock_worst_mhz": -30.844765979486056,
+   "power_rms_pct_same_window": 0.9293458905738239,
+   "clock_rms_mhz_same_window": 5.862665582368881,
+   "clock_worst_mhz_same_window": -21.408647268947107,
+   "energy_err_pct": [
+    0.07792106631390183,
+    -0.18455056526682778,
+    -0.24384708720051052
+   ],
+   "transient_rms_pct": {
+    "wake": 5.035354129640473,
+    "load change": 0.6577626636067019,
+    "short idle": 0.08298355745726331
+   },
+   "transient_replays": {
+    "wake": 38,
+    "load change": 36,
+    "short idle": 21
+   },
+   "peak_reading_w": {
+    "sim": 422.01,
+    "meas": 421.692
+   }
+  },
+  "forward2": {
+   "tag": "forward2",
+   "runs": 3,
+   "segments": 24,
+   "latency_rms_pct": 0.9606156883666708,
+   "latency_worst_pct": -2.2713700662861274,
+   "power_rms_pct": 1.5393400611879562,
+   "power_worst_pct": 4.475210627926685,
+   "clock_rms_mhz": 8.227352633684914,
+   "clock_worst_mhz": 23.213794304565,
+   "power_rms_pct_same_window": 1.7126582118462101,
+   "clock_rms_mhz_same_window": 8.847480092388038,
+   "clock_worst_mhz_same_window": 23.21379430456568,
+   "energy_err_pct": [
+    0.857289016799756,
+    0.6396124578006646,
+    0.3609112559135985
+   ],
+   "transient_rms_pct": {
+    "wake": 6.331118035063595,
+    "load change": 1.0391823761345473,
+    "short idle": 1.4551076225068547
+   },
+   "transient_replays": {
+    "wake": 27,
+    "load change": 45,
+    "short idle": 3
+   },
+   "peak_reading_w": {
+    "sim": 433.33,
+    "meas": 416.425
+   }
+  },
+  "lock1050": {
+   "tag": "lock1050",
+   "runs": 2,
+   "segments": 22,
+   "latency_rms_pct": 1.2277727581792586,
+   "latency_worst_pct": 2.511547898344643,
+   "power_rms_pct": 3.042560786611577,
+   "power_worst_pct": 4.2869235181277165,
+   "clock_rms_mhz": 3.2312489512113564e-11,
+   "clock_worst_mhz": 6.207301339600235e-11,
+   "power_rms_pct_same_window": 3.0407964078434544,
+   "clock_rms_mhz_same_window": 3.0534484562265126e-11,
+   "clock_worst_mhz_same_window": -5.2295945351943374e-11,
+   "energy_err_pct": [
+    2.312461322184589,
+    1.9627796608150616
+   ],
+   "transient_rms_pct": {
+    "wake": 0.3056931885596535,
+    "load change": 0.0811573263533047,
+    "short idle": 0.15745529837176314
+   },
+   "transient_replays": {
+    "wake": 94,
+    "load change": 778,
+    "short idle": 332
+   },
+   "peak_reading_w": {
+    "sim": 258.31,
+    "meas": 258.478
+   }
+  },
+  "lock1290": {
+   "tag": "lock1290",
+   "runs": 2,
+   "segments": 22,
+   "latency_rms_pct": 2.585518598556049,
+   "latency_worst_pct": -4.145917890289654,
+   "power_rms_pct": 3.386217465028666,
+   "power_worst_pct": 7.862660461612947,
+   "clock_rms_mhz": 2.3042991448841513e-11,
+   "clock_worst_mhz": -3.4788172342814505e-11,
+   "power_rms_pct_same_window": 3.385207825741384,
+   "clock_rms_mhz_same_window": 2.3665885214607596e-11,
+   "clock_worst_mhz_same_window": 4.320099833421409e-11,
+   "energy_err_pct": [
+    1.718406977931708,
+    0.9262136861596604
+   ],
+   "transient_rms_pct": {
+    "wake": 0.28347992853109594,
+    "load change": 0.08952671960419009,
+    "short idle": 0.18659504158155774
+   },
+   "transient_replays": {
+    "wake": 114,
+    "load change": 846,
+    "short idle": 366
+   },
+   "peak_reading_w": {
+    "sim": 378.35,
+    "meas": 377.724
+   }
+  },
+  "heldout1": {
+   "tag": "heldout1",
+   "runs": 3,
+   "segments": 42,
+   "latency_rms_pct": 1.557285247422521,
+   "latency_worst_pct": 4.364741335069613,
+   "power_rms_pct": 1.7593977119388895,
+   "power_worst_pct": 6.197492806451632,
+   "clock_rms_mhz": 19.430179362284154,
+   "clock_worst_mhz": -88.44632361823506,
+   "power_rms_pct_same_window": 2.537096474904,
+   "clock_rms_mhz_same_window": 12.562652100949643,
+   "clock_worst_mhz_same_window": -54.863730097430334,
+   "energy_err_pct": [
+    0.02685150586108076,
+    -0.2890064521376301,
+    -1.09280802912759
+   ],
+   "transient_rms_pct": {
+    "wake": 6.8094804995771385,
+    "load change": 0.7935864010125063,
+    "short idle": 0.7854823387155202
+   },
+   "transient_replays": {
+    "wake": 247,
+    "load change": 1834,
+    "short idle": 111
+   },
+   "peak_reading_w": {
+    "sim": 414.22,
+    "meas": 426.636
+   }
+  },
+  "heldout2": {
+   "tag": "heldout2",
+   "runs": 3,
+   "segments": 24,
+   "latency_rms_pct": 0.6756211794578564,
+   "latency_worst_pct": 1.4976620803260474,
+   "power_rms_pct": 0.5341449343830357,
+   "power_worst_pct": 1.4302998129482214,
+   "clock_rms_mhz": 8.454743697222634,
+   "clock_worst_mhz": -20.037213559832935,
+   "power_rms_pct_same_window": 0.5791689477178694,
+   "clock_rms_mhz_same_window": 6.542927255052756,
+   "clock_worst_mhz_same_window": -11.510152367400678,
+   "energy_err_pct": [
+    0.014332516361248437,
+    -0.2896355454644506,
+    0.22397226271324566
+   ],
+   "transient_rms_pct": {
+    "wake": 4.311288285323561,
+    "load change": 0.9360372567257726,
+    "short idle": 0.8899178484580076
+   },
+   "transient_replays": {
+    "wake": 6,
+    "load change": 48,
+    "short idle": 21
+   },
+   "peak_reading_w": {
+    "sim": 416.44,
+    "meas": 443.571
+   }
+  }
+ },
+ "consistency": {
+  "two_domains_same_clock_vs_one_domain": 4.440892098500626e-16,
+  "energy_trace_vs_total": 1.0325074129013956e-14,
+  "energy_layers_vs_total": 0.0,
+  "table_vs_exact_rms": 0.0011272345310864107,
+  "table_vs_exact_worst": 0.005834961114994375
+ }
+}

@@ -1,0 +1,16 @@
+the `trace2` load: 11720 MoE layers in 11 segments
+  policy                                                  busy s vs row 1   busy J vs row 1  mean W  peak W over ms set-points
+  queue kernel, stock governor (measured)                  19.82    +0.0%     7789    +0.0%   392.9   421.4     100         39
+  queue kernel, tdp_bisection                              19.84    +0.1%     7717    -0.9%   388.9   415.4       0         40
+  queue kernel, fixed 1050 MHz                             23.24   +17.3%     5924   -23.9%   254.9   258.3       0          0
+  pinned*, 64 cold experts, one clock                      22.37   +12.8%     8314    +6.7%   371.7   426.0     100         27
+  pinned*, 64 cold experts, two domains                    22.31   +12.6%     7546    -3.1%   338.2   411.4       0         28
+  pinned*, experts rebalanced per batch, one clock         20.16    +1.7%     7842    +0.7%   389.0   416.5       0         38
+  pinned*, rebalanced, two domains, governor               20.16    +1.7%     7912    +1.6%   392.4   432.4     200         96
+  pinned*, rebalanced, two domains, tdp_bisection          20.09    +1.4%     7798    +0.1%   388.1   421.7     100         45
+  pinned*, rebalanced, two domains, 0.05 ms actuation      20.08    +1.3%     7832    +0.6%   390.1   398.5       0         21
+  pinned*, rebalanced, two domains, closed_loop            20.14    +1.6%     7735    -0.7%   384.1   431.0     100        157
+  pinned, one block per SM, rebalanced, two domains        23.84   +20.2%     8855   +13.7%   371.5   402.1       0         15
+  fixed 1050 MHz against the governor, the `trace2` load: measured time +15.9% energy -26.0%  |  simulated time +17.3% energy -23.9%
+  fixed 1290 MHz against the governor, the `trace2` load: measured time +1.7% energy -9.5%  |  simulated time +1.8% energy -7.9%
+wrote /home/xinting/aiconfigurator_overlap_exp/tools/moe_megakernel/sim/out/policies_trace2.csv

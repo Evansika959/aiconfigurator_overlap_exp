@@ -23,7 +23,19 @@ MODELS = [
     ("olmoe_it",  "OLMoE-1B-7B-Instruct", "routing_olmoe_it.npz"),
     ("qwen3",     "Qwen3-30B-A3B",       "routing_qwen.npz"),
     ("qwen3next", "Qwen3-Next-80B-A3B",  "routing_qwen3next.npz"),
+    # added 2026-10-01, after the rows above (which keeps their null draws unchanged)
+    ("gptoss",    "GPT-OSS-20B",         "routing_gptoss.npz"),
+    ("gptoss_raw", "GPT-OSS-20B, raw prompt", "routing_gptoss_raw.npz"),
+    ("llama4",    "Llama-4-Scout-17B-16E", "routing_llama4.npz"),
 ]
+# Rows that are measured and written but are NOT part of the cross-model comparison (the
+# table in INFRA.md, the figures, the correlation). Every other row has role "model".
+#   control        GPT-OSS without its chat template, whose 67-token system preamble is
+#                  39% of the tokens counted
+#   not compared   Llama 4 Scout (107.8B parameters): its trace is not like for like --
+#                  prefill only, a modified MoE forward, and top-1 routing beside a shared
+#                  expert that every token also passes through
+ROLE = {"gptoss_raw": "control", "llama4": "not compared"}
 
 
 def gini(x):
@@ -79,9 +91,11 @@ def main():
         B = m["batch"]
         print(f"  {name:<24}{E:>8}{m['top_k']:>7}{B:>4}{R:>6}{R*B:>7}{np.mean(tpe):>9.0f}"
               f"{f'{ex.mean():+.3f} ± {ex.std():.3f}':>15}"
-              f"{f'{mms.mean():.2f} ± {mms.std():.2f}':>13}")
-        rows.append(dict(tag=tag, model=m["model"], experts=E, top_k=m["top_k"],
-                         layers=m["layers"], repeats=R, conversations=R * 64,
+              f"{f'{mms.mean():.2f} ± {mms.std():.2f}':>13}"
+              + (f"   ({ROLE[tag]})" if tag in ROLE else ""))
+        rows.append(dict(tag=tag, role=ROLE.get(tag, "model"), model=m["model"], experts=E,
+                         top_k=m["top_k"],
+                         layers=m["layers"], repeats=R, conversations=R * B,
                          tokens_per_expert=round(float(np.mean(tpe)), 1),
                          excess_gini=round(float(ex.mean()), 4),
                          excess_gini_sd=round(float(ex.std()), 4),
@@ -89,16 +103,22 @@ def main():
                          excess_gini_max=round(float(ex.max()), 4),
                          max_over_mean=round(float(mms.mean()), 3),
                          dataset=m.get("dataset", "")))
-    p = os.path.join(HERE, "data", "skew_across_models.csv")
+    # v2: the five rows of the checked-in skew_across_models.csv (unchanged, except that
+    # `conversations` is now batches x batch size -- Qwen3-Next ran at 32 -- and that there
+    # is a `role` column), then the rows added on 2026-10-01. The checked-in file is left
+    # as it is.
+    p = os.path.join(HERE, "data", "skew_across_models_v2.csv")
     with open(p, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
         w.writeheader(); w.writerows(rows)
     print(f"\n  wrote {p}")
-    ex = [r["excess_gini"] for r in rows]
-    ne = [r["experts"] for r in rows]
+    own = [r for r in rows if r["role"] == "model"]
+    ex = [r["excess_gini"] for r in own]
+    ne = [r["experts"] for r in own]
     if len(ex) > 2:
-        print(f"  correlation(expert count, excess gini) = "
-              f"{np.corrcoef(ne, ex)[0,1]:+.2f}")
+        print(f"  correlation(expert count, excess gini) over the {len(own)} model rows = "
+              f"{np.corrcoef(ne, ex)[0,1]:+.2f}; with log2(experts): "
+              f"{np.corrcoef(np.log2(ne), ex)[0,1]:+.2f}")
 
 
 if __name__ == "__main__":

@@ -2,8 +2,9 @@
 
 WHY EACH SETTING IS WHAT IT IS
 
-  Type 42 fonts.  Type 3 (matplotlib's default for PDF) is rejected outright by many
-  venues' checkers. This is the single most common camera-ready rejection.
+  PNG only.  Figures are saved as 600 dpi PNGs and nothing else (figstyle.save). The
+  Type 42 font settings below are kept so that a PDF, should one ever be wanted again,
+  embeds real type: Type 3, matplotlib's default for PDF, is rejected by many venues.
 
   STIXGeneral.  NeurIPS sets its body in Times. This machine has no Times, Nimbus Roman
   or Liberation Serif -- but STIXGeneral ships with matplotlib and is Times-metric
@@ -58,8 +59,8 @@ def use():
         "legend.handletextpad": 0.5, "legend.columnspacing": 1.2,
         "axes.spines.top": False, "axes.spines.right": False,
         "axes.grid": False,
-        "figure.dpi": 200, "savefig.dpi": 600,   # PDF is the deliverable; the PNG
-        # companion at 600 dpi is 3300 px across 5.5 in, enough for print on its own.
+        "figure.dpi": 200, "savefig.dpi": 600,   # PNG is the only output: 600 dpi is
+        # 3300 px across 5.5 in, enough for print on its own.
         "savefig.bbox": "tight", "savefig.pad_inches": 0.01,
         "axes.prop_cycle": mpl.cycler(color=[GEMM, COMM, MUTED]),
         "hatch.linewidth": 0.5,
@@ -130,21 +131,15 @@ def matrix(ax, rows, cols, vals, fmt="{:+.0f}", vmin=None, vmax=None, cmap=None,
 
 
 def save(fig, stem, outdir="figs"):
-    """Emit PDF (the deliverable for LaTeX) and PNG (a companion for viewing).
+    """Write the figure as a 600 dpi PNG, the only format kept (no PDF since 2026-10-01).
 
-    VECTOR IS THE DELIVERABLE. The Type 42 settings above exist for exactly this: a
-    line plot with text belongs in the paper as a PDF, so the type is real type and
-    stays crisp at any zoom. The PNG at 600 dpi is the convenience copy for viewing in
-    a terminal or a chat, not the thing that goes into \includegraphics.
+    600 dpi is 3300 px across the 5.5 in text width: enough for print on its own.
 
-    INCLUDE IT WITHOUT A WIDTH KEY:  \includegraphics{fig.pdf}
-
-    `savefig.bbox="tight"` trims to the ink, so a figure declared at 5.5 in is written
-    out a little narrower -- fig14 lands at 5.29 in, fig16 at 3.93 in. Asking LaTeX for
-    `width=\textwidth` then scales it back up by whatever that ratio happens to be, and
-    8 pt type prints at 8.3 pt against a 10 pt body: the figure-type/body-type mismatch
-    the 5.5 in convention exists to prevent. Including at natural size keeps the type
-    exactly as specified; the small white margin the trim removed is not missed.
+    INCLUDE IT AT ITS NATURAL SIZE. `savefig.bbox="tight"` trims to the ink, so a figure
+    declared at 5.5 in is written out a little narrower -- fig14 lands at 5.29 in, fig16
+    at 3.93 in. Asking LaTeX for `width=\textwidth` then scales it back up by whatever
+    that ratio happens to be, and 8 pt type prints at 8.3 pt against a 10 pt body: the
+    figure-type/body-type mismatch the 5.5 in convention exists to prevent.
 
     (Forcing the saved file to exactly 5.5 in was tried and abandoned. Trimmed width is
     not a simple function of canvas width, because `tight_layout` re-runs on every draw
@@ -154,9 +149,7 @@ def save(fig, stem, outdir="figs"):
     """
     import os
     os.makedirs(outdir, exist_ok=True)
-    pdf = os.path.join(outdir, stem + ".pdf")
     png = os.path.join(outdir, stem + ".png")
-    fig.savefig(pdf)
     fig.savefig(png)
     plt.close(fig)
-    return (pdf, png)
+    return (png,)

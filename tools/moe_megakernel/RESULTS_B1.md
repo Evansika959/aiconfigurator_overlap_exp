@@ -140,7 +140,7 @@ CUDA_VISIBLE_DEVICES=0 python3 test_fused_moe.py            # correctness
 CUDA_VISIBLE_DEVICES=0 python3 b1_bench.py --model qwen --tune   # 707 s
 CUDA_VISIBLE_DEVICES=0 python3 b1_energy.py --model qwen --repeats 6   # ~25 min,
                                                             # locks clocks on GPU 0
-CUDA_VISIBLE_DEVICES=0 python3 make_b1_fig.py               # -> figs/fig17_b1_energy.pdf
+CUDA_VISIBLE_DEVICES=0 python3 make_b1_fig.py               # -> figs/fig17_b1_energy.png
 ```
 
 `--model` also accepts `qwen3next`, `olmoe`, `granite`; shapes and the routing file
@@ -158,7 +158,7 @@ filled in later as a *separate* campaign; that is not comparable at the few-mJ l
 because the reshuffle exists to stop drift aliasing onto clock and it does not reach
 across campaigns. Re-collecting everything at once measured the offset that had been
 introduced: **-2.96 mJ**. 234 rows in `data/b1_energy_qwen.csv`; figure
-`figs/fig17_b1_energy.pdf`.
+`figs/fig17_b1_energy.png`.
 
 | SM clock (requested -> measured) | layer time | energy/layer | |
 |---|---|---|---|
@@ -175,7 +175,7 @@ introduced: **-2.96 mJ**. 234 rows in `data/b1_energy_qwen.csv`; figure
 **Against the deployed governor point, 1050 MHz is -23.9% energy for +21.6% latency**
 — and 1050, not 1035, is the one to deploy: they tie on energy (1144.5 +/- 8.7 vs
 1141.8 +/- 1.2 mJ, t = 0.74) and 1050 is 1.2% faster. 1035 is -24.1% / +23.1%, which is
-the same energy for 1.5 pp more latency. `figs/fig17_b1_energy.pdf` labels 1050 for that
+the same energy for 1.5 pp more latency. `figs/fig17_b1_energy.png` labels 1050 for that
 reason.
 Essentially a 1:1 trade — which is why the earlier draft of the figure, which drew that
 as a near-vertical arrow, was misleading and was removed.

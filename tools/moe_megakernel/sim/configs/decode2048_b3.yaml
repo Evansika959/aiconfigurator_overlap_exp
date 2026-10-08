@@ -1,0 +1,11 @@
+# B3 -- partitions, still one rail: the 64 least-routed experts pinned to 32 SMs, the
+# rest on 76, ONE clock for the whole chip. Runs on today's A100.
+name: decode2048_b3
+model: qwen
+hardware:
+  domains: [{name: all, sms: 108}]
+  tdp_w: 400
+kernel: {type: persistent, block_m: 64, n_cold: 64, cold_sms: 32}
+controller: {type: tdp_bisection}
+workload:
+  - {phase: decode, cells: 32, layers: [0], repeat: 2000}

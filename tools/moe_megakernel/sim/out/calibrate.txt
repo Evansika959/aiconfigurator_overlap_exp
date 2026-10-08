@@ -1,0 +1,59 @@
+training sweeps: ['sm_corun_holdout', 'sm_corun_lowclk', 'sm_corun_scan']: {'queue': 56, 'solo': 1558, 'full': 118, 'corun': 703}
+  cross-validation, form 'shipped': fitted on sm_corun_scan alone ...
+  1 rate (persistent): 1170 times, 9 parameters, 25 s
+      all                    n=1170  rms  2.92%  bias +0.00%  worst  -11.1%
+      solo                   n= 622  rms  2.83%  bias +0.48%  worst  -11.1%
+      corun                  n= 548  rms  3.02%  bias -0.53%  worst   +8.3%
+      aP=27.21  bP=0.001697  aR=1141  aL=1.363  bw_l=1.647e+04  gamma_l=0.2415  xi=0.6319  gamma_x=1.392  q=1.723
+      1-sigma: aP 0.032  bP 0.422  aR 0.004  aL 0.112  bw_l 0.043  gamma_l 0.213  xi 0.029  gamma_x 0.132  q 0.047
+      ... scored on holdout  n= 994  rms  3.79%  bias +0.72%  worst  +15.8%
+      ... scored on lowclk   n= 800  rms  2.68%  bias -0.67%  worst   -7.7%
+  cross-validation, form 'proportional': fitted on sm_corun_scan alone ...
+  1 rate (persistent): 1170 times, 7 parameters, 15 s
+      all                    n=1170  rms  2.96%  bias +0.00%  worst  -10.4%
+      solo                   n= 622  rms  2.85%  bias +0.45%  worst  -10.4%
+      corun                  n= 548  rms  3.08%  bias -0.51%  worst   -8.1%
+      aP=23.51  bP=0.004888  aR=1142  aL=1.178  bw_l=1.804e+04  xi=0.6417  q=1.715
+      1-sigma: aP 0.021  bP 0.076  aR 0.004  aL 0.127  bw_l 0.042  xi 0.028  q 0.046
+      ... scored on holdout  n= 994  rms  3.82%  bias +0.79%  worst  +15.5%
+      ... scored on lowclk   n= 800  rms  3.00%  bias -1.18%  worst   -9.7%
+  cross-validation, form 'linear': fitted on sm_corun_scan alone ...
+  1 rate (persistent): 1170 times, 7 parameters, 26 s
+      all                    n=1170  rms  3.07%  bias -0.00%  worst   -9.3%
+      solo                   n= 622  rms  2.86%  bias +0.40%  worst   -9.2%
+      corun                  n= 548  rms  3.29%  bias -0.45%  worst   -9.3%
+      aP=24.56  bP=0.003646  aR=1130  aL=0.9671  bw_d=1329  bw_l=2.172e+04  xi=0.4068
+      1-sigma: aP 0.020  bP 0.102  aR 0.004  aL 0.133  bw_d 0.012  bw_l 0.048  xi 0.030
+      ... scored on holdout  n= 994  rms  4.18%  bias +1.00%  worst  +17.9%
+      ... scored on lowclk   n= 800  rms  3.10%  bias -1.25%  worst   -8.7%
+  1 rate (persistent): 2964 times, 9 parameters, 54 s
+      all                    n=2964  rms  3.10%  bias +0.00%  worst  -15.2%
+      solo                   n=1558  rms  3.20%  bias +0.34%  worst  -15.2%
+      corun                  n=1406  rms  2.98%  bias -0.37%  worst  +11.8%
+      aP=26.5  bP=0.001557  aR=1165  aL=1.386  bw_l=1.483e+04  gamma_l=0.4438  xi=0.595  gamma_x=1.494  q=1.723
+      1-sigma: aP 0.012  bP 0.187  aR 0.002  aL 0.076  bw_l 0.031  gamma_l 0.073  xi 0.019  gamma_x 0.082  q 0.033
+  2 epilogue: 118 (case, clock) pairs; ms = 44.7 us + pairs x (4.88 + 7703 / f[MHz]) ns
+      epilogue time          n= 118  rms  8.05%  bias +0.66%  worst  +35.2%
+      window = 1 tiles per SM: rms 1.92%  worst -5.3%
+      window = 2 tiles per SM: rms 1.88%  worst -5.3%
+      window = 3 tiles per SM: rms 1.86%  worst -5.2%
+      window = 4 tiles per SM: rms 1.85%  worst -5.3%
+  3 queue kernel: 197 end-to-end times, 4 parameters + window 4
+      b1_energy              n=  36  rms  0.90%  bias -0.13%  worst   -2.3%
+      batch_clock            n= 105  rms  2.01%  bias +0.01%  worst   -5.3%
+      training sweeps        n=  56  rms  2.00%  bias -0.09%  worst   -4.7%
+      aP=15.27  bP=1.598e-13  aR=968.2  aL=1.844
+  4 idle: 41 clocks 210-1410 MHz, die 37 C; 55.7 W at 210, 76.9 W at 1410; below 1050 MHz 4.71 mW/MHz on 54.4 W
+      right after a 2 s load burst (die +1.5 C): +0.09 W at 210, +2.51 W at 1410
+  5 power: 2261 records, 15 clocks; error as % of board power
+      all                    n=2261  rms  2.28%  bias -0.01%  worst  +16.2%
+      solo                   n=1558  rms  2.02%  bias +0.26%  worst   +9.6%
+      corun                  n= 703  rms  2.78%  bias -0.59%  worst  +16.2%
+      e_panel 19.47 mJ/GB   e_mac 1.695 J/TMAC (real pairs)   e_pad 0.598 J/TMAC (padding)   e_dram 77.56 mJ/GB
+      g:   510:1.000  630:0.983  750:0.983  870:0.978  930:0.970  990:0.991  1050:1.043  1110:1.096  1170:1.176  1230:1.305  1290:1.424  1320:1.506  1350:1.611  1380:1.694  1410:1.833
+      act: 510:2.6  630:3.7  750:3.4  870:3.8  930:4.3  990:1.7  1050:4.6  1110:2.8  1170:5.7  1230:7.0  1290:8.9  1320:9.4  1350:13.1  1380:16.7  1410:21.3
+      e_dram refitted clock by clock: 74.8-81.4 mJ/GB over 510-1410 MHz, no trend
+      act, made monotone: 2.6  3.4  3.4  3.4  3.4  3.4  3.7  3.7  5.7  7.0  8.9  9.4  13.1  16.7  21.3
+      second campaign, g at the shared clocks: 1050:-1.4%  1110:+0.0%  1170:+0.2%  1230:-3.0%  1290:-5.6%  1320:-6.9%  1350:-7.6%  1380:-7.0%  1410:-9.9%
+  epilogue energy: 0.34 + g x 1.44 uJ per pair; rms 7.8 mJ on layers of 48 mJ median
+wrote /home/xinting/aiconfigurator_overlap_exp/tools/moe_megakernel/sim/calib/a100_qwen.json

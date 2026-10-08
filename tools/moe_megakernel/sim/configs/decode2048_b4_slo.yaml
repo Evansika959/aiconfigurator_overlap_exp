@@ -1,0 +1,14 @@
+# B4 with the other objective: not "as fast as TDP allows" but "the least energy that
+# still meets a latency target" -- here 2.2 ms per layer. The cold domain is slowed
+# until its partition finishes with the hot one.
+name: decode2048_b4_slo
+model: qwen
+hardware:
+  domains: [{name: cold, sms: 32}, {name: hot, sms: 76}]
+  tdp_w: 400
+  uncore: max
+  actuation_ms: 38
+kernel: {type: persistent, block_m: 64, n_cold: 64}
+controller: {type: min_energy_slo, slo_ms: 2.2}
+workload:
+  - {phase: decode, cells: 32, layers: [0], repeat: 2000}

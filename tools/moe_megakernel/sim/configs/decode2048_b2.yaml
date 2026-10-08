@@ -1,0 +1,11 @@
+# B2 -- the kernel a partition needs, without the partition: the persistent kernel (one
+# resident block per SM, as measured) over all 108 SMs, best single clock under TDP.
+name: decode2048_b2
+model: qwen
+hardware:
+  domains: [{name: all, sms: 108}]
+  tdp_w: 400
+kernel: {type: persistent, block_m: 64}
+controller: {type: tdp_bisection}
+workload:
+  - {phase: decode, cells: 32, layers: [0], repeat: 2000}

@@ -1,0 +1,6 @@
+==PROF== Connected to process 72262 (/usr/bin/python3.12)
+==PROF== Disconnected from process 72262
+"ID","Process ID","Process Name","Host Name","Kernel Name","Context","Stream","Block Size","Grid Size","Device","CC","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","72262","python3.12","127.0.0.1","ncclDevKernel_AllReduce_Sum_bf16_RING_LL(ncclDevKernelArgsStorage<4096>)","1","7","(544, 1, 1)","(24, 1, 1)","0","8.0","Command line profiler metrics","launch__block_size","","544"
+"0","72262","python3.12","127.0.0.1","ncclDevKernel_AllReduce_Sum_bf16_RING_LL(ncclDevKernelArgsStorage<4096>)","1","7","(544, 1, 1)","(24, 1, 1)","0","8.0","Command line profiler metrics","launch__grid_size","","24"
+"0","72262","python3.12","127.0.0.1","ncclDevKernel_AllReduce_Sum_bf16_RING_LL(ncclDevKernelArgsStorage<4096>)","1","7","(544, 1, 1)","(24, 1, 1)","0","8.0","Command line profiler metrics","launch__shared_mem_config_size","byte","102400"

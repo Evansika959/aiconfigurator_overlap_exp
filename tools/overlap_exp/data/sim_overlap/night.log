@@ -1,0 +1,39 @@
+### cal finished 08:02:47
+### ncu: GEMM launch attributes 08:02:47
+### occupancy probe under NCCL 08:02:59
+### commsize 08:09:04
+### world2 08:25:27
+### world3 08:28:25
+### hetero 08:31:26
+### unbalanced 08:41:45
+### night queue done 08:45:32
+0, Disabled, 1095 MHz, 400.00 W
+1, Disabled, 1095 MHz, 400.00 W
+2, Disabled, 1095 MHz, 400.00 W
+3, Disabled, 1095 MHz, 400.00 W
+### endphase 08:45:49
+### night queue 2 done 08:49:48
+### ncu: GEMM launch attributes (second attempt) 08:49:54
+### train 08:50:12
+### night queue 3 done 08:54:24
+0, Disabled, 1095 MHz, 400.00 W
+1, Disabled, 1095 MHz, 400.00 W
+2, Disabled, 1095 MHz, 400.00 W
+3, Disabled, 1095 MHz, 400.00 W
+### blind test starts; predictions registered 2026-10-08 09:59:30 UTC 10:33:04
+### blind_multi 10:33:04
+### blind_train 10:35:59
+### blind_auto 10:39:11
+### blind 10:42:23
+### blind test done 11:17:05
+0, Disabled, 1095 MHz, 400.00 W
+1, Disabled, 1095 MHz, 400.00 W
+2, Disabled, 1095 MHz, 400.00 W
+3, Disabled, 1095 MHz, 400.00 W
+### policy 11:17:09
+### NCCL's default CTA count (ncu, rank 0) 11:18:12
+### after-blind queue done 11:18:47
+0, Disabled, 1095 MHz, 400.00 W
+1, Disabled, 1095 MHz, 400.00 W
+2, Disabled, 1095 MHz, 400.00 W
+3, Disabled, 1095 MHz, 400.00 W

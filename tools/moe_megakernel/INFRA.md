@@ -1,7 +1,8 @@
 # How the routing traces are produced
 
-Everything needed to reproduce `data/routing_*.npz`, `data/skew_across_models.csv` and
-`figs/fig16_skew_across_models.png`.
+Everything needed to reproduce `data/routing_*.npz`, `data/skew_across_models.csv` (five
+families; `data/skew_across_models_v2.csv` with GPT-OSS-20B, added on 2026-10-01),
+`figs/fig16_skew_across_models.png` and `figs/fig16c_skew_with_gptoss.png`.
 
 ## Hardware
 
@@ -50,6 +51,7 @@ Sharded across the four GPUs with `device_map="auto"`, bf16.
 | `olmoe_it` | allenai/OLMoE-1B-7B-0924-Instruct | 64 | 8 | 16 | 6.9B |
 | `qwen3` | Qwen/Qwen3-30B-A3B | 128 | 8 | 48 | 30.5B |
 | `qwen3next` | Qwen/Qwen3-Next-80B-A3B-Instruct | **512** | 10 | 48 | **80B** |
+| `gptoss` | openai/gpt-oss-20b | 32 | 4 | 24 | 20.9B |
 
 Mixtral-8x7B (8 experts) and Qwen1.5-MoE-A2.7B (60) were traced and then dropped from the
 study; their `.npz` files are kept in `data/retired/`.
@@ -70,6 +72,70 @@ conversations against the others' 1536, and only **78 tokens per expert** agains
 
 204 GB of weights in `~/.cache/huggingface`. `fetch_models.sh` downloads them
 sequentially -- parallel downloads saturate the link and the later ones time out.
+
+### GPT-OSS-20B (added 2026-10-01)
+
+Same prompts, same 24 batches of 64 conversations, same 512-token cap, same analysis.
+What had to change is listed here, with what each change costs. A trace of OLMoE with the
+changed tracer is identical to the stored one, count for count, prefill and decode.
+
+**The router is not a bias-free `nn.Linear`.** It is a module of its own with a weight
+and a bias, returning `(scores, indices)`. It is found by the shape of its weight,
+(experts, hidden), and the indices it returns are what is counted -- the block's own
+top-4. The exactly-one-candidate guard is unchanged.
+
+**A 64-row batch does not fit in one forward.** transformers computes EVERY expert on
+EVERY position (the input is repeated once per expert), and at 64 x 512 positions the
+temporaries of one layer run a 40 GB card out of memory. `--rows 16` forwards the same
+padded batch 16 rows at a time and adds the counts. A row is the tensor it would have been in the full batch, so
+the routing is the same up to floating-point ties: on OLMoE, where both ways fit, 0.12%
+of the prefill dispatches move.
+
+**It is released in MXFP4.** The MoE weights in the checkpoint are 4-bit; without the
+`kernels` package transformers dequantises them to bf16 at load. That loses nothing: an
+MXFP4 value is one of sixteen two-bit mantissas times a power of two, which bf16 holds
+exactly. This is the model as OpenAI ships it, not a quantisation chosen here.
+
+**Its chat template is long.** It prepends a 67-token system preamble to every prompt:
+39% of all tokens counted in a batch, against 0-9% for the other families, and identical
+in all 64 conversations. The trace with the template is the string a server receives and
+is the one in the table and the figure; `routing_gptoss_raw.npz` is the control with the
+raw turn (`--no-template`). The preamble accounts for 0.03 of the excess Gini: +0.464
+with it, +0.435 without.
+
+### Llama 4 Scout: traced, not in the comparison
+
+`data/routing_llama4.npz` exists and is left out of the table and the figures. The model
+is 107.8B parameters (16 experts, top-1, 48 layers; about 17B of them active per token),
+217 GB in bf16, and its trace is not like for like with the others in four ways:
+
+- **Prefill only.** 26 of its 48 layers fit on the four GPUs; the other 22 stay in RAM
+  and accelerate moves each to GPU 0 for its forward and back. A 64-row prefill takes
+  35 s that way. A decode step would move the same 22 layers again for one token per
+  row, so none were run.
+- **A modified MoE forward** (`--sparse-moe`): each expert is computed only on the
+  positions routed to it, where transformers computes all 16 on every position. The 15
+  a position was not routed to receive an input multiplied by a score of exactly zero
+  and return exactly zero, so the arithmetic on the rows that matter is the same, but it
+  is not bit-identical: on 4 rows, 0.77% of the routing decisions differ from the dense
+  path. That is the model's own noise floor with top-1 routing through 48 bf16 layers --
+  the dense path forwarded 2 rows at a time instead of 4 differs from itself by 0.74%,
+  and twice the same way by 0 -- but it is a different code path from every other model
+  here.
+- **Top-1 beside a shared expert.** Every token goes through one routed expert of 16
+  and through a shared expert. Only the routed one can be counted, so its "share of
+  dispatched tokens" is a share of half the MoE work.
+- **Weights from a mirror.** `meta-llama/Llama-4-Scout-17B-16E-Instruct` is gated and
+  this box has no token. The 50 weight files and `tokenizer.json` of
+  `unsloth/Llama-4-Scout-17B-16E-Instruct` have the same size and sha256 as Meta's (the
+  hashes are public metadata of the gated repository); `config.json`,
+  `tokenizer_config.json` and `chat_template.jinja` are the mirror's.
+
+For the record, its excess Gini is +0.389 ± 0.017 and its busiest expert takes 18.0% of
+a layer's tokens where a uniform router would give 6.25%
+(`data/skew_across_models_v2.csv`, role "not compared").
+`python3 make_skew_gptoss_fig.py --with-llama4` redraws the figure with it
+(`figs/fig16b_skew_six_models.png`).
 
 ## Inference framework -- and why it is the reference implementation, not a server
 
@@ -179,8 +245,9 @@ the same token count, and the **excess** is the part the router caused.
 cd tools/moe_megakernel
 ./fetch_models.sh                 # ~204 GB, sequential
 ./run_all_models.sh               # B=64, 512-token cap, 8 decode steps, per model
-python3 analyse_skew.py           # -> data/skew_across_models.csv
+python3 analyse_skew.py           # -> data/skew_across_models_v2.csv
 python3 make_skew_fig.py          # -> figs/fig16_skew_across_models.png
+python3 make_skew_gptoss_fig.py   # -> figs/fig16c_skew_with_gptoss.png
 ```
 
 Per-model tracing runs in 3-8 s once the weights are cached; the whole set is ~2 minutes
@@ -217,3 +284,27 @@ expert count, and the *same 24 prompt batches* (same seeds), so the comparison c
 So instruction tuning does raise the skew, but by about **+0.016**, not the +0.04 the
 single-batch version suggested. The effect is only visible because the pairing removes the
 prompt-draw variance, which is an order of magnitude larger than the effect itself.
+
+
+### With GPT-OSS-20B (2026-10-01)
+
+`figs/fig16c_skew_with_gptoss.png`, `data/skew_across_models_v2.csv`. The Qwen3-Next row
+was in the data and missing from the table above.
+
+| model | experts | top-k | tokens/expert | **excess Gini** | max/mean |
+|---|---|---|---|---|---|
+| Qwen3-Next-80B-A3B (batch 32) | 512 | 10 | 78 | **+0.568 ± 0.036** | 10.96 ± 2.42 |
+| GPT-OSS-20B | 32 | 4 | 1406 | **+0.464 ± 0.026** | 4.33 ± 0.20 |
+| GPT-OSS-20B, raw prompt (control) | 32 | 4 | 1146 | +0.435 ± 0.037 | 3.77 ± 0.38 |
+
+**GPT-OSS breaks the pattern.** It has 32 experts, fewer than every family above, and is
+as skewed as Qwen3-30B with 128 (+0.464 against +0.427) and more skewed than Granite with
+40 and OLMoE with 64 (+0.329 and +0.250). Its busiest expert takes 13.5% of a layer's
+tokens where a uniform router would give 3.1%, and its skew grows with depth, from a Gini
+of 0.21 at the first layer to 0.71 at the last. The correlation between expert count and
+excess Gini, +0.90 over the five families above, is +0.73 with GPT-OSS (+0.61 against
+log2 of the expert count). Expert count alone does not predict the skew.
+
+The checked-in `skew_across_models.csv` says Qwen3-Next saw 1536 conversations; it saw
+768 (24 batches of 32). The v2 file has batches x batch size and a `role` column;
+nothing else in its first five rows differs.

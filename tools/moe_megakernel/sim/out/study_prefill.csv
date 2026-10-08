@@ -1,0 +1,103 @@
+objective,name,what,config,f,ms,mj,w,worst_config,worst_ms,worst_mj
+fastest under TDP,B0,"queue kernel, stock governor",,1318,3.770292383056472,1507.9687488548318,399.9606915451908,,,
+fastest under TDP,B1,"queue kernel, one clock",,1305,3.8008314397754206,1481.8891706281172,389.8855274454574,,,
+fastest under TDP,B2,"persistent kernel, one clock",BM128,1380,4.536770340168956,1756.8772889973147,387.25285991265014,,,
+fastest under TDP,B3,"pinned, one clock","BM128, 96 cold experts on 64 SMs",1380,4.554408266049088,1758.4891968927784,386.10706246988553,"BM128, 8 cold experts on 96 SMs",32.054766321023806,4590.315094926078
+fastest under TDP,B4,"pinned, a clock per domain","BM128, 96 cold experts on 64 SMs",1395/1380,4.515551553611594,1793.5532330806755,397.19471957886725,"BM128, 120 cold experts on 16 SMs",21.713516641398485,3574.219482674243
+fastest under TDP,B4@16,... on a 16-SM cold domain,"BM128, 32 cold experts on 16 SMs",1215/1410,4.578717817206492,1829.5348622964882,399.57362199112333,"BM128, 120 cold experts on 16 SMs",21.713516641398485,3574.219482674243
+fastest under TDP,B4@32,... on a 32-SM cold domain,"BM128, 56 cold experts on 32 SMs",1350/1410,4.60670573797206,1836.9151078375705,398.7480886170532,"BM128, 120 cold experts on 32 SMs",11.32247481827624,2553.231465717712
+fastest under TDP,B4@48,... on a 48-SM cold domain,"BM128, 80 cold experts on 48 SMs",1410/1365,4.519957469734813,1790.5409752858666,396.14111134344773,"BM128, 120 cold experts on 48 SMs",7.860003630849139,2213.020960199613
+fastest under TDP,B4@64,... on a 64-SM cold domain,"BM128, 96 cold experts on 64 SMs",1395/1380,4.515551553611594,1793.5532330806755,397.19471957886725,"BM128, 8 cold experts on 64 SMs",9.420481748474735,2366.348170888721
+fastest under TDP,B4@80,... on a 80-SM cold domain,"BM128, 112 cold experts on 80 SMs",1410/1350,4.61099345462476,1842.5972045700241,399.60959014633295,"BM128, 8 cold experts on 80 SMs",14.268217657465799,2842.670021632721
+fastest under TDP,B3*,"pinned, one clock (vLLM per-SM costs)","BM128, 88 cold experts on 56 SMs",1320,3.788830568548708,1514.0657000129927,399.6129340227921,"BM128, 8 cold experts on 96 SMs",24.51217719664346,3849.2062394423942
+fastest under TDP,B4*,"pinned, a clock per domain (vLLM per-SM costs)","BM128, 96 cold experts on 64 SMs",1320/1305,3.7809843180086893,1500.1095202772344,396.75105583809693,"BM128, 120 cold experts on 16 SMs",16.704940119835122,3082.0939867287725
+fastest under TDP,B4*@16,... on a 16-SM cold domain (vLLM per-SM costs),"BM128, 32 cold experts on 16 SMs",1065/1335,3.8333024863041443,1515.4418291927811,395.33583238141097,"BM128, 120 cold experts on 16 SMs",16.704940119835122,3082.0939867287725
+fastest under TDP,B4*@32,... on a 32-SM cold domain (vLLM per-SM costs),"BM128, 56 cold experts on 32 SMs",1200/1350,3.828010064643771,1527.9066045026077,399.1386069265187,"BM128, 120 cold experts on 32 SMs",8.785249782878175,2303.9324635938738
+fastest under TDP,B4*@48,... on a 48-SM cold domain (vLLM per-SM costs),"BM128, 80 cold experts on 48 SMs",1320/1320,3.8006256780430574,1515.014055274255,398.6222752813521,"BM128, 120 cold experts on 48 SMs",6.143627360975436,2044.375733482438
+fastest under TDP,B4*@64,... on a 64-SM cold domain (vLLM per-SM costs),"BM128, 96 cold experts on 64 SMs",1320/1305,3.7809843180086893,1500.1095202772344,396.75105583809693,"BM128, 8 cold experts on 64 SMs",7.333966290473123,2161.334341081747
+fastest under TDP,B4*@80,... on a 80-SM cold domain (vLLM per-SM costs),"BM128, 112 cold experts on 80 SMs",1350/1185,3.8260386765499037,1529.5854374122334,399.7830567649994,"BM128, 8 cold experts on 80 SMs",11.039257871606013,2525.403542999754
+"least energy, <= 1.00 x B0 latency",B0,"queue kernel, stock governor",,1318,3.770292383056472,1507.9687488548318,399.9606915451908,,,
+"least energy, <= 1.00 x B0 latency",B1,"queue kernel, one clock",,,,,,,,
+"least energy, <= 1.00 x B0 latency",B2,"persistent kernel, one clock",,,,,,,,
+"least energy, <= 1.00 x B0 latency",B3,"pinned, one clock",,,,,,,,
+"least energy, <= 1.00 x B0 latency",B4,"pinned, a clock per domain",,,,,,,,
+"least energy, <= 1.00 x B0 latency",B4@16,... on a 16-SM cold domain,,,,,,,,
+"least energy, <= 1.00 x B0 latency",B4@32,... on a 32-SM cold domain,,,,,,,,
+"least energy, <= 1.00 x B0 latency",B4@48,... on a 48-SM cold domain,,,,,,,,
+"least energy, <= 1.00 x B0 latency",B4@64,... on a 64-SM cold domain,,,,,,,,
+"least energy, <= 1.00 x B0 latency",B4@80,... on a 80-SM cold domain,,,,,,,,
+"least energy, <= 1.00 x B0 latency",B3*,"pinned, one clock (vLLM per-SM costs)",,,,,,,,
+"least energy, <= 1.00 x B0 latency",B4*,"pinned, a clock per domain (vLLM per-SM costs)",,,,,,,,
+"least energy, <= 1.00 x B0 latency",B4*@16,... on a 16-SM cold domain (vLLM per-SM costs),,,,,,,,
+"least energy, <= 1.00 x B0 latency",B4*@32,... on a 32-SM cold domain (vLLM per-SM costs),,,,,,,,
+"least energy, <= 1.00 x B0 latency",B4*@48,... on a 48-SM cold domain (vLLM per-SM costs),,,,,,,,
+"least energy, <= 1.00 x B0 latency",B4*@64,... on a 64-SM cold domain (vLLM per-SM costs),,,,,,,,
+"least energy, <= 1.00 x B0 latency",B4*@80,... on a 80-SM cold domain (vLLM per-SM costs),,,,,,,,
+"least energy, <= 1.02 x B0 latency",B0,"queue kernel, stock governor",,1318,3.770292383056472,1507.9687488548318,399.9606915451908,,,
+"least energy, <= 1.02 x B0 latency",B1,"queue kernel, one clock",,1290,3.8372103375240494,1451.5942053815688,378.2941454072613,,,
+"least energy, <= 1.02 x B0 latency",B2,"persistent kernel, one clock",,,,,,,,
+"least energy, <= 1.02 x B0 latency",B3,"pinned, one clock",,,,,,,,
+"least energy, <= 1.02 x B0 latency",B4,"pinned, a clock per domain",,,,,,,,
+"least energy, <= 1.02 x B0 latency",B4@16,... on a 16-SM cold domain,,,,,,,,
+"least energy, <= 1.02 x B0 latency",B4@32,... on a 32-SM cold domain,,,,,,,,
+"least energy, <= 1.02 x B0 latency",B4@48,... on a 48-SM cold domain,,,,,,,,
+"least energy, <= 1.02 x B0 latency",B4@64,... on a 64-SM cold domain,,,,,,,,
+"least energy, <= 1.02 x B0 latency",B4@80,... on a 80-SM cold domain,,,,,,,,
+"least energy, <= 1.02 x B0 latency",B3*,"pinned, one clock (vLLM per-SM costs)","BM128, 96 cold experts on 64 SMs",1305,3.81505910510869,1483.0177610502328,388.7273355907764,"BM128, 40 cold experts on 20 SMs",3.8387658624459537,1518.0806181213695
+"least energy, <= 1.02 x B0 latency",B4*,"pinned, a clock per domain (vLLM per-SM costs)","BM128, 80 cold experts on 48 SMs",1305/1275,3.8413179472246926,1448.8821774111177,377.1836118012356,"BM128, 64 cold experts on 32 SMs",3.8434109128819283,1524.6954032654003
+"least energy, <= 1.02 x B0 latency",B4*@16,... on a 16-SM cold domain (vLLM per-SM costs),"BM128, 32 cold experts on 16 SMs",1050/1335,3.8339329145036722,1514.0850497462902,394.91693869200066,,,
+"least energy, <= 1.02 x B0 latency",B4*@32,... on a 32-SM cold domain (vLLM per-SM costs),"BM128, 56 cold experts on 32 SMs",1155/1350,3.8315779456407935,1510.4740862110123,394.21724094885934,"BM128, 64 cold experts on 32 SMs",3.8434109128819283,1524.6954032654003
+"least energy, <= 1.02 x B0 latency",B4*@48,... on a 48-SM cold domain (vLLM per-SM costs),"BM128, 80 cold experts on 48 SMs",1305/1275,3.8413179472246926,1448.8821774111177,377.1836118012356,,,
+"least energy, <= 1.02 x B0 latency",B4*@64,... on a 64-SM cold domain (vLLM per-SM costs),"BM128, 96 cold experts on 64 SMs",1305/1290,3.816738422429091,1469.8129754248546,385.0965962947547,,,
+"least energy, <= 1.02 x B0 latency",B4*@80,... on a 80-SM cold domain (vLLM per-SM costs),"BM128, 112 cold experts on 80 SMs",1350/1125,3.839326789209028,1511.443972452379,393.6742182771486,,,
+"least energy, <= 1.05 x B0 latency",B0,"queue kernel, stock governor",,1318,3.770292383056472,1507.9687488548318,399.9606915451908,,,
+"least energy, <= 1.05 x B0 latency",B1,"queue kernel, one clock",,1245,3.952115318778686,1373.84135618546,347.62177855934004,,,
+"least energy, <= 1.05 x B0 latency",B2,"persistent kernel, one clock",,,,,,,,
+"least energy, <= 1.05 x B0 latency",B3,"pinned, one clock",,,,,,,,
+"least energy, <= 1.05 x B0 latency",B4,"pinned, a clock per domain",,,,,,,,
+"least energy, <= 1.05 x B0 latency",B4@16,... on a 16-SM cold domain,,,,,,,,
+"least energy, <= 1.05 x B0 latency",B4@32,... on a 32-SM cold domain,,,,,,,,
+"least energy, <= 1.05 x B0 latency",B4@48,... on a 48-SM cold domain,,,,,,,,
+"least energy, <= 1.05 x B0 latency",B4@64,... on a 64-SM cold domain,,,,,,,,
+"least energy, <= 1.05 x B0 latency",B4@80,... on a 80-SM cold domain,,,,,,,,
+"least energy, <= 1.05 x B0 latency",B3*,"pinned, one clock (vLLM per-SM costs)","BM128, 96 cold experts on 64 SMs",1260,3.927793265492355,1392.2395392816275,354.4584567403672,"BM128, 32 cold experts on 20 SMs",3.9534512675932088,1574.5447168100702
+"least energy, <= 1.05 x B0 latency",B4*,"pinned, a clock per domain (vLLM per-SM costs)","BM128, 80 cold experts on 48 SMs",1260/1230,3.9581255723892403,1372.7419912039597,346.8161800575045,"BM128, 24 cold experts on 16 SMs",3.945233551863083,1573.9184958423045
+"least energy, <= 1.05 x B0 latency",B4*@16,... on a 16-SM cold domain (vLLM per-SM costs),"BM128, 40 cold experts on 16 SMs",1380/1230,3.9521237789173083,1413.9168407918362,357.76127466816877,"BM128, 24 cold experts on 16 SMs",3.945233551863083,1573.9184958423045
+"least energy, <= 1.05 x B0 latency",B4*@32,... on a 32-SM cold domain (vLLM per-SM costs),"BM128, 56 cold experts on 32 SMs",1125/1305,3.9392852759194565,1415.2998767255183,359.2783405094157,"BM128, 64 cold experts on 32 SMs",3.951468774385027,1415.522069856618
+"least energy, <= 1.05 x B0 latency",B4*@48,... on a 48-SM cold domain (vLLM per-SM costs),"BM128, 80 cold experts on 48 SMs",1260/1230,3.9581255723892403,1372.7419912039597,346.8161800575045,"BM128, 72 cold experts on 48 SMs",3.952705396910707,1530.1568662210498
+"least energy, <= 1.05 x B0 latency",B4*@64,... on a 64-SM cold domain (vLLM per-SM costs),"BM128, 96 cold experts on 64 SMs",1260/1245,3.929597285767241,1384.3935923531417,352.2991013270825,,,
+"least energy, <= 1.05 x B0 latency",B4*@80,... on a 80-SM cold domain (vLLM per-SM costs),"BM128, 112 cold experts on 80 SMs",1305/1095,3.9385855451264162,1416.5008177953077,359.6470868959741,,,
+"least energy, <= 1.10 x B0 latency",B0,"queue kernel, stock governor",,1318,3.770292383056472,1507.9687488548318,399.9606915451908,,,
+"least energy, <= 1.10 x B0 latency",B1,"queue kernel, one clock",,1185,4.120069798322864,1286.4637342288395,312.24318936356707,,,
+"least energy, <= 1.10 x B0 latency",B2,"persistent kernel, one clock",,,,,,,,
+"least energy, <= 1.10 x B0 latency",B3,"pinned, one clock",,,,,,,,
+"least energy, <= 1.10 x B0 latency",B4,"pinned, a clock per domain",,,,,,,,
+"least energy, <= 1.10 x B0 latency",B4@16,... on a 16-SM cold domain,,,,,,,,
+"least energy, <= 1.10 x B0 latency",B4@32,... on a 32-SM cold domain,,,,,,,,
+"least energy, <= 1.10 x B0 latency",B4@48,... on a 48-SM cold domain,,,,,,,,
+"least energy, <= 1.10 x B0 latency",B4@64,... on a 64-SM cold domain,,,,,,,,
+"least energy, <= 1.10 x B0 latency",B4@80,... on a 80-SM cold domain,,,,,,,,
+"least energy, <= 1.10 x B0 latency",B3*,"pinned, one clock (vLLM per-SM costs)","BM128, 96 cold experts on 64 SMs",1185,4.13632114989018,1287.6124588020161,311.29412154958095,"BM128, 112 cold experts on 72 SMs",4.132801574217109,1637.12599182423
+"least energy, <= 1.10 x B0 latency",B4*,"pinned, a clock per domain (vLLM per-SM costs)","BM128, 96 cold experts on 64 SMs",1185/1170,4.138365320457755,1278.2182598604652,308.8703294370054,"BM128, 120 cold experts on 80 SMs",4.146417927833581,1626.566930546212
+"least energy, <= 1.10 x B0 latency",B4*@16,... on a 16-SM cold domain (vLLM per-SM costs),"BM128, 40 cold experts on 16 SMs",1305/1155,4.142281922681278,1288.2154155000098,310.9917286040624,"BM128, 8 cold experts on 16 SMs",4.138302619497499,1612.6515805428046
+"least energy, <= 1.10 x B0 latency",B4*@32,... on a 32-SM cold domain (vLLM per-SM costs),"BM128, 64 cold experts on 32 SMs",1290/1140,4.141634262587718,1302.7591200076452,314.55194674617974,"BM128, 48 cold experts on 32 SMs",4.147018638486355,1452.1551246766894
+"least energy, <= 1.10 x B0 latency",B4*@48,... on a 48-SM cold domain (vLLM per-SM costs),"BM128, 80 cold experts on 48 SMs",1200/1170,4.128895292031758,1284.8648455989496,311.1885273716132,"BM128, 88 cold experts on 48 SMs",4.14659537253129,1458.107060153424
+"least energy, <= 1.10 x B0 latency",B4*@64,... on a 64-SM cold domain (vLLM per-SM costs),"BM128, 96 cold experts on 64 SMs",1185/1170,4.138365320457755,1278.2182598604652,308.8703294370054,"BM128, 104 cold experts on 64 SMs",4.145714044236175,1482.9296163025165
+"least energy, <= 1.10 x B0 latency",B4*@80,... on a 80-SM cold domain (vLLM per-SM costs),"BM128, 112 cold experts on 80 SMs",1230/1035,4.138914174551138,1312.7172340417633,317.16464238694357,"BM128, 120 cold experts on 80 SMs",4.146417927833581,1626.566930546212
+"least energy, <= 1.25 x B0 latency",B0,"queue kernel, stock governor",,1318,3.770292383056472,1507.9687488548318,399.9606915451908,,,
+"least energy, <= 1.25 x B0 latency",B1,"queue kernel, one clock",,1020,4.690804490653002,1158.2478692916357,246.9188113893012,,,
+"least energy, <= 1.25 x B0 latency",B2,"persistent kernel, one clock",BM128,1320,4.707054724952629,1587.893137623121,337.3432497407604,,,
+"least energy, <= 1.25 x B0 latency",B3,"pinned, one clock","BM128, 96 cold experts on 64 SMs",1335,4.681412570288687,1634.9375110128854,349.24021039915823,"BM128, 104 cold experts on 76 SMs",4.704438021909831,1837.5830843837218
+"least energy, <= 1.25 x B0 latency",B4,"pinned, a clock per domain","BM128, 80 cold experts on 48 SMs",1335/1305,4.70726381348281,1591.4001568402184,338.073288410571,"BM128, 32 cold experts on 16 SMs",4.712492823730873,1666.1382425100644
+"least energy, <= 1.25 x B0 latency",B4@16,... on a 16-SM cold domain,"BM128, 32 cold experts on 16 SMs",1050/1365,4.712492823730873,1666.1382425100644,353.5577251428015,,,
+"least energy, <= 1.25 x B0 latency",B4@32,... on a 32-SM cold domain,"BM128, 56 cold experts on 32 SMs",1185/1380,4.697999746568864,1656.5761733897157,352.6130827485845,,,
+"least energy, <= 1.25 x B0 latency",B4@48,... on a 48-SM cold domain,"BM128, 80 cold experts on 48 SMs",1335/1305,4.70726381348281,1591.4001568402184,338.073288410571,,,
+"least energy, <= 1.25 x B0 latency",B4@64,... on a 64-SM cold domain,"BM128, 96 cold experts on 64 SMs",1335/1305,4.686851317706375,1601.8802751701937,341.7817563613503,,,
+"least energy, <= 1.25 x B0 latency",B4@80,... on a 80-SM cold domain,"BM128, 112 cold experts on 80 SMs",1380/1140,4.706118305471236,1651.3112464484698,350.88604647458385,,,
+"least energy, <= 1.25 x B0 latency",B3*,"pinned, one clock (vLLM per-SM costs)","BM128, 96 cold experts on 64 SMs",1020,4.710153056384809,1159.4669106136562,246.16331926665322,"BM128, 40 cold experts on 44 SMs",4.7046183988862005,1837.6001882095136
+"least energy, <= 1.25 x B0 latency",B4*,"pinned, a clock per domain (vLLM per-SM costs)","BM128, 80 cold experts on 48 SMs",1035/1005,4.709682369389123,1159.1968943352613,246.13058873556622,"BM128, 48 cold experts on 48 SMs",4.711514798616257,1829.9464256578403
+"least energy, <= 1.25 x B0 latency",B4*@16,... on a 16-SM cold domain (vLLM per-SM costs),"BM128, 40 cold experts on 16 SMs",1125/1005,4.703123517509402,1166.0395834324004,247.92876034221,"BM128, 48 cold experts on 16 SMs",4.712707111030838,1350.6371885899414
+"least energy, <= 1.25 x B0 latency",B4*@32,... on a 32-SM cold domain (vLLM per-SM costs),"BM128, 64 cold experts on 32 SMs",1110/990,4.711525023778467,1168.5262617524627,248.01444454928273,"BM128, 8 cold experts on 32 SMs",4.712350774205101,1744.5667478687533
+"least energy, <= 1.25 x B0 latency",B4*@48,... on a 48-SM cold domain (vLLM per-SM costs),"BM128, 80 cold experts on 48 SMs",1035/1005,4.709682369389123,1159.1968943352613,246.13058873556622,"BM128, 48 cold experts on 48 SMs",4.711514798616257,1829.9464256578403
+"least energy, <= 1.25 x B0 latency",B4*@64,... on a 64-SM cold domain (vLLM per-SM costs),"BM128, 96 cold experts on 64 SMs",1020/1020,4.710153056384809,1159.4669106136562,246.16331926665322,"BM128, 112 cold experts on 64 SMs",4.670587724888362,1458.6581550888118
+"least energy, <= 1.25 x B0 latency",B4*@80,... on a 80-SM cold domain (vLLM per-SM costs),"BM128, 112 cold experts on 80 SMs",1065/930,4.682975862591618,1176.6576177874797,251.26279791164728,"BM128, 120 cold experts on 80 SMs",4.6706890341936305,1313.0130681613641

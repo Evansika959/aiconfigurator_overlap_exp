@@ -14,7 +14,7 @@ with a working partitioned persistent kernel, not by argument: the kernel exists
 bit-identical to vLLM's path, and the partitioning works. What kills the idea is the
 silicon, not the software.
 
-Figure: `figs/fig18_two_domain_verdict.pdf`.
+Figure: `figs/fig18_two_domain_verdict.png`.
 
 ---
 
@@ -274,6 +274,78 @@ Two further checks:
   heterogeneity that would make this work is not there. This is the same assumption
   flagged in §6 as the weakest one, seen from the power side.
 
+### 4b-ii. Letting the hot domain clock above what the whole chip can sustain
+
+The table above has a blind spot, and it is the one the objection is really about. Its
+search, like every composition in §3-4, stops at 1290 MHz — the fastest clock the
+full-width kernel holds — so no split in it could put the hot SMs *above* the chip-wide
+limit. But that is the whole proposal: slow the cold domain, and spend the power it frees
+on hot SMs clocked higher than 108 SMs could run together.
+
+`predict_tdp.py` models it dynamically rather than by enumeration: fix f_cold, binary-search
+the highest f_hot whose pair stays under 400 W (up to the A100's 1410 MHz max), keep the
+f_cold with the shortest makespan. The uniform baseline gets the same search with one knob
+— which is what the GPU's boost loop does, and it lands where the hardware does: **1322
+MHz, 400.0 W, 3.759 ms**. The binary search is checked against an exhaustive 1 MHz scan.
+
+The deciding quantity is the **marginal power cost of throughput**, dP/dX in
+W per (layer/s). A split straddling the operating point trades power off the cold side at
+the cost *below* 1322 MHz and buys throughput on the hot side at the cost *above* it, so it
+wins only if the curve gets **cheaper** above the operating point. Measured:
+
+| segment | dP/dX, per-pass mean ± sd |
+|---|---|
+| 510-915 MHz (under the voltage floor) | ~0.8-0.9 |
+| 1170-1230 | 3.40 ± 0.17 |
+| 1230-1290 | 3.58 ± 0.06 |
+| 1290-1322 (to the governor point) | 9.66 ± 5.87 (range 5.50-17.58) |
+| **above 1322** | **unmeasurable at full width** — locked at 1335, 1380 or 1410 the kernel sits at ~1320 MHz on the limit |
+| above 1322, rebuilt from a 54-SM sweep (added later, see the end of this section) | 3.52 to 1335 MHz, then 5.67-6.49 up to 1410; chord 5.76 |
+
+So the curve above 1322 is extended at a constant marginal cost m, which is the most
+generous extension available to the design (a rising m only makes the hot side dearer),
+and m is swept:
+
+| m above 1322 | best split, free kernel | best split, measured kernel cost |
+|---|---|---|
+| 0.91 (the sub-floor slope; physically impossible here) | −1.90% latency | +2.76% |
+| 3.49 (curve stops steepening at exactly 1322) | −0.56% | +4.25% to +4.67% |
+| 5.00 | −0.29% | +4.78% to +4.95% |
+| 7.37 (the last segment's pooled slope) | 0.00% | +5.16% |
+| 10.0 | 0.00% | +5.27% |
+
+The free-kernel split wins by more than 0.01% only if m is below a **break-even of 4.67-7.24**
+(depending on phi). Every per-pass measurement of the last segment is above 5.50, and the
+voltage rises all the way to 1410 MHz, so the curve should steepen further, not flatten. At
+that point the dynamic search converges to f_cold = f_hot ≈ 1322 MHz, which is the
+governor's answer.
+
+The conclusion is **two-sided, and it closes either way**:
+
+* if the curve keeps steepening above 1322, as it must, the split gains **nothing**;
+* if it stopped steepening at exactly the operating point, the split's ceiling is
+  **≈0.6%** latency with a *free* partitioned kernel. The measured kernel costs +5.6%
+  (§1), so it loses by 2.8-5.3% at **every** m swept, including the impossible one.
+
+What the model does not settle is the exact value of m above 1322. Settling it needs a
+narrow partition locked at 1335-1410 MHz, which a full-width kernel cannot reach. That
+measurement moves the free-kernel ceiling between 0 and ~0.6%, and it cannot overturn
+the measured-kernel result. Routing imbalance does not appear anywhere in this argument,
+because the SM share s absorbs phi. A power-limited split can beat a uniform clock only
+if the two partitions have *different* P-vs-X curves, and at the same tile they do not
+(kappa ratio 1.025, §4c).
+
+**Settled since.** The narrow-partition sweep was run (`partition_kappa.py`,
+`data/partition_kappa_qwen_hiclk54.csv`, read by `analyse_hiclk.py`): the full-width
+curve rebuilt from 54 SMs has m = 3.52 up to 1335 MHz and 5.67-6.49 from there to 1410,
+chord 5.76 from 1320 to 1410. That is inside the break-even band, where the table above
+puts the free-kernel split between 0 and 0.3%. The event-driven simulator
+(`RESULTS_SIM.md`), fitted on partitions of 16-108 SMs up to 1410 MHz with the shared
+memory system and the power limiter in it, puts the second rail between -0.2% and +0.0%
+of latency at the 400 W wall with an efficient pinned kernel, and with the kernel as
+measured between -0.9% and +2.4% (slower in three workloads of four, because its cold
+domain must be whole GPCs): no detectable effect.
+
 ## 4c. Could a CUSTOM kernel create the heterogeneity a grouped GEMM lacks?
 
 Everything above partitions one grouped GEMM. The objection is fair: the whole reason to
@@ -333,7 +405,7 @@ cd tools/moe_megakernel
 CUDA_VISIBLE_DEVICES=0 python3 test_persistent.py                    # bit-exactness
 CUDA_VISIBLE_DEVICES=0 python3 pin_vs_queue.py --clock 1200 --blocks-per-sm 2
 python3 predict_two_domain.py
-python3 make_b2_fig.py                        # -> figs/fig18_two_domain_verdict.pdf
+python3 make_b2_fig.py                        # -> figs/fig18_two_domain_verdict.png
 ```
 
 `persistent_moe.py` holds the kernel; `test_persistent.py` checks it against

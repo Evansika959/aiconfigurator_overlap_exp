@@ -1,0 +1,78 @@
+{
+"world": 4,
+"ctas": [
+4,
+16
+],
+"runs": [
+{
+"mode": "gemm_only",
+"clock": 1200,
+"shape": "2048x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1200,
+"shape": "4096x4096x4096",
+"once": true
+},
+{
+"mode": "comm_only",
+"clock": 1200,
+"mib": 64
+},
+{
+"mode": "concurrent",
+"clock": 1200,
+"mib": 64,
+"shape": "2048x4096x4096"
+},
+{
+"mode": "concurrent_gf",
+"clock": 1200,
+"mib": 64,
+"shape": "2048x4096x4096"
+},
+{
+"mode": "serial",
+"clock": 1200,
+"mib": 64,
+"shape": "2048x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1200,
+"mib": 64,
+"shape": "4096x4096x4096"
+},
+{
+"mode": "concurrent_gf",
+"clock": 1200,
+"mib": 64,
+"shape": "4096x4096x4096"
+},
+{
+"mode": "serial",
+"clock": 1200,
+"mib": 64,
+"shape": "4096x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": [
+1410,
+900,
+900,
+900
+],
+"mib": 64,
+"shape": [
+"4096x4096x4096",
+"1024x4096x4096",
+"1024x4096x4096",
+"1024x4096x4096"
+]
+}
+]
+}

@@ -1,0 +1,11 @@
+# B1 -- no new kernel, no new hardware: the queue kernel at the best SINGLE clock under
+# TDP, found by bisection on the predicted board power.
+name: decode2048_b1
+model: qwen
+hardware:
+  domains: [{name: all, sms: 108}]
+  tdp_w: 400
+kernel: {type: queue, block_m: 128}
+controller: {type: tdp_bisection}
+workload:
+  - {phase: decode, cells: 32, layers: [0], repeat: 3000}

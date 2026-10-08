@@ -14,4 +14,15 @@ p = snapshot_download('$M', allow_patterns=['*.json','*.safetensors','*.txt','*.
 print('DONE', p)
 "
 done
+# Added 2026-10-01. GPT-OSS: the transformers checkpoint only (13 GB), not the `original/`
+# and `metal/` copies.
+python3 -c "
+from huggingface_hub import snapshot_download
+print('DONE', snapshot_download('openai/gpt-oss-20b', allow_patterns=['*.json', 'model-*.safetensors', '*.jinja', '*.txt'], ignore_patterns=['original/*', 'metal/*']))
+"
+# Llama 4 Scout is not part of the comparison (INFRA.md) and is 217 GB, so it is not
+# fetched here. Meta's repository is gated; the mirror's 50 weight files have the same
+# sha256 as Meta's:
+#   snapshot_download('unsloth/Llama-4-Scout-17B-16E-Instruct',
+#                     allow_patterns=['*.json', '*.safetensors', '*.jinja', '*.txt'])
 echo "ALL DONE $(date +%H:%M:%S)"

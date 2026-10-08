@@ -1,0 +1,444 @@
+world=4  30 runs x 10 CTA counts  (persistence was Disabled/Disabled/Disabled/Disabled)
+=== 1 CTA  [0 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 08:09:13.396406565 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+   1CTA                1410    4MiB                -     comm_only | T 0.577/0.610/0.616/0.580 ms  gemm   0.000  comm   0.534  108/107/109/105 W  clk 1410/1410/1410/1410
+   1CTA                1410    8MiB                -     comm_only | T    0.818 ms  gemm   0.000  comm   0.794  108/106/109/105 W  clk 1410/1410/1410/1410
+   1CTA                1410   16MiB                -     comm_only | T    1.581 ms  gemm   0.000  comm   1.557  109/107/110/105 W  clk 1410/1410/1410/1410
+   1CTA                1410  128MiB                -     comm_only | T   12.042 ms  gemm   0.000  comm  12.017  110/109/111/107 W  clk 1410/1410/1410/1410
+   1CTA                1410  512MiB                -     comm_only | T   47.921 ms  gemm   0.000  comm  47.894  111/109/111/108 W  clk 1410/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   1CTA                1200    4MiB                -     comm_only | T    0.616 ms  gemm   0.000  comm   0.592  93/91/92/90 W  clk 1200/1200/1200/1200
+   1CTA                1200    8MiB                -     comm_only | T    0.953 ms  gemm   0.000  comm   0.930  92/90/91/89 W  clk 1200/1200/1200/1200
+   1CTA                1200   16MiB                -     comm_only | T    1.818 ms  gemm   0.000  comm   1.793  93/91/92/90 W  clk 1200/1200/1200/1200
+   1CTA                1200  128MiB                -     comm_only | T   13.957 ms  gemm   0.000  comm  13.931  94/91/93/91 W  clk 1200/1200/1200/1200
+   1CTA                1200  512MiB                -     comm_only | T   55.543 ms  gemm   0.000  comm  55.516  94/92/93/91 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   1CTA                1050    4MiB                -     comm_only | T    0.693 ms  gemm   0.000  comm   0.669  86/84/85/83 W  clk 1050/1050/1050/1050
+   1CTA                1050    8MiB                -     comm_only | T    1.070 ms  gemm   0.000  comm   1.046  86/84/85/83 W  clk 1050/1050/1050/1050
+   1CTA                1050   16MiB                -     comm_only | T    2.049 ms  gemm   0.000  comm   2.025  86/84/85/83 W  clk 1050/1050/1050/1050
+   1CTA                1050  128MiB                -     comm_only | T   15.770 ms  gemm   0.000  comm  15.744  87/85/86/84 W  clk 1050/1050/1050/1050
+   1CTA                1050  512MiB                -     comm_only | T   62.752 ms  gemm   0.000  comm  62.724  87/85/86/84 W  clk 1050/1050/1050/1050
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   1CTA                 900    4MiB                -     comm_only | T    0.798 ms  gemm   0.000  comm   0.775  83/82/82/81 W  clk 900/900/900/900
+   1CTA                 900    8MiB                -     comm_only | T    1.217 ms  gemm   0.000  comm   1.193  83/82/82/81 W  clk 900/900/900/900
+   1CTA                 900   16MiB                -     comm_only | T    2.344 ms  gemm   0.000  comm   2.319  84/82/83/81 W  clk 900/900/900/900
+   1CTA                 900  128MiB                -     comm_only | T   18.147 ms  gemm   0.000  comm  18.120  84/83/83/82 W  clk 900/900/900/900
+   1CTA                 900  512MiB                -     comm_only | T   72.294 ms  gemm   0.000  comm  72.266  84/83/83/82 W  clk 900/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   1CTA                 705    4MiB                -     comm_only | T    1.005 ms  gemm   0.000  comm   0.980  81/80/80/79 W  clk 705/705/705/705
+   1CTA                 705    8MiB                -     comm_only | T    1.512 ms  gemm   0.000  comm   1.488  81/80/80/79 W  clk 705/705/705/705
+   1CTA                 705   16MiB                -     comm_only | T    2.933 ms  gemm   0.000  comm   2.907  81/80/80/79 W  clk 705/705/705/705
+   1CTA                 705  128MiB                -     comm_only | T   22.781 ms  gemm   0.000  comm  22.755  82/80/81/80 W  clk 705/705/705/705
+   1CTA                 705  512MiB                -     comm_only | T   90.798 ms  gemm   0.000  comm  90.770  82/80/81/80 W  clk 705/705/705/705
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   1CTA                 510    4MiB                -     comm_only | T    1.345 ms  gemm   0.000  comm   1.320  80/78/79/78 W  clk 510/510/510/510
+   1CTA                 510    8MiB                -     comm_only | T    1.983 ms  gemm   0.000  comm   1.958  79/78/79/78 W  clk 510/510/510/510
+   1CTA                 510   16MiB                -     comm_only | T    3.866 ms  gemm   0.000  comm   3.840  80/78/79/78 W  clk 510/510/510/510
+   1CTA                 510  128MiB                -     comm_only | T   30.178 ms  gemm   0.000  comm  30.152  80/79/79/78 W  clk 510/510/510/510
+   1CTA                 510  512MiB                -     comm_only | T  120.422 ms  gemm   0.000  comm 120.392  80/79/79/78 W  clk 510/510/510/510
+=== 2 CTA  [2 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 08:11:08.781249997 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+   2CTA                1410    4MiB                -     comm_only | T    0.308 ms  gemm   0.000  comm   0.285  111/109/111/107 W  clk 1410/1410/1410/1410
+   2CTA                1410    8MiB                -     comm_only | T    0.477 ms  gemm   0.000  comm   0.455  110/108/110/106 W  clk 1410/1410/1410/1410
+   2CTA                1410   16MiB                -     comm_only | T    0.832 ms  gemm   0.000  comm   0.809  112/110/113/108 W  clk 1410/1410/1410/1410
+   2CTA                1410  128MiB                -     comm_only | T    6.054 ms  gemm   0.000  comm   6.030  115/113/115/111 W  clk 1410/1410/1410/1410
+   2CTA                1410  512MiB                -     comm_only | T   23.937 ms  gemm   0.000  comm  23.909  115/113/116/112 W  clk 1410/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   2CTA                1200    4MiB                -     comm_only | T    0.348 ms  gemm   0.000  comm   0.325  94/92/93/91 W  clk 1200/1200/1200/1200
+   2CTA                1200    8MiB                -     comm_only | T    0.543 ms  gemm   0.000  comm   0.520  93/91/93/90 W  clk 1200/1200/1200/1200
+   2CTA                1200   16MiB                -     comm_only | T    0.953 ms  gemm   0.000  comm   0.929  95/93/94/92 W  clk 1200/1200/1200/1200
+   2CTA                1200  128MiB                -     comm_only | T    6.998 ms  gemm   0.000  comm   6.973  97/94/96/93 W  clk 1200/1200/1200/1200
+   2CTA                1200  512MiB                -     comm_only | T   27.728 ms  gemm   0.000  comm  27.700  97/95/96/93 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   2CTA                1050    4MiB                -     comm_only | T    0.388 ms  gemm   0.000  comm   0.365  87/85/86/84 W  clk 1050/1050/1050/1050
+   2CTA                1050    8MiB                -     comm_only | T    0.609 ms  gemm   0.000  comm   0.586  86/85/86/84 W  clk 1050/1050/1050/1050
+   2CTA                1050   16MiB                -     comm_only | T    1.069 ms  gemm   0.000  comm   1.045  88/86/87/85 W  clk 1050/1050/1050/1050
+   2CTA                1050  128MiB                -     comm_only | T    7.901 ms  gemm   0.000  comm   7.874  89/88/88/86 W  clk 1050/1050/1050/1050
+   2CTA                1050  512MiB                -     comm_only | T   31.300 ms  gemm   0.000  comm  31.271  89/88/88/86 W  clk 1050/1050/1050/1050
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   2CTA                 900    4MiB                -     comm_only | T    0.442 ms  gemm   0.000  comm   0.419  85/83/84/82 W  clk 900/900/900/900
+   2CTA                 900    8MiB                -     comm_only | T    0.696 ms  gemm   0.000  comm   0.673  84/83/83/82 W  clk 900/900/900/900
+   2CTA                 900   16MiB                -     comm_only | T    1.214 ms  gemm   0.000  comm   1.189  85/84/84/83 W  clk 900/900/900/900
+   2CTA                 900  128MiB                -     comm_only | T    9.099 ms  gemm   0.000  comm   9.074  86/85/85/84 W  clk 900/900/900/900
+   2CTA                 900  512MiB                -     comm_only | T   36.098 ms  gemm   0.000  comm  36.069  86/85/85/84 W  clk 900/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   2CTA                 705    4MiB                -     comm_only | T    0.550 ms  gemm   0.000  comm   0.526  82/81/81/80 W  clk 705/705/705/705
+   2CTA                 705    8MiB                -     comm_only | T    0.861 ms  gemm   0.000  comm   0.836  82/80/81/80 W  clk 705/705/705/705
+   2CTA                 705   16MiB                -     comm_only | T    1.518 ms  gemm   0.000  comm   1.494  83/81/82/81 W  clk 705/705/705/705
+   2CTA                 705  128MiB                -     comm_only | T   11.429 ms  gemm   0.000  comm  11.402  83/82/83/81 W  clk 705/705/705/705
+   2CTA                 705  512MiB                -     comm_only | T   45.365 ms  gemm   0.000  comm  45.335  83/82/83/81 W  clk 705/705/705/705
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   2CTA                 510    4MiB                -     comm_only | T    0.726 ms  gemm   0.000  comm   0.701  80/79/79/79 W  clk 510/510/510/510
+   2CTA                 510    8MiB                -     comm_only | T    1.114 ms  gemm   0.000  comm   1.089  80/79/79/78 W  clk 510/510/510/510
+   2CTA                 510   16MiB                -     comm_only | T    1.982 ms  gemm   0.000  comm   1.957  81/79/80/79 W  clk 510/510/510/510
+   2CTA                 510  128MiB                -     comm_only | T   15.136 ms  gemm   0.000  comm  15.110  81/80/80/79 W  clk 510/510/510/510
+   2CTA                 510  512MiB                -     comm_only | T   60.207 ms  gemm   0.000  comm  60.177  81/80/80/79 W  clk 510/510/510/510
+=== 4 CTA  [4 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 08:12:52.942731866 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+   4CTA                1410    4MiB                -     comm_only | T    0.207 ms  gemm   0.000  comm   0.182  113/111/114/110 W  clk 1410/1410/1410/1410
+   4CTA                1410    8MiB                -     comm_only | T    0.309 ms  gemm   0.000  comm   0.286  112/109/113/108 W  clk 1410/1410/1410/1410
+   4CTA                1410   16MiB                -     comm_only | T    0.486 ms  gemm   0.000  comm   0.463  116/114/116/112 W  clk 1410/1410/1410/1410
+   4CTA                1410  128MiB                -     comm_only | T    3.207 ms  gemm   0.000  comm   3.182  123/121/124/120 W  clk 1410/1410/1410/1410
+   4CTA                1410  512MiB                -     comm_only | T   12.619 ms  gemm   0.000  comm  12.595  124/123/125/120 W  clk 1410/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   4CTA                1200    4MiB                -     comm_only | T 0.228/0.228/0.233/0.230 ms  gemm   0.000  comm   0.205  96/94/95/93 W  clk 1200/1200/1200/1200
+   4CTA                1200    8MiB                -     comm_only | T    0.346 ms  gemm   0.000  comm   0.323  95/92/94/92 W  clk 1200/1200/1200/1200
+   4CTA                1200   16MiB                -     comm_only | T    0.553 ms  gemm   0.000  comm   0.530  98/95/97/94 W  clk 1200/1200/1200/1200
+   4CTA                1200  128MiB                -     comm_only | T    3.690 ms  gemm   0.000  comm   3.666  103/100/102/100 W  clk 1200/1200/1200/1200
+   4CTA                1200  512MiB                -     comm_only | T   14.465 ms  gemm   0.000  comm  14.439  103/101/102/100 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   4CTA                1050    4MiB                -     comm_only | T 0.252/0.250/0.254/0.257 ms  gemm   0.000  comm   0.229  88/87/88/86 W  clk 1050/1050/1050/1050
+   4CTA                1050    8MiB                -     comm_only | T    0.390 ms  gemm   0.000  comm   0.367  88/86/87/85 W  clk 1050/1050/1050/1050
+   4CTA                1050   16MiB                -     comm_only | T    0.617 ms  gemm   0.000  comm   0.593  90/88/89/87 W  clk 1050/1050/1050/1050
+   4CTA                1050  128MiB                -     comm_only | T    4.135 ms  gemm   0.000  comm   4.111  94/93/93/91 W  clk 1050/1050/1050/1050
+   4CTA                1050  512MiB                -     comm_only | T   16.191 ms  gemm   0.000  comm  16.165  94/93/93/91 W  clk 1050/1050/1050/1050
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   4CTA                 900    4MiB                -     comm_only | T    0.281 ms  gemm   0.000  comm   0.257  86/84/85/84 W  clk 900/900/900/900
+   4CTA                 900    8MiB                -     comm_only | T    0.433 ms  gemm   0.000  comm   0.410  86/84/84/83 W  clk 900/900/900/900
+   4CTA                 900   16MiB                -     comm_only | T    0.699 ms  gemm   0.000  comm   0.676  87/86/86/85 W  clk 900/900/900/900
+   4CTA                 900  128MiB                -     comm_only | T    4.719 ms  gemm   0.000  comm   4.694  91/89/90/89 W  clk 900/900/900/900
+   4CTA                 900  512MiB                -     comm_only | T   18.537 ms  gemm   0.000  comm  18.511  91/90/90/89 W  clk 900/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   4CTA                 705    4MiB                -     comm_only | T    0.344 ms  gemm   0.000  comm   0.320  83/82/82/81 W  clk 705/705/705/705
+   4CTA                 705    8MiB                -     comm_only | T    0.531 ms  gemm   0.000  comm   0.508  83/81/82/81 W  clk 705/705/705/705
+   4CTA                 705   16MiB                -     comm_only | T    0.864 ms  gemm   0.000  comm   0.839  84/83/83/82 W  clk 705/705/705/705
+   4CTA                 705  128MiB                -     comm_only | T    5.907 ms  gemm   0.000  comm   5.882  87/85/86/85 W  clk 705/705/705/705
+   4CTA                 705  512MiB                -     comm_only | T   23.272 ms  gemm   0.000  comm  23.243  87/85/86/85 W  clk 705/705/705/705
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   4CTA                 510    4MiB                -     comm_only | T    0.440 ms  gemm   0.000  comm   0.416  81/80/81/79 W  clk 510/510/510/510
+   4CTA                 510    8MiB                -     comm_only | T    0.678 ms  gemm   0.000  comm   0.655  81/80/80/79 W  clk 510/510/510/510
+   4CTA                 510   16MiB                -     comm_only | T    1.122 ms  gemm   0.000  comm   1.098  82/80/81/80 W  clk 510/510/510/510
+   4CTA                 510  128MiB                -     comm_only | T    7.709 ms  gemm   0.000  comm   7.684  84/83/83/82 W  clk 510/510/510/510
+   4CTA                 510  512MiB                -     comm_only | T   30.485 ms  gemm   0.000  comm  30.458  84/83/83/82 W  clk 510/510/510/510
+=== 8 CTA  [5 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 08:14:30.818269555 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+   8CTA                1410    4MiB                -     comm_only | T 0.159/0.159/0.164/0.164 ms  gemm   0.000  comm   0.136  117/114/118/113 W  clk 1410/1410/1410/1410
+   8CTA                1410    8MiB                -     comm_only | T    0.220 ms  gemm   0.000  comm   0.198  115/113/115/111 W  clk 1410/1410/1410/1410
+   8CTA                1410   16MiB                -     comm_only | T    0.319 ms  gemm   0.000  comm   0.296  120/117/122/117 W  clk 1410/1410/1410/1410
+   8CTA                1410  128MiB                -     comm_only | T    1.840 ms  gemm   0.000  comm   1.817  140/138/137/132 W  clk 1410/1410/1410/1410
+   8CTA                1410  512MiB                -     comm_only | T    6.996 ms  gemm   0.000  comm   6.972  142/139/140/137 W  clk 1410/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   8CTA                1200    4MiB                -     comm_only | T    0.177 ms  gemm   0.000  comm   0.154  98/96/97/95 W  clk 1200/1200/1200/1200
+   8CTA                1200    8MiB                -     comm_only | T    0.257 ms  gemm   0.000  comm   0.235  97/94/96/94 W  clk 1200/1200/1200/1200
+   8CTA                1200   16MiB                -     comm_only | T    0.359 ms  gemm   0.000  comm   0.337  101/99/100/98 W  clk 1200/1200/1200/1200
+   8CTA                1200  128MiB                -     comm_only | T    2.051 ms  gemm   0.000  comm   2.027  113/112/113/111 W  clk 1200/1200/1200/1200
+   8CTA                1200  512MiB                -     comm_only | T    7.925 ms  gemm   0.000  comm   7.901  115/114/114/112 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   8CTA                1050    4MiB                -     comm_only | T 0.186/0.188/0.193/0.190 ms  gemm   0.000  comm   0.163  91/89/89/88 W  clk 1050/1050/1050/1050
+   8CTA                1050    8MiB                -     comm_only | T    0.269 ms  gemm   0.000  comm   0.246  89/87/89/87 W  clk 1050/1050/1050/1050
+   8CTA                1050   16MiB                -     comm_only | T    0.396 ms  gemm   0.000  comm   0.373  93/91/92/90 W  clk 1050/1050/1050/1050
+   8CTA                1050  128MiB                -     comm_only | T    2.289 ms  gemm   0.000  comm   2.265  102/103/103/102 W  clk 1050/1050/1050/1050
+   8CTA                1050  512MiB                -     comm_only | T    8.848 ms  gemm   0.000  comm   8.823  104/104/104/102 W  clk 1050/1050/1050/1050
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   8CTA                 900    4MiB                -     comm_only | T 0.205/0.204/0.210/0.209 ms  gemm   0.000  comm   0.182  88/86/87/86 W  clk 900/900/900/900
+   8CTA                 900    8MiB                -     comm_only | T 0.306/0.302/0.308/0.307 ms  gemm   0.000  comm   0.283  87/85/86/85 W  clk 900/900/900/900
+   8CTA                 900   16MiB                -     comm_only | T    0.447 ms  gemm   0.000  comm   0.424  90/89/89/87 W  clk 900/900/900/900
+   8CTA                 900  128MiB                -     comm_only | T    2.591 ms  gemm   0.000  comm   2.566  99/99/98/98 W  clk 900/900/900/900
+   8CTA                 900  512MiB                -     comm_only | T   10.054 ms  gemm   0.000  comm  10.029  100/100/99/98 W  clk 900/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   8CTA                 705    4MiB                -     comm_only | T    0.245 ms  gemm   0.000  comm   0.222  85/83/84/83 W  clk 705/705/705/705
+   8CTA                 705    8MiB                -     comm_only | T    0.367 ms  gemm   0.000  comm   0.345  84/83/83/82 W  clk 705/705/705/705
+   8CTA                 705   16MiB                -     comm_only | T    0.544 ms  gemm   0.000  comm   0.521  87/85/86/84 W  clk 705/705/705/705
+   8CTA                 705  128MiB                -     comm_only | T    3.191 ms  gemm   0.000  comm   3.167  93/92/95/93 W  clk 705/705/705/705
+   8CTA                 705  512MiB                -     comm_only | T   12.454 ms  gemm   0.000  comm  12.429  93/93/95/93 W  clk 705/705/705/705
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   8CTA                 510    4MiB                -     comm_only | T    0.305 ms  gemm   0.000  comm   0.282  83/81/82/81 W  clk 510/510/510/510
+   8CTA                 510    8MiB                -     comm_only | T    0.458 ms  gemm   0.000  comm   0.435  82/81/81/80 W  clk 510/510/510/510
+   8CTA                 510   16MiB                -     comm_only | T    0.689 ms  gemm   0.000  comm   0.665  84/83/83/82 W  clk 510/510/510/510
+   8CTA                 510  128MiB                -     comm_only | T    4.069 ms  gemm   0.000  comm   4.045  89/90/90/89 W  clk 510/510/510/510
+   8CTA                 510  512MiB                -     comm_only | T   15.945 ms  gemm   0.000  comm  15.921  90/90/89/89 W  clk 510/510/510/510
+=== 12 CTA  [7 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 08:16:06.320067828 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  12CTA                1410    4MiB                -     comm_only | T 0.231/0.194/0.196/0.235 ms  gemm   0.000  comm   0.207  119/117/120/116 W  clk 1410/1410/1410/1410
+  12CTA                1410    8MiB                -     comm_only | T    0.205 ms  gemm   0.000  comm   0.182  117/115/116/111 W  clk 1410/1410/1410/1410
+  12CTA                1410   16MiB                -     comm_only | T 0.271/0.272/0.278/0.276 ms  gemm   0.000  comm   0.248  124/123/126/121 W  clk 1410/1410/1410/1410
+  12CTA                1410  128MiB                -     comm_only | T    1.369 ms  gemm   0.000  comm   1.345  149/146/150/144 W  clk 1410/1410/1410/1410
+  12CTA                1410  512MiB                -     comm_only | T    5.068 ms  gemm   0.000  comm   5.044  153/151/155/149 W  clk 1410/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  12CTA                1200    4MiB                -     comm_only | T    0.154 ms  gemm   0.000  comm   0.131  100/98/99/97 W  clk 1200/1200/1200/1200
+  12CTA                1200    8MiB                -     comm_only | T 0.233/0.232/0.236/0.238 ms  gemm   0.000  comm   0.209  97/96/97/95 W  clk 1200/1200/1200/1200
+  12CTA                1200   16MiB                -     comm_only | T    0.305 ms  gemm   0.000  comm   0.282  104/101/103/100 W  clk 1200/1200/1200/1200
+  12CTA                1200  128MiB                -     comm_only | T    1.525 ms  gemm   0.000  comm   1.502  122/119/121/118 W  clk 1200/1200/1200/1200
+  12CTA                1200  512MiB                -     comm_only | T    5.673 ms  gemm   0.000  comm   5.648  126/123/125/121 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  12CTA                1050    4MiB                -     comm_only | T 0.165/0.166/0.169/0.168 ms  gemm   0.000  comm   0.142  92/90/91/90 W  clk 1050/1050/1050/1050
+  12CTA                1050    8MiB                -     comm_only | T 0.252/0.250/0.256/0.254 ms  gemm   0.000  comm   0.230  91/88/89/88 W  clk 1050/1050/1050/1050
+  12CTA                1050   16MiB                -     comm_only | T    0.337 ms  gemm   0.000  comm   0.314  95/93/94/92 W  clk 1050/1050/1050/1050
+  12CTA                1050  128MiB                -     comm_only | T    1.688 ms  gemm   0.000  comm   1.664  110/108/110/107 W  clk 1050/1050/1050/1050
+  12CTA                1050  512MiB                -     comm_only | T    6.280 ms  gemm   0.000  comm   6.255  113/111/112/109 W  clk 1050/1050/1050/1050
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  12CTA                 900    4MiB                -     comm_only | T 0.182/0.184/0.186/0.187 ms  gemm   0.000  comm   0.159  89/87/88/87 W  clk 900/900/900/900
+  12CTA                 900    8MiB                -     comm_only | T    0.283 ms  gemm   0.000  comm   0.259  88/86/87/85 W  clk 900/900/900/900
+  12CTA                 900   16MiB                -     comm_only | T    0.373 ms  gemm   0.000  comm   0.350  92/90/91/89 W  clk 900/900/900/900
+  12CTA                 900  128MiB                -     comm_only | T    1.911 ms  gemm   0.000  comm   1.886  105/103/104/102 W  clk 900/900/900/900
+  12CTA                 900  512MiB                -     comm_only | T    7.138 ms  gemm   0.000  comm   7.113  108/106/107/104 W  clk 900/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  12CTA                 705    4MiB                -     comm_only | T 0.222/0.223/0.225/0.227 ms  gemm   0.000  comm   0.196  86/84/86/84 W  clk 705/705/705/705
+  12CTA                 705    8MiB                -     comm_only | T    0.335 ms  gemm   0.000  comm   0.312  85/83/84/83 W  clk 705/705/705/705
+  12CTA                 705   16MiB                -     comm_only | T    0.450 ms  gemm   0.000  comm   0.426  88/86/87/86 W  clk 705/705/705/705
+  12CTA                 705  128MiB                -     comm_only | T    2.364 ms  gemm   0.000  comm   2.339  99/97/99/96 W  clk 705/705/705/705
+  12CTA                 705  512MiB                -     comm_only | T    8.843 ms  gemm   0.000  comm   8.818  101/99/100/98 W  clk 705/705/705/705
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  12CTA                 510    4MiB                -     comm_only | T 0.265/0.263/0.265/0.269 ms  gemm   0.000  comm   0.242  84/83/83/82 W  clk 510/510/510/510
+  12CTA                 510    8MiB                -     comm_only | T    0.410 ms  gemm   0.000  comm   0.387  83/81/82/81 W  clk 510/510/510/510
+  12CTA                 510   16MiB                -     comm_only | T    0.561 ms  gemm   0.000  comm   0.538  86/84/85/84 W  clk 510/510/510/510
+  12CTA                 510  128MiB                -     comm_only | T    2.954 ms  gemm   0.000  comm   2.929  95/93/94/92 W  clk 510/510/510/510
+  12CTA                 510  512MiB                -     comm_only | T   11.131 ms  gemm   0.000  comm  11.105  96/95/95/94 W  clk 510/510/510/510
+=== 16 CTA  [8 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 08:17:39.613391624 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  16CTA                1410    4MiB                -     comm_only | T 0.141/0.143/0.147/0.144 ms  gemm   0.000  comm   0.116  122/120/124/117 W  clk 1410/1410/1410/1410
+  16CTA                1410    8MiB                -     comm_only | T 0.183/0.185/0.187/0.185 ms  gemm   0.000  comm   0.161  119/117/120/114 W  clk 1410/1410/1410/1410
+  16CTA                1410   16MiB                -     comm_only | T    0.255 ms  gemm   0.000  comm   0.232  128/124/127/124 W  clk 1410/1410/1410/1410
+  16CTA                1410  128MiB                -     comm_only | T    1.165 ms  gemm   0.000  comm   1.141  157/155/158/152 W  clk 1410/1410/1410/1410
+  16CTA                1410  512MiB                -     comm_only | T    4.282 ms  gemm   0.000  comm   4.257  161/159/163/156 W  clk 1410/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA                1200    4MiB                -     comm_only | T    0.147 ms  gemm   0.000  comm   0.124  103/101/100/99 W  clk 1200/1200/1200/1200
+  16CTA                1200    8MiB                -     comm_only | T    0.212 ms  gemm   0.000  comm   0.190  99/97/98/95 W  clk 1200/1200/1200/1200
+  16CTA                1200   16MiB                -     comm_only | T    0.284 ms  gemm   0.000  comm   0.260  106/104/105/103 W  clk 1200/1200/1200/1200
+  16CTA                1200  128MiB                -     comm_only | T    1.277 ms  gemm   0.000  comm   1.253  129/126/128/124 W  clk 1200/1200/1200/1200
+  16CTA                1200  512MiB                -     comm_only | T    4.706 ms  gemm   0.000  comm   4.680  132/129/131/127 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA                1050    4MiB                -     comm_only | T 0.160/0.163/0.160/0.161 ms  gemm   0.000  comm   0.137  94/92/92/91 W  clk 1050/1050/1050/1050
+  16CTA                1050    8MiB                -     comm_only | T 0.224/0.226/0.227/0.229 ms  gemm   0.000  comm   0.200  91/89/90/88 W  clk 1050/1050/1050/1050
+  16CTA                1050   16MiB                -     comm_only | T    0.295 ms  gemm   0.000  comm   0.272  96/95/96/94 W  clk 1050/1050/1050/1050
+  16CTA                1050  128MiB                -     comm_only | T    1.409 ms  gemm   0.000  comm   1.385  116/114/115/112 W  clk 1050/1050/1050/1050
+  16CTA                1050  512MiB                -     comm_only | T    5.208 ms  gemm   0.000  comm   5.183  118/116/117/114 W  clk 1050/1050/1050/1050
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA                 900    4MiB                -     comm_only | T    0.171 ms  gemm   0.000  comm   0.148  91/89/89/89 W  clk 900/900/900/900
+  16CTA                 900    8MiB                -     comm_only | T 0.247/0.249/0.249/0.253 ms  gemm   0.000  comm   0.224  88/87/87/86 W  clk 900/900/900/900
+  16CTA                 900   16MiB                -     comm_only | T 0.344/0.349/0.341/0.349 ms  gemm   0.000  comm   0.320  94/92/93/91 W  clk 900/900/900/900
+  16CTA                 900  128MiB                -     comm_only | T    1.603 ms  gemm   0.000  comm   1.579  110/109/109/106 W  clk 900/900/900/900
+  16CTA                 900  512MiB                -     comm_only | T    5.936 ms  gemm   0.000  comm   5.911  112/111/111/109 W  clk 900/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA                 705    4MiB                -     comm_only | T    0.198 ms  gemm   0.000  comm   0.174  88/86/87/85 W  clk 705/705/705/705
+  16CTA                 705    8MiB                -     comm_only | T    0.298 ms  gemm   0.000  comm   0.276  86/83/85/83 W  clk 705/705/705/705
+  16CTA                 705   16MiB                -     comm_only | T    0.405 ms  gemm   0.000  comm   0.382  90/88/89/88 W  clk 705/705/705/705
+  16CTA                 705  128MiB                -     comm_only | T    1.930 ms  gemm   0.000  comm   1.906  104/102/103/101 W  clk 705/705/705/705
+  16CTA                 705  512MiB                -     comm_only | T    7.173 ms  gemm   0.000  comm   7.144  105/104/105/103 W  clk 705/705/705/705
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA                 510    4MiB                -     comm_only | T 0.244/0.246/0.249/0.251 ms  gemm   0.000  comm   0.219  85/83/84/83 W  clk 510/510/510/510
+  16CTA                 510    8MiB                -     comm_only | T 0.358/0.363/0.366/0.365 ms  gemm   0.000  comm   0.332  84/82/83/81 W  clk 510/510/510/510
+  16CTA                 510   16MiB                -     comm_only | T    0.491 ms  gemm   0.000  comm   0.466  87/86/86/85 W  clk 510/510/510/510
+  16CTA                 510  128MiB                -     comm_only | T    2.288 ms  gemm   0.000  comm   2.261  99/98/99/97 W  clk 510/510/510/510
+  16CTA                 510  512MiB                -     comm_only | T    8.817 ms  gemm   0.000  comm   8.792  100/98/99/97 W  clk 510/510/510/510
+=== 22 CTA  [10 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 08:19:14.345025649 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  22CTA                1410    4MiB                -     comm_only | T 0.139/0.139/0.141/0.142 ms  gemm   0.000  comm   0.115  126/124/128/122 W  clk 1410/1410/1410/1410
+  22CTA                1410    8MiB                -     comm_only | T    0.182 ms  gemm   0.000  comm   0.159  119/118/121/117 W  clk 1410/1410/1410/1410
+  22CTA                1410   16MiB                -     comm_only | T    0.250 ms  gemm   0.000  comm   0.228  130/125/130/124 W  clk 1410/1410/1410/1410
+  22CTA                1410  128MiB                -     comm_only | T    1.107 ms  gemm   0.000  comm   1.083  160/157/161/155 W  clk 1410/1410/1410/1410
+  22CTA                1410  512MiB                -     comm_only | T    3.910 ms  gemm   0.000  comm   3.886  168/164/168/161 W  clk 1410/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  22CTA                1200    4MiB                -     comm_only | T 0.145/0.143/0.147/0.148 ms  gemm   0.000  comm   0.122  105/101/104/100 W  clk 1200/1200/1200/1200
+  22CTA                1200    8MiB                -     comm_only | T    0.211 ms  gemm   0.000  comm   0.188  100/98/100/96 W  clk 1200/1200/1200/1200
+  22CTA                1200   16MiB                -     comm_only | T 0.278/0.272/0.276/0.274 ms  gemm   0.000  comm   0.255  109/105/106/104 W  clk 1200/1200/1200/1200
+  22CTA                1200  128MiB                -     comm_only | T    1.159 ms  gemm   0.000  comm   1.136  133/130/132/128 W  clk 1200/1200/1200/1200
+  22CTA                1200  512MiB                -     comm_only | T    4.121 ms  gemm   0.000  comm   4.096  137/134/136/132 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  22CTA                1050    4MiB                -     comm_only | T 0.154/0.152/0.154/0.157 ms  gemm   0.000  comm   0.131  95/93/95/92 W  clk 1050/1050/1050/1050
+  22CTA                1050    8MiB                -     comm_only | T 0.224/0.222/0.230/0.227 ms  gemm   0.000  comm   0.202  93/90/91/90 W  clk 1050/1050/1050/1050
+  22CTA                1050   16MiB                -     comm_only | T    0.282 ms  gemm   0.000  comm   0.259  99/96/98/95 W  clk 1050/1050/1050/1050
+  22CTA                1050  128MiB                -     comm_only | T    1.263 ms  gemm   0.000  comm   1.239  119/117/119/116 W  clk 1050/1050/1050/1050
+  22CTA                1050  512MiB                -     comm_only | T    4.597 ms  gemm   0.000  comm   4.573  122/120/121/119 W  clk 1050/1050/1050/1050
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  22CTA                 900    4MiB                -     comm_only | T 0.169/0.171/0.174/0.175 ms  gemm   0.000  comm   0.145  93/90/91/90 W  clk 900/900/900/900
+  22CTA                 900    8MiB                -     comm_only | T 0.248/0.242/0.256/0.254 ms  gemm   0.000  comm   0.226  90/87/89/87 W  clk 900/900/900/900
+  22CTA                 900   16MiB                -     comm_only | T 0.328/0.317/0.330/0.328 ms  gemm   0.000  comm   0.305  95/93/94/92 W  clk 900/900/900/900
+  22CTA                 900  128MiB                -     comm_only | T    1.444 ms  gemm   0.000  comm   1.420  113/111/112/110 W  clk 900/900/900/900
+  22CTA                 900  512MiB                -     comm_only | T    5.321 ms  gemm   0.000  comm   5.297  116/114/114/112 W  clk 900/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  22CTA                 705    4MiB                -     comm_only | T 0.205/0.204/0.209/0.205 ms  gemm   0.000  comm   0.181  89/87/88/86 W  clk 705/705/705/705
+  22CTA                 705    8MiB                -     comm_only | T 0.292/0.289/0.295/0.294 ms  gemm   0.000  comm   0.269  87/85/86/84 W  clk 705/705/705/705
+  22CTA                 705   16MiB                -     comm_only | T 0.400/0.394/0.404/0.400 ms  gemm   0.000  comm   0.375  91/89/90/88 W  clk 705/705/705/705
+  22CTA                 705  128MiB                -     comm_only | T    1.808 ms  gemm   0.000  comm   1.783  106/104/105/103 W  clk 705/705/705/705
+  22CTA                 705  512MiB                -     comm_only | T    6.666 ms  gemm   0.000  comm   6.641  108/105/107/105 W  clk 705/705/705/705
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  22CTA                 510    4MiB                -     comm_only | T    0.233 ms  gemm   0.000  comm   0.209  86/84/85/84 W  clk 510/510/510/510
+  22CTA                 510    8MiB                -     comm_only | T    0.347 ms  gemm   0.000  comm   0.323  85/83/84/82 W  clk 510/510/510/510
+  22CTA                 510   16MiB                -     comm_only | T 0.465/0.464/0.476/0.473 ms  gemm   0.000  comm   0.441  88/86/87/86 W  clk 510/510/510/510
+  22CTA                 510  128MiB                -     comm_only | T    2.044 ms  gemm   0.000  comm   2.019  102/100/101/99 W  clk 510/510/510/510
+  22CTA                 510  512MiB                -     comm_only | T    7.495 ms  gemm   0.000  comm   7.471  104/102/103/101 W  clk 510/510/510/510
+=== 32 CTA  [12 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 08:20:48.388370978 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  32CTA                1410    4MiB                -     comm_only | T 0.131/0.130/0.132/0.134 ms  gemm   0.000  comm   0.108  132/128/133/131 W  clk 1410/1410/1410/1410
+  32CTA                1410    8MiB                -     comm_only | T 0.169/0.167/0.172/0.171 ms  gemm   0.000  comm   0.147  124/120/124/119 W  clk 1410/1410/1410/1410
+  32CTA                1410   16MiB                -     comm_only | T    0.226 ms  gemm   0.000  comm   0.204  133/133/135/132 W  clk 1410/1410/1410/1410
+  32CTA                1410  128MiB                -     comm_only | T    1.067 ms  gemm   0.000  comm   1.043  163/161/164/158 W  clk 1410/1410/1410/1410
+  32CTA                1410  512MiB                -     comm_only | T    3.769 ms  gemm   0.000  comm   3.746  170/166/170/163 W  clk 1410/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  32CTA                1200    4MiB                -     comm_only | T 0.139/0.139/0.140/0.142 ms  gemm   0.000  comm   0.116  109/106/107/105 W  clk 1200/1200/1200/1200
+  32CTA                1200    8MiB                -     comm_only | T 0.184/0.183/0.186/0.187 ms  gemm   0.000  comm   0.162  104/100/102/100 W  clk 1200/1200/1200/1200
+  32CTA                1200   16MiB                -     comm_only | T    0.243 ms  gemm   0.000  comm   0.221  112/109/110/108 W  clk 1200/1200/1200/1200
+  32CTA                1200  128MiB                -     comm_only | T    1.105 ms  gemm   0.000  comm   1.082  136/133/134/131 W  clk 1200/1200/1200/1200
+  32CTA                1200  512MiB                -     comm_only | T    3.958 ms  gemm   0.000  comm   3.935  139/136/138/134 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  32CTA                1050    4MiB                -     comm_only | T    0.149 ms  gemm   0.000  comm   0.127  99/97/97/96 W  clk 1050/1050/1050/1050
+  32CTA                1050    8MiB                -     comm_only | T    0.203 ms  gemm   0.000  comm   0.181  95/91/93/91 W  clk 1050/1050/1050/1050
+  32CTA                1050   16MiB                -     comm_only | T    0.265 ms  gemm   0.000  comm   0.243  101/100/100/98 W  clk 1050/1050/1050/1050
+  32CTA                1050  128MiB                -     comm_only | T    1.221 ms  gemm   0.000  comm   1.195  121/119/121/118 W  clk 1050/1050/1050/1050
+  32CTA                1050  512MiB                -     comm_only | T    4.384 ms  gemm   0.000  comm   4.361  124/122/124/120 W  clk 1050/1050/1050/1050
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  32CTA                 900    4MiB                -     comm_only | T 0.166/0.166/0.166/0.170 ms  gemm   0.000  comm   0.143  96/94/93/93 W  clk 900/900/900/900
+  32CTA                 900    8MiB                -     comm_only | T 0.226/0.223/0.225/0.229 ms  gemm   0.000  comm   0.203  91/90/90/89 W  clk 900/900/900/900
+  32CTA                 900   16MiB                -     comm_only | T    0.298 ms  gemm   0.000  comm   0.276  99/95/97/95 W  clk 900/900/900/900
+  32CTA                 900  128MiB                -     comm_only | T    1.390 ms  gemm   0.000  comm   1.367  115/113/114/111 W  clk 900/900/900/900
+  32CTA                 900  512MiB                -     comm_only | T    4.998 ms  gemm   0.000  comm   4.974  118/116/117/114 W  clk 900/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  32CTA                 705    4MiB                -     comm_only | T    0.192 ms  gemm   0.000  comm   0.170  92/90/90/89 W  clk 705/705/705/705
+  32CTA                 705    8MiB                -     comm_only | T    0.257 ms  gemm   0.000  comm   0.234  89/86/88/86 W  clk 705/705/705/705
+  32CTA                 705   16MiB                -     comm_only | T    0.346 ms  gemm   0.000  comm   0.323  93/92/92/91 W  clk 705/705/705/705
+  32CTA                 705  128MiB                -     comm_only | T    1.733 ms  gemm   0.000  comm   1.709  108/105/107/104 W  clk 705/705/705/705
+  32CTA                 705  512MiB                -     comm_only | T    6.421 ms  gemm   0.000  comm   6.397  109/107/108/106 W  clk 705/705/705/705
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  32CTA                 510    4MiB                -     comm_only | T 0.227/0.225/0.229/0.230 ms  gemm   0.000  comm   0.201  89/87/88/86 W  clk 510/510/510/510
+  32CTA                 510    8MiB                -     comm_only | T    0.299 ms  gemm   0.000  comm   0.277  86/84/85/83 W  clk 510/510/510/510
+  32CTA                 510   16MiB                -     comm_only | T    0.415 ms  gemm   0.000  comm   0.392  91/89/89/88 W  clk 510/510/510/510
+  32CTA                 510  128MiB                -     comm_only | T    1.913 ms  gemm   0.000  comm   1.889  104/102/103/101 W  clk 510/510/510/510
+  32CTA                 510  512MiB                -     comm_only | T    7.140 ms  gemm   0.000  comm   7.115  105/103/104/102 W  clk 510/510/510/510
+=== 48 CTA  [13 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 08:22:23.134844965 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  48CTA                1410    4MiB                -     comm_only | T 0.135/0.132/0.136/0.136 ms  gemm   0.000  comm   0.111  136/130/140/133 W  clk 1410/1410/1410/1410
+  48CTA                1410    8MiB                -     comm_only | T    0.176 ms  gemm   0.000  comm   0.154  126/123/127/123 W  clk 1410/1410/1410/1410
+  48CTA                1410   16MiB                -     comm_only | T    0.222 ms  gemm   0.000  comm   0.200  140/137/140/136 W  clk 1410/1410/1410/1410
+  48CTA                1410  128MiB                -     comm_only | T    1.081 ms  gemm   0.000  comm   1.058  165/161/166/159 W  clk 1410/1410/1410/1410
+  48CTA                1410  512MiB                -     comm_only | T    3.761 ms  gemm   0.000  comm   3.737  172/167/172/165 W  clk 1410/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  48CTA                1200    4MiB                -     comm_only | T 0.139/0.136/0.139/0.140 ms  gemm   0.000  comm   0.117  113/109/112/109 W  clk 1200/1200/1200/1200
+  48CTA                1200    8MiB                -     comm_only | T 0.198/0.194/0.202/0.200 ms  gemm   0.000  comm   0.174  106/102/105/102 W  clk 1200/1200/1200/1200
+  48CTA                1200   16MiB                -     comm_only | T    0.244 ms  gemm   0.000  comm   0.223  116/114/115/110 W  clk 1200/1200/1200/1200
+  48CTA                1200  128MiB                -     comm_only | T    1.114 ms  gemm   0.000  comm   1.091  137/134/136/132 W  clk 1200/1200/1200/1200
+  48CTA                1200  512MiB                -     comm_only | T    3.902 ms  gemm   0.000  comm   3.879  141/137/140/136 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  48CTA                1050    4MiB                -     comm_only | T 0.195/0.224/0.227/0.196 ms  gemm   0.000  comm   0.153  102/101/101/98 W  clk 1050/1050/1050/1050
+  48CTA                1050    8MiB                -     comm_only | T    0.206 ms  gemm   0.000  comm   0.184  96/95/95/93 W  clk 1050/1050/1050/1050
+  48CTA                1050   16MiB                -     comm_only | T    0.253 ms  gemm   0.000  comm   0.231  106/102/105/102 W  clk 1050/1050/1050/1050
+  48CTA                1050  128MiB                -     comm_only | T    1.194 ms  gemm   0.000  comm   1.171  123/121/123/120 W  clk 1050/1050/1050/1050
+  48CTA                1050  512MiB                -     comm_only | T    4.291 ms  gemm   0.000  comm   4.267  125/123/125/122 W  clk 1050/1050/1050/1050
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  48CTA                 900    4MiB                -     comm_only | T    0.164 ms  gemm   0.000  comm   0.141  100/96/97/96 W  clk 900/900/900/900
+  48CTA                 900    8MiB                -     comm_only | T 0.234/0.230/0.235/0.238 ms  gemm   0.000  comm   0.211  93/91/93/90 W  clk 900/900/900/900
+  48CTA                 900   16MiB                -     comm_only | T    0.284 ms  gemm   0.000  comm   0.262  101/99/99/98 W  clk 900/900/900/900
+  48CTA                 900  128MiB                -     comm_only | T    1.358 ms  gemm   0.000  comm   1.333  117/115/116/114 W  clk 900/900/900/900
+  48CTA                 900  512MiB                -     comm_only | T    4.915 ms  gemm   0.000  comm   4.889  119/117/118/115 W  clk 900/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  48CTA                 705    4MiB                -     comm_only | T 0.189/0.185/0.191/0.189 ms  gemm   0.000  comm   0.165  94/91/94/92 W  clk 705/705/705/705
+  48CTA                 705    8MiB                -     comm_only | T    0.264 ms  gemm   0.000  comm   0.242  91/88/90/88 W  clk 705/705/705/705
+  48CTA                 705   16MiB                -     comm_only | T 0.345/0.340/0.348/0.347 ms  gemm   0.000  comm   0.322  97/94/96/94 W  clk 705/705/705/705
+  48CTA                 705  128MiB                -     comm_only | T    1.715 ms  gemm   0.000  comm   1.691  108/106/108/106 W  clk 705/705/705/705
+  48CTA                 705  512MiB                -     comm_only | T    6.295 ms  gemm   0.000  comm   6.270  110/107/110/107 W  clk 705/705/705/705
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  48CTA                 510    4MiB                -     comm_only | T    0.212 ms  gemm   0.000  comm   0.188  91/89/90/89 W  clk 510/510/510/510
+  48CTA                 510    8MiB                -     comm_only | T    0.300 ms  gemm   0.000  comm   0.278  88/86/87/85 W  clk 510/510/510/510
+  48CTA                 510   16MiB                -     comm_only | T    0.387 ms  gemm   0.000  comm   0.365  93/91/92/91 W  clk 510/510/510/510
+  48CTA                 510  128MiB                -     comm_only | T    1.880 ms  gemm   0.000  comm   1.856  105/103/104/103 W  clk 510/510/510/510
+  48CTA                 510  512MiB                -     comm_only | T    6.924 ms  gemm   0.000  comm   6.899  106/104/105/103 W  clk 510/510/510/510
+=== 64 CTA  [15 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 08:23:55.956476200 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  64CTA                1410    4MiB                -     comm_only | T 0.217/0.185/0.222/0.184 ms  gemm   0.000  comm   0.195  143/140/146/136 W  clk 1410/1410/1410/1410
+  64CTA                1410    8MiB                -     comm_only | T 0.187/0.185/0.189/0.186 ms  gemm   0.000  comm   0.165  130/128/129/123 W  clk 1410/1410/1410/1410
+  64CTA                1410   16MiB                -     comm_only | T 0.230/0.231/0.233/0.228 ms  gemm   0.000  comm   0.207  146/139/147/140 W  clk 1410/1410/1410/1410
+  64CTA                1410  128MiB                -     comm_only | T    1.049 ms  gemm   0.000  comm   1.026  169/164/170/162 W  clk 1410/1410/1410/1410
+  64CTA                1410  512MiB                -     comm_only | T    3.936 ms  gemm   0.000  comm   3.912  170/166/170/164 W  clk 1410/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  64CTA                1200    4MiB                -     comm_only | T 0.146/0.143/0.149/0.148 ms  gemm   0.000  comm   0.124  118/115/117/112 W  clk 1200/1200/1200/1200
+  64CTA                1200    8MiB                -     comm_only | T    0.203 ms  gemm   0.000  comm   0.181  109/106/106/102 W  clk 1200/1200/1200/1200
+  64CTA                1200   16MiB                -     comm_only | T    0.240 ms  gemm   0.000  comm   0.217  115/117/119/115 W  clk 1200/1200/1200/1200
+  64CTA                1200  128MiB                -     comm_only | T    1.085 ms  gemm   0.000  comm   1.061  139/136/138/134 W  clk 1200/1200/1200/1200
+  64CTA                1200  512MiB                -     comm_only | T    4.024 ms  gemm   0.000  comm   4.000  140/137/139/135 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  64CTA                1050    4MiB                -     comm_only | T    0.154 ms  gemm   0.000  comm   0.132  106/104/106/103 W  clk 1050/1050/1050/1050
+  64CTA                1050    8MiB                -     comm_only | T    0.212 ms  gemm   0.000  comm   0.190  98/97/99/96 W  clk 1050/1050/1050/1050
+  64CTA                1050   16MiB                -     comm_only | T    0.254 ms  gemm   0.000  comm   0.232  108/103/105/103 W  clk 1050/1050/1050/1050
+  64CTA                1050  128MiB                -     comm_only | T    1.189 ms  gemm   0.000  comm   1.165  125/123/125/121 W  clk 1050/1050/1050/1050
+  64CTA                1050  512MiB                -     comm_only | T    4.276 ms  gemm   0.000  comm   4.252  126/124/126/122 W  clk 1050/1050/1050/1050
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  64CTA                 900    4MiB                -     comm_only | T    0.165 ms  gemm   0.000  comm   0.142  103/100/100/100 W  clk 900/900/900/900
+  64CTA                 900    8MiB                -     comm_only | T    0.235 ms  gemm   0.000  comm   0.212  96/93/94/93 W  clk 900/900/900/900
+  64CTA                 900   16MiB                -     comm_only | T    0.287 ms  gemm   0.000  comm   0.264  103/100/102/100 W  clk 900/900/900/900
+  64CTA                 900  128MiB                -     comm_only | T    1.365 ms  gemm   0.000  comm   1.341  118/116/117/114 W  clk 900/900/900/900
+  64CTA                 900  512MiB                -     comm_only | T    4.956 ms  gemm   0.000  comm   4.932  119/117/118/115 W  clk 900/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  64CTA                 705    4MiB                -     comm_only | T    0.192 ms  gemm   0.000  comm   0.169  98/96/97/95 W  clk 705/705/705/705
+  64CTA                 705    8MiB                -     comm_only | T    0.269 ms  gemm   0.000  comm   0.247  92/90/90/89 W  clk 705/705/705/705
+  64CTA                 705   16MiB                -     comm_only | T    0.336 ms  gemm   0.000  comm   0.313  97/97/97/95 W  clk 705/705/705/705
+  64CTA                 705  128MiB                -     comm_only | T    1.661 ms  gemm   0.000  comm   1.637  110/108/110/107 W  clk 705/705/705/705
+  64CTA                 705  512MiB                -     comm_only | T    6.134 ms  gemm   0.000  comm   6.109  111/108/110/108 W  clk 705/705/705/705
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  64CTA                 510    4MiB                -     comm_only | T    0.217 ms  gemm   0.000  comm   0.194  94/92/93/92 W  clk 510/510/510/510
+  64CTA                 510    8MiB                -     comm_only | T    0.313 ms  gemm   0.000  comm   0.290  90/88/88/87 W  clk 510/510/510/510
+  64CTA                 510   16MiB                -     comm_only | T    0.385 ms  gemm   0.000  comm   0.362  95/93/95/93 W  clk 510/510/510/510
+  64CTA                 510  128MiB                -     comm_only | T    1.865 ms  gemm   0.000  comm   1.841  106/104/105/103 W  clk 510/510/510/510
+  64CTA                 510  512MiB                -     comm_only | T    6.780 ms  gemm   0.000  comm   6.755  107/105/106/104 W  clk 510/510/510/510
+[clocks] restored
+
+DONE in 16.2 min -> data/sim_overlap/commsize.csv  (1200 rows)

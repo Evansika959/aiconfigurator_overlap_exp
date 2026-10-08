@@ -1,0 +1,36 @@
+world=4  10 runs x 1 CTA counts  (persistence was Disabled/Disabled/Disabled/Disabled)
+=== 16 CTA  [0 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 11:17:17.933955463 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  16CTA                   0 ddp_overlap_8192_+_3_x_2048|A | T   35.312 ms  loop   35.577  399/179/197/189 W  clk 1245/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA 1260/1260/1260/1260 ddp_overlap_8192_+_3_x_2048|one+1% | T   35.448 ms  loop   35.690  399/159/162/151 W  clk 1245/1260/1260/1260
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA    1410/900/900/900 ddp_overlap_8192_+_3_x_2048|per_gpu+1% | T   35.764 ms  loop   35.907  400/138/134/132 W  clk 1230/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA                   0 ddp_overlap_8192_+_3_x_4096|A | T   35.740 ms  loop   35.791  398/310/315/297 W  clk 1230/1395/1395/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA 1260/1260/1260/1260 ddp_overlap_8192_+_3_x_4096|one+1% | T   35.790 ms  loop   35.885  396/267/270/235 W  clk 1230/1260/1260/1260
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA    1410/975/975/975 ddp_overlap_8192_+_3_x_4096|per_gpu+1% | T   35.896 ms  loop   35.975  401/205/203/196 W  clk 1215/975/975/975
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA    1260/705/705/705 ddp_overlap_8192_+_3_x_4096|per_gpu+3% | T   36.381 ms  loop   36.456  395/186/190/178 W  clk 1230/705/705/705
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA                   0     ddp_overlap_4_x_4096|A | T   18.972 ms  loop   19.284  397/398/402/405 W  clk 1245/1275/1245/1290
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA 1305/1305/1305/1305 ddp_overlap_4_x_4096|one+1% | T   18.986 ms  loop   19.292  400/405/402/400 W  clk 1245/1275/1245/1275
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA 1260/1260/1260/1260 ddp_overlap_4_x_4096|one+3% | T   19.298 ms  loop   19.444  395/373/389/376 W  clk 1260/1260/1260/1260
+[clocks] restored
+
+DONE in 0.9 min -> data/sim_overlap/policy.csv  (40 rows)

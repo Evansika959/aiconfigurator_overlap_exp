@@ -1,0 +1,17 @@
+decode 2048 tokens; 64 cold experts on a 32-SM domain; persistent per-SM costs, BM64; TDP 400 W
+                                               |  energy at B3@1290 latency |  energy at B3@1350 latency |    fastest under TDP
+  as shipped                                   |           -3.30%  930/1305 |           -6.10%  930/1350 |     -0.17%  840/1410
+  uncore follows the SLOWER domain             |           -2.80%  930/1320 |           -3.74%  930/1380 |     +0.00% 1410/1410
+  no idle power in shared logic                |           -3.60%  930/1305 |           -6.42%  930/1350 |     -0.17%  840/1410
+  half the idle power in shared logic          |           -3.00%  930/1305 |           -5.77%  930/1350 |     -0.17%  840/1410
+  domain crossing costs 5%                     |           -3.09% 1140/1290 |           -6.11%  930/1350 |     -0.18%  870/1410
+  domain crossing costs 10%                    |           -4.67%  930/1290 |           -6.12%  930/1350 |     -0.22%  885/1410
+  lower rail through an LDO                    |           -1.12% 1215/1290 |           -4.27%  930/1350 |     -0.17%  840/1410
+  half of panel delivery on the uncore clock   |           -3.27%  930/1305 |           -4.38%  930/1365 |     -0.02% 1200/1410
+  all of panel delivery on the uncore clock    |           -4.02% 1410/1170 |           -5.24% 1410/1275 |     +0.00% 1410/1410
+  DRAM-L2 coupling on the uncore clock         |           -4.67%  930/1290 |           -6.12%  930/1350 |     -0.23%  900/1410
+  loaded-die power at the faster clock         |           -2.68%  930/1305 |           -5.17%  930/1350 |     -0.17%  840/1410
+  epilogue at the slower clock                 |           -1.52%  945/1320 |           -2.11% 1005/1380 |     +0.00% 1410/1410
+  rate model: proportional form                |           -3.30%  930/1305 |           -6.09%  930/1350 |     -0.13%  840/1410
+  rate model: linear form                      |           -3.25%  930/1305 |           -4.35%  930/1365 |     +0.00% 1410/1410
+wrote /home/xinting/aiconfigurator_overlap_exp/tools/moe_megakernel/sim/out/sensitivity_cells32_persistent.csv

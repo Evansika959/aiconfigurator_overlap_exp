@@ -1,0 +1,31 @@
+{
+ "written_utc": "2026-10-08 09:59:30",
+ "tag": "first_shot",
+ "kernels": "calib/a100_kernels.json",
+ "kernels_sha256": "ef25e81466850cc7efc84b49740c742eb69aff2876eb43b136010ff3dec47c7a",
+ "calib_sha256": "ee08d19783af31b4da087eff6f6f2773dd6dec0bd1bab3cf7bbf34cefbfc68df",
+ "measured_already": [],
+ "plans": {
+  "blind": {
+   "rows": 2860,
+   "sha256": "3e55335d3f16108b84ae322234de9360f5dd79fbb06f260269ea42d1831d03f1",
+   "plan_sha256": "07306f2f885755c675fc27a226b1f1b5d627733af22ed935f625bd67567b2705"
+  },
+  "blind_auto": {
+   "rows": 248,
+   "sha256": "145a1e776dd935aefbdbb3ccc0443857fd020fa92605dfb7b3e61859d0477c13",
+   "plan_sha256": "d94cbde935505b38463e8c262bd74c784eb08ad825788af7becb99afdd4514b1"
+  },
+  "blind_multi": {
+   "rows": 196,
+   "sha256": "34b1e470c707f87fb566bf0bf64d7f569b198500475832aacadebd838f34c123",
+   "plan_sha256": "2db654c21257164bd5608519abc3162aa9316d459d133c293d2447b42354880e"
+  },
+  "blind_train": {
+   "rows": 152,
+   "sha256": "8a2b0e70f7778646b9f33bff660273b1cc138758500fc2fe43de2fc7b20bef93",
+   "plan_sha256": "ebae0c38f3573328c2ce41a8d02a160f92f61cd1ff0d5b1ab853c2add9f9a0f5"
+  }
+ },
+ "frozen_sim_sha256": "fd7e21133220bdbc4606800678c627536b8f8b42a7d0a7c7a8fed034f1ef19ff"
+}

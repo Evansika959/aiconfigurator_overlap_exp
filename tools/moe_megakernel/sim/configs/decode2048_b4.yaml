@@ -1,0 +1,14 @@
+# B4 -- the design under study: the same partitions as B3, now on two V/f domains of 32
+# and 76 SMs, each with its own clock, chosen by nested bisection so that predicted
+# board power sits at TDP.
+name: decode2048_b4
+model: qwen
+hardware:
+  domains: [{name: cold, sms: 32}, {name: hot, sms: 76}]
+  tdp_w: 400
+  uncore: max            # shared logic (L2, crossbar) follows the faster domain
+  actuation_ms: 38       # NVML on the A100; an on-die regulator would be ~0.05
+kernel: {type: persistent, block_m: 64, n_cold: 64}
+controller: {type: tdp_bisection}
+workload:
+  - {phase: decode, cells: 32, layers: [0], repeat: 2000}

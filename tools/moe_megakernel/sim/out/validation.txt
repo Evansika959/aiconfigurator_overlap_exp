@@ -1,0 +1,103 @@
+0  decomposition vs ncu
+  tiles   model vs ncu over 90 kernels: median +0.00%, worst +0.00%
+  tensor  model vs ncu over 90 kernels: median +0.00%, worst +0.00%
+  dram    model vs ncu over 90 kernels: median -0.11%, worst -17.27%
+
+1  fitted: the training sweeps, 16-108 SMs
+                                                  fit | time: n   rms%  bias%  worst% | power: n   rms%  bias%  worst% dyn rms%
+  scan, 930-1410 MHz: solo                        yes |   622   2.81  +0.20   -12.8 |   622   2.16  -0.09    +7.6     3.65
+  scan, 930-1410 MHz: co-run                      yes |   548   3.17  -0.66    -8.6 |   274   2.49  -0.71    +9.0     3.41
+  holdout, 990-1380 MHz: solo                     yes |   520   3.92  +0.95   -15.2 |   520   2.86  -0.31    +7.8     4.75
+  holdout, 990-1380 MHz: co-run                   yes |   474   3.28  +0.12   +11.7 |   237   3.36  -0.27   +14.0     4.62
+  lowclk, 510-870 MHz: solo                       yes |   416   2.71  -0.23    -9.0 |   416   1.54  +0.23    +5.7     3.35
+  lowclk, 510-870 MHz: co-run                     yes |   384   2.12  -0.24    -6.9 |   192   2.30  -0.71    +7.9     3.75
+  (holdout, scored BEFORE it was fitted, by a fit on the scan alone: time rms 3.79%, bias +0.72%, worst +15.8%, n=994)
+  (lowclk, scored BEFORE it was fitted, by a fit on the scan alone: time rms 2.68%, bias -0.67%, worst -7.7%, n=800)
+
+2  other days (replayed single passes of 1 ms or longer)
+                                                  fit | time: n   rms%  bias%  worst% | power: n   rms%  bias%  worst% dyn rms%
+  prefill, BM16-128, 54 SMs, 600-1290 MHz          no |    55   6.10  +3.75   +12.4 |    55   5.51  +1.04   +11.1    10.39
+  decode 1024, BM16-128, 600-1290 MHz              no |    94   3.39  +2.93    +6.7 |    94   2.16  -1.63    -5.1     3.71
+  decode 2048, BM16-128, 600-1290 MHz              no |   106   3.03  +2.56    +6.4 |   106   2.69  -2.41    -5.0     4.76
+  prefill, 8 cold experts                          no |    13   0.48  +0.19    +1.0 |    13   1.41  -0.41    +3.0     2.49
+  prefill, 32 cold experts                         no |    25   1.13  +0.65    +2.5 |    25   2.07  -1.08    -4.1     3.79
+  prefill, 64 cold experts                         no |    26   0.62  +0.19    +1.5 |    26   1.70  -0.47    -3.1     3.09
+  prefill, 96 cold experts                         no |    26   0.64  -0.00    +1.3 |    26   1.81  -0.00    +3.7     3.18
+  prefill, 54 SMs, 1050-1410 MHz               partly |    32   0.83  +0.78    +1.3 |    32   2.95  +2.17    +5.8     4.36
+  first co-run campaign: solo                      no |    96   3.11  +0.93    -7.5 |    96   1.67  -0.69    -4.5     2.86
+  first co-run campaign: 54+54, 32+76              no |    96   2.87  -0.13    +7.1 |    48   2.19  -0.74    -5.1     3.11
+
+3  other workloads (never fitted)
+                                                  fit | time: n   rms%  bias%  worst% | power: n   rms%  bias%  worst% dyn rms%
+  MoE layer 6: solo                                no |   154   3.41  +1.27   -10.6 |   154   2.70  +0.03    +6.9     4.43
+  MoE layer 6: co-run                              no |   122   3.52  +0.32   -10.0 |    61   2.40  -0.94    +6.4     3.25
+  MoE layer 24: solo                               no |   154   3.80  +1.40   +11.5 |   154   3.08  +0.02    -8.5     4.94
+  MoE layer 24: co-run                             no |   124   4.12  +0.84   -11.6 |    62   2.46  -0.75    -5.2     3.31
+  MoE layer 36: solo                               no |   154   3.49  +1.19   -11.2 |   154   2.90  -0.13    -8.9     4.70
+  MoE layer 36: co-run                             no |   124   3.60  +0.14   -10.5 |    62   2.51  -0.73    -5.5     3.35
+  MoE layer 47: solo                               no |   154   4.37  +1.73   +17.2 |   154   4.99  +1.48   +27.3     9.35
+  MoE layer 47: co-run                             no |   126   5.76  +2.12   +19.7 |    63   3.30  +0.10   +13.8     4.68
+  pinned layer END TO END, six SM splits           no |   108   1.38  -0.20    +4.2 |   108   2.32  +1.71    +5.5     3.48
+    the pair was also swept side by side           no |    94   1.46  -0.19    +4.2 |    94   1.94  +1.41    +4.8     3.00
+    the pair was not                               no |    14   0.70  -0.29    -1.9 |    14   4.01  +3.76    +5.5     5.75
+    prefill, BM128, 16 cold experts                no |    18   0.57  -0.26    -1.1 |    18   3.54  +3.31    +5.5     5.26
+    prefill, BM128, 64 cold experts                no |    18   0.87  -0.57    -1.9 |    18   2.66  +2.35    +5.5     3.91
+    1024 tokens, BM64, 64 cold experts             no |    18   0.98  -0.57    -1.9 |    18   1.35  +1.01    +2.9     1.99
+    2048 tokens, BM16, 64 cold experts             no |    18   2.38  +1.67    +4.2 |    18   1.81  +0.78    +4.0     2.90
+    2048 tokens, BM64, 64 cold experts             no |    18   1.27  -0.62    -3.0 |    18   1.64  +1.05    +4.1     2.47
+    4096 tokens, BM64, 64 cold experts             no |    18   1.46  -0.87    -3.0 |    18   2.19  +1.78    +4.8     3.34
+
+3b other MODELS: fitted on Qwen3-30B-A3B only, kernel config borrowed from it
+                                                  fit | time: n   rms%  bias%  worst% | power: n   rms%  bias%  worst% dyn rms%
+  OLMoE, 64 experts, I=1024: solo                  no |   104   2.74  +1.97    +7.2 |   104   2.61  +1.27    -5.7     4.34
+  OLMoE, 64 experts, I=1024: co-run                no |    96   2.86  +2.04    +6.8 |    48   2.96  -2.10    -6.5     3.92
+  OLMoE, 64 experts, I=1024: whole layers, both kernels     no |    14   1.92  +1.34    +4.0 |    14   2.70  +2.18    +4.1     3.61
+  Granite, 40 experts, K=1536: solo                no |    92   8.08  -7.73   -15.1 |    92   6.12  +5.42   +17.1     9.86
+  Granite, 40 experts, K=1536: co-run              no |    72   5.86  -5.28    -9.6 |    36   6.11  +5.59   +11.3     8.47
+  Granite, 40 experts, K=1536: a partition that fits in L2     no |    36   4.43  -3.72    -7.6 |    24  19.23 +17.68   +33.3    36.64
+  Granite, 40 experts, K=1536: whole layers, both kernels     no |    14   5.10  -4.40    -7.0 |    14   7.37  +7.00   +10.1    10.14
+  Qwen3-Next, 512 experts, top-10: solo            no |   104   2.72  -1.03    -6.2 |   104   2.64  -0.62    +9.6     4.31
+  Qwen3-Next, 512 experts, top-10: co-run          no |    96   3.43  -1.72    -6.8 |    48   4.60  +3.17   +11.7     6.44
+  Qwen3-Next, 512 experts, top-10: whole layers, both kernels     no |    14   2.36  -1.20    -5.1 |    14   3.34  +2.96    +6.1     4.56
+
+4  whole layers through the event engine, fixed clock
+                                                  fit | time: n   rms%  bias%  worst% | power: n   rms%  bias%  worst% dyn rms%
+  persistent kernel, other layers (never fitted)     no |    40   1.17  +0.75    +2.2 |    40   2.56  +2.37    +4.5     3.55
+  persistent kernel, training sweeps              yes |   118   2.18  +1.11    +6.5 |   118   1.84  +0.94    +7.2     2.66
+  queue kernel, other layers (never fitted)        no |    25   1.24  +0.51    -2.7 |    25   1.92  +1.58    +3.2     2.51
+  queue kernel, training sweeps                   yes |    56   2.00  -0.09    -4.7 |    56   2.16  +1.43    +4.8     2.98
+  queue kernel, 64-7744 tokens, 510-1410 MHz      yes |   141   1.79  -0.03    -5.3 |   141   1.68  -0.66    +4.0     2.24
+  queue kernel, 512-12288 tokens, 1290 MHz         no |     8   2.10  -0.55    -4.0 |     8   2.04  +0.65    +4.2     2.61
+  persistent, BM64 and BM128, 512-7744 tokens (never fitted)     no |    28   2.44  +0.94    -5.0 |    28   2.23  +0.19    +6.7     3.00
+  queue kernel, 512-7744 tokens (never fitted)     no |    12   2.47  -0.82    -4.3 |    12   2.70  +1.84    +4.9     3.50
+  prefill at 1200 MHz, both kernels (Sep 17)       no |     2   0.93  +0.89    +1.1 |     2   1.82  -1.72    -2.3     2.30
+
+5  the stock governor: where it settles (queue kernel, never fitted)
+   batch |                   measured |                  simulated | d clock    d W   d ms
+     512 |   1410 MHz  362.8 W  1.0060 ms |   1410 MHz  373.5 W  0.9662 ms |      +0  +10.7  -4.0%
+    1024 |   1410 MHz  397.7 W  1.1565 ms |   1400 MHz  400.1 W  1.1073 ms |     -10   +2.4  -4.3%
+    2048 |   1340 MHz  396.8 W  1.4703 ms |   1352 MHz  399.7 W  1.4795 ms |     +12   +2.9  +0.6%
+    4096 |   1320 MHz  399.5 W  2.2409 ms |   1327 MHz  400.3 W  2.2633 ms |      +7   +0.8  +1.0%
+    6144 |   1320 MHz  399.8 W  3.1073 ms |   1322 MHz  399.7 W  3.1308 ms |      +2   -0.1  +0.8%
+    8192 |   1320 MHz  399.1 W  3.9623 ms |   1318 MHz  399.8 W  3.9658 ms |      -2   +0.7  +0.1%
+   10240 |   1320 MHz  399.2 W  4.8396 ms |   1318 MHz  400.2 W  4.8363 ms |      -2   +1.1  -0.1%
+   12288 |   1317 MHz  397.2 W  5.6860 ms |   1315 MHz  399.9 W  5.6628 ms |      -3   +2.7  -0.4%
+
+6  a load that moves, under the governor (python3 -m sim.validate_trace)
+  dynamics   21 segments, 3 runs: latency rms 2.73%, power rms 0.91%, clock rms 9 MHz (7 over the same window), energy of each run -0.7% -0.9% -1.1%
+  trace      33 segments, 3 runs: latency rms 2.22%, power rms 1.28%, clock rms 12 MHz (7 over the same window), energy of each run -0.5% -0.3% -0.4%
+  trace2     22 segments, 2 runs: latency rms 2.72%, power rms 1.67%, clock rms 15 MHz (12 over the same window), energy of each run -0.4% -0.7%
+  forward    21 segments, 3 runs: latency rms 1.01%, power rms 0.67%, clock rms 11 MHz (6 over the same window), energy of each run +0.1% -0.2% -0.2%
+  forward2   24 segments, 3 runs: latency rms 0.96%, power rms 1.54%, clock rms 8 MHz (9 over the same window), energy of each run +0.9% +0.6% +0.4%
+  lock1050   22 segments, 2 runs: latency rms 1.23%, power rms 3.04%, clock rms 0 MHz (0 over the same window), energy of each run +2.3% +2.0%
+  lock1290   22 segments, 2 runs: latency rms 2.59%, power rms 3.39%, clock rms 0 MHz (0 over the same window), energy of each run +1.7% +0.9%
+  heldout1   42 segments, 3 runs: latency rms 1.56%, power rms 1.76%, clock rms 19 MHz (13 over the same window), energy of each run +0.0% -0.3% -1.1%
+  heldout2   24 segments, 3 runs: latency rms 0.68%, power rms 0.53%, clock rms 8 MHz (7 over the same window), energy of each run +0.0% -0.3% +0.2%
+
+7  self-consistency
+  two domains at one clock vs one domain, pinned: worst relative difference 4.4e-16 (9 cases, time and power)
+  energy: trace integral vs total 1.0e-14, sum of layers vs total 0.0e+00
+  tabulated vs exact solve, 202 co-run times: rms 0.11%, worst 0.58%
+  PASS
+
+wrote /home/xinting/aiconfigurator_overlap_exp/tools/moe_megakernel/sim/out/validation.json

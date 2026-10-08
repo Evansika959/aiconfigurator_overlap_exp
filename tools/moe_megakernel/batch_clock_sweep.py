@@ -50,13 +50,14 @@ def clocks():
     return sorted(set(c), reverse=True)
 
 
-def decode_batches(spec, layer, cells):
-    """Pool `cells` real decode (rep, step) routings into one batch of 64*cells tokens."""
+def decode_batches(spec, layer, cells, start=0):
+    """Pool `cells` real decode (rep, step) routings into one batch of 64*cells tokens,
+    beginning at cell `start` (the traced cells wrap around)."""
     Z = np.load(os.path.join(HERE, "data", spec["npz"]))
     key = [k for k in Z.files if k.startswith("decode")][0]
     A = Z[key]                       # (reps, steps, layers, experts)
     flat = A[:, :, layer, :].reshape(-1, A.shape[-1])
-    return flat[:cells].sum(axis=0).astype(np.int64)
+    return flat[(start + np.arange(cells)) % len(flat)].sum(axis=0).astype(np.int64)
 
 
 def main():

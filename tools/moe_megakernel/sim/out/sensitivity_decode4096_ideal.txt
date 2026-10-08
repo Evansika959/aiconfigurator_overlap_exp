@@ -1,0 +1,17 @@
+decode 4096 tokens; 64 cold experts on a 32-SM domain; queue per-SM costs, BM128; TDP 400 W
+                                               |  energy at B3@1290 latency |  energy at B3@1350 latency |    fastest under TDP
+  as shipped                                   |           -3.10%  930/1305 |           -4.29%  930/1365 |     -1.47% 1200/1380
+  uncore follows the SLOWER domain             |           -3.84%  930/1305 |           -5.14%  930/1365 |     -1.59%  945/1395
+  no idle power in shared logic                |           -3.34%  930/1305 |           -4.57%  930/1365 |     -1.48% 1215/1380
+  half the idle power in shared logic          |           -2.86%  930/1305 |           -4.01%  930/1365 |     -1.47% 1200/1380
+  domain crossing costs 5%                     |           -3.11%  930/1305 |           -4.29%  930/1365 |     -1.48% 1200/1380
+  domain crossing costs 10%                    |           -3.11%  930/1305 |           -4.29%  930/1365 |     -1.49% 1200/1380
+  lower rail through an LDO                    |           +0.00% 1290/1290 |           -2.03%  990/1365 |     -1.34% 1065/1380
+  half of panel delivery on the uncore clock   |           -3.09%  930/1305 |           -4.28%  930/1365 |     -1.45% 1200/1380
+  all of panel delivery on the uncore clock    |           -3.08%  930/1305 |           -4.27%  930/1365 |     -1.43% 1200/1380
+  DRAM-L2 coupling on the uncore clock         |           -3.11%  930/1305 |           -4.29%  930/1365 |     -1.48% 1200/1380
+  loaded-die power at the faster clock         |           -2.61%  930/1305 |           -2.57% 1080/1365 |     -1.42% 1155/1380
+  epilogue at the slower clock                 |           -0.42% 1065/1320 |           -1.42% 1215/1365 |     -0.84% 1230/1380
+  rate model: proportional form                |           -3.10%  930/1305 |           -3.22% 1110/1365 |     -1.49% 1185/1380
+  rate model: linear form                      |           -3.13%  930/1305 |           -3.94% 1020/1365 |     -1.67% 1080/1380
+wrote /home/xinting/aiconfigurator_overlap_exp/tools/moe_megakernel/sim/out/sensitivity_cells64_queue.csv

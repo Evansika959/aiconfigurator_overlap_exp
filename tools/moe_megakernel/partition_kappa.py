@@ -28,6 +28,18 @@ divide its dynamic power by (clock x SMs busy). One resident block per SM, so SM
 is exact rather than modelled.
 
   python3 partition_kappa.py --light-experts 16 --repeats 3
+
+DECODE MODE (--decode-cells N). Prefill gave no heterogeneity because every partition
+is compute-bound. Decode is where it could appear: batch_clock_sweep.py measured the
+whole layer's clock elasticity at ~0.6 for batches up to 1024 tokens and ~0.9 at 4096,
+and inside one batch of 1024-2048 the hot experts sit above the crossing while the cold
+ones stream weights for a handful of tokens. N pools N real decode (rep, step) cells,
+64 tokens each, exactly as batch_clock_sweep.py does. --with-all adds the whole layer on
+all 108 SMs at 1 block/SM, to check against that sweep's queue kernel whether the
+low occupancy of a persistent kernel changes the elasticity by itself.
+
+  python3 partition_kappa.py --decode-cells 16 --light-experts 64 --block-m 16,64,128 \\
+      --with-all --repeats 3
 """
 import argparse, csv, json, os, random, subprocess, sys, time
 import numpy as np
@@ -37,6 +49,7 @@ import triton
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from persistent_moe import PersistentMoE, _launch
 from b1_bench import SHAPES, load_counts, make_inputs
+from batch_clock_sweep import decode_batches
 from baseline_b0 import Power
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -63,15 +76,32 @@ def main():
                     help="SMs the partition runs on, one resident block each")
     ap.add_argument("--repeats", type=int, default=3)
     ap.add_argument("--secs", type=float, default=1.5)
+    ap.add_argument("--decode-cells", type=int, default=0,
+                    help="pool this many real decode cells (64 tokens each) instead "
+                         "of the prefill batch; 0 = prefill")
+    ap.add_argument("--with-all", action="store_true",
+                    help="also run the whole layer on all SMs, 1 block/SM")
+    ap.add_argument("--all-sms", type=int, default=108)
+    ap.add_argument("--clocks", default=None,
+                    help="comma-separated MHz; default is the 13-clock grid in clocks(). "
+                         "Above 1290 only a partial-width run holds its clock: at full "
+                         "width the board hits 400 W and settles near 1320 MHz")
     ap.add_argument("--out", default=None)
     a = ap.parse_args()
-    out = a.out or os.path.join(HERE, "data", f"partition_kappa_{a.model}.csv")
 
     spec = SHAPES[a.model]
-    counts = load_counts(spec, a.rep, a.layer)
+    if a.decode_cells:
+        counts = decode_batches(spec, a.layer, a.decode_cells)
+        counts[np.argmax(counts)] -= int(counts.sum()) % spec["topk"]
+        tag = f"_decode{int(counts.sum()) // spec['topk']}"
+    else:
+        counts = load_counts(spec, a.rep, a.layer)
+        tag = ""
+    out = a.out or os.path.join(HERE, "data", f"partition_kappa_{a.model}{tag}.csv")
     x, w1, w2, tw, ti, M = make_inputs(spec, counts)
     base = json.load(open(os.path.join(HERE, "data", f"b1_config_{a.model}.json")))
-    light_e = np.argsort(counts)[:a.light_experts]
+    light_e = np.argsort(counts, kind="stable")[:a.light_experts]
+    wmib = 3 * spec["K"] * spec["I"] * 2 / 2**20      # one expert's w1 + w2, MiB
 
     jobs = []
     for bm in [int(v) for v in a.block_m.split(",")]:
@@ -80,6 +110,8 @@ def main():
         mask = np.isin(p.rowblock_expert.cpu().numpy(), light_e)
         mb = {"light": p.live_m[torch.from_numpy(mask).to(p.live_m.device)],
               "heavy": p.live_m[torch.from_numpy(~mask).to(p.live_m.device)]}
+        if a.with_all:
+            mb["all"] = p.live_m
         for name, rows in mb.items():
             if rows.numel() == 0:
                 continue
@@ -89,21 +121,29 @@ def main():
                 torch.isin(p.live_m, rows)].cpu().numpy()
             real = int(counts[np.unique(e)].sum())
             padded = int(rows.numel() * bm)
+            nexp = int(len(np.unique(e)))
+            nsm_part = a.all_sms if name == "all" else a.sms
 
-            def body(p=p, t1=t1, t2=t2, cfg=cfg, nsm=a.sms):
+            def body(p=p, t1=t1, t2=t2, cfg=cfg, nsm=nsm_part):
                 _launch(p.x, p.w1, p.c1, p.tw, p.sorted_ids, p.expert_ids, t1,
                         nsm, False, p.topk, cfg, p.ct)
                 _launch(p.c2, p.w2, p.c3, p.tw, p.sorted_ids, p.expert_ids, t2,
                         nsm, True, 1, cfg, p.ct)
             jobs.append(dict(block_m=bm, part=name, real=real, padded=padded,
-                             tiles=int(t1.numel() + t2.numel()), fn=body))
+                             tiles=int(t1.numel() + t2.numel()), fn=body,
+                             sms=nsm_part, experts=nexp,
+                             weight_mib=round(nexp * wmib, 1)))
 
-    print(f"{a.model} layer{a.layer}: {a.light_experts} lightest experts are 'light'; "
-          f"each partition runs alone on {a.sms} SMs, 1 block/SM")
+    print(f"{a.model} layer{a.layer}{tag or ' prefill'}: {a.light_experts} lightest "
+          f"experts are 'light'; each partition runs alone on {a.sms} SMs, 1 block/SM"
+          + (f"; 'all' on {a.all_sms}" if a.with_all else ""))
+    print(f"  tokens per expert: min {counts.min()} median {np.median(counts):.0f} "
+          f"max {counts.max()}; light experts carry {counts[light_e].max()} or fewer")
     for j in jobs:
         print(f"  BLOCK_M={j['block_m']:<4d} {j['part']:<6s} {j['tiles']:>6d} tiles, "
               f"{j['padded']:>6d} padded rows for {j['real']:>6d} real "
-              f"({j['padded']/j['real']-1:+.0%})")
+              f"({j['padded']/j['real']-1:+.0%}), {j['experts']} experts, "
+              f"{j['weight_mib']:.0f} MiB of weights")
 
     graphs = []
     for j in jobs:
@@ -122,7 +162,8 @@ def main():
     rows_out, rng = [], random.Random(11)
     try:
         for pas in range(a.repeats):
-            grid = clocks()[:]
+            grid = ([int(c) for c in a.clocks.split(",")] if a.clocks
+                    else clocks()[:])
             rng.shuffle(grid)
             for f in grid:
                 subprocess.run(["sudo", "nvidia-smi", "-i", "0", "-lgc", f"{f},{f}"],
@@ -145,13 +186,15 @@ def main():
                     ms = wall / (n * 4) * 1e3
                     pdyn = sm["power_w"] - idle["power_w"]
                     rows_out.append(dict(
-                        pas=pas, block_m=j["block_m"], part=j["part"], sms=a.sms,
+                        pas=pas, block_m=j["block_m"], part=j["part"], sms=j["sms"],
+                        tokens=int(counts.sum()) // spec["topk"], experts=j["experts"],
+                        weight_mib=j["weight_mib"],
                         clock=f, clock_med=sm["clock_med"],
                         held=abs(sm["clock_med"] - f) <= TOL,
                         real_rows=j["real"], padded_rows=j["padded"], tiles=j["tiles"],
                         ms=round(ms, 5), power_w=sm["power_w"], idle_w=idle["power_w"],
                         p_dyn_w=round(pdyn, 3),
-                        kappa_mw_per_mhz_per_sm=round(pdyn / f * 1e3 / a.sms, 5),
+                        kappa_mw_per_mhz_per_sm=round(pdyn / f * 1e3 / j["sms"], 5),
                         e_dyn_mj=round(pdyn * ms, 5), replays=n))
                 print(f"  p{pas} {f:4d} MHz  " + "  ".join(
                     f"{j['part'][0]}{j['block_m']}:{r['kappa_mw_per_mhz_per_sm']:.2f}"

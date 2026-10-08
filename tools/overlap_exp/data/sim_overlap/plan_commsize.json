@@ -1,0 +1,167 @@
+{
+"world": 4,
+"ctas": [
+1,
+2,
+4,
+8,
+12,
+16,
+22,
+32,
+48,
+64
+],
+"runs": [
+{
+"mode": "comm_only",
+"clock": 1410,
+"mib": 4
+},
+{
+"mode": "comm_only",
+"clock": 1410,
+"mib": 8
+},
+{
+"mode": "comm_only",
+"clock": 1410,
+"mib": 16
+},
+{
+"mode": "comm_only",
+"clock": 1410,
+"mib": 128
+},
+{
+"mode": "comm_only",
+"clock": 1410,
+"mib": 512
+},
+{
+"mode": "comm_only",
+"clock": 1200,
+"mib": 4
+},
+{
+"mode": "comm_only",
+"clock": 1200,
+"mib": 8
+},
+{
+"mode": "comm_only",
+"clock": 1200,
+"mib": 16
+},
+{
+"mode": "comm_only",
+"clock": 1200,
+"mib": 128
+},
+{
+"mode": "comm_only",
+"clock": 1200,
+"mib": 512
+},
+{
+"mode": "comm_only",
+"clock": 1050,
+"mib": 4
+},
+{
+"mode": "comm_only",
+"clock": 1050,
+"mib": 8
+},
+{
+"mode": "comm_only",
+"clock": 1050,
+"mib": 16
+},
+{
+"mode": "comm_only",
+"clock": 1050,
+"mib": 128
+},
+{
+"mode": "comm_only",
+"clock": 1050,
+"mib": 512
+},
+{
+"mode": "comm_only",
+"clock": 900,
+"mib": 4
+},
+{
+"mode": "comm_only",
+"clock": 900,
+"mib": 8
+},
+{
+"mode": "comm_only",
+"clock": 900,
+"mib": 16
+},
+{
+"mode": "comm_only",
+"clock": 900,
+"mib": 128
+},
+{
+"mode": "comm_only",
+"clock": 900,
+"mib": 512
+},
+{
+"mode": "comm_only",
+"clock": 705,
+"mib": 4
+},
+{
+"mode": "comm_only",
+"clock": 705,
+"mib": 8
+},
+{
+"mode": "comm_only",
+"clock": 705,
+"mib": 16
+},
+{
+"mode": "comm_only",
+"clock": 705,
+"mib": 128
+},
+{
+"mode": "comm_only",
+"clock": 705,
+"mib": 512
+},
+{
+"mode": "comm_only",
+"clock": 510,
+"mib": 4
+},
+{
+"mode": "comm_only",
+"clock": 510,
+"mib": 8
+},
+{
+"mode": "comm_only",
+"clock": 510,
+"mib": 16
+},
+{
+"mode": "comm_only",
+"clock": 510,
+"mib": 128
+},
+{
+"mode": "comm_only",
+"clock": 510,
+"mib": 512
+}
+]
+}

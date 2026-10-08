@@ -1,0 +1,123 @@
+prefill batch, 7744 tokens, layer 0; the wall: 400.0 W; 995 s
+
+  fastest under TDP
+                                                        clock MHz       ms       W       mJ  ms vs B0  mJ vs B0  best configuration
+  B0      queue kernel, stock governor                       1318   3.7703   400.0   1508.0     +0.0%     +0.0%  
+  B1      queue kernel, one clock                            1305   3.8008   389.9   1481.9     +0.8%     -1.7%  
+  B2      persistent kernel, one clock                       1380   4.5368   387.3   1756.9    +20.3%    +16.5%  BM128
+  B3      pinned, one clock                                  1380   4.5544   386.1   1758.5    +20.8%    +16.6%  BM128, 96 cold experts on 64 SMs
+  B4      pinned, a clock per domain                    1395/1380   4.5156   397.2   1793.6    +19.8%    +18.9%  BM128, 96 cold experts on 64 SMs
+  B4@16   ... on a 16-SM cold domain                    1215/1410   4.5787   399.6   1829.5    +21.4%    +21.3%  BM128, 32 cold experts on 16 SMs
+  B4@32   ... on a 32-SM cold domain                    1350/1410   4.6067   398.7   1836.9    +22.2%    +21.8%  BM128, 56 cold experts on 32 SMs
+  B4@48   ... on a 48-SM cold domain                    1410/1365   4.5200   396.1   1790.5    +19.9%    +18.7%  BM128, 80 cold experts on 48 SMs
+  B4@64   ... on a 64-SM cold domain                    1395/1380   4.5156   397.2   1793.6    +19.8%    +18.9%  BM128, 96 cold experts on 64 SMs
+  B4@80   ... on a 80-SM cold domain                    1410/1350   4.6110   399.6   1842.6    +22.3%    +22.2%  BM128, 112 cold experts on 80 SMs
+  B3*     pinned, one clock (vLLM per-SM costs)              1320   3.7888   399.6   1514.1     +0.5%     +0.4%  BM128, 88 cold experts on 56 SMs
+  B4*     pinned, a clock per domain (vLLM per-SM costs)  1320/1305   3.7810   396.8   1500.1     +0.3%     -0.5%  BM128, 96 cold experts on 64 SMs
+  B4*@16  ... on a 16-SM cold domain (vLLM per-SM costs)  1065/1335   3.8333   395.3   1515.4     +1.7%     +0.5%  BM128, 32 cold experts on 16 SMs
+  B4*@32  ... on a 32-SM cold domain (vLLM per-SM costs)  1200/1350   3.8280   399.1   1527.9     +1.5%     +1.3%  BM128, 56 cold experts on 32 SMs
+  B4*@48  ... on a 48-SM cold domain (vLLM per-SM costs)  1320/1320   3.8006   398.6   1515.0     +0.8%     +0.5%  BM128, 80 cold experts on 48 SMs
+  B4*@64  ... on a 64-SM cold domain (vLLM per-SM costs)  1320/1305   3.7810   396.8   1500.1     +0.3%     -0.5%  BM128, 96 cold experts on 64 SMs
+  B4*@80  ... on a 80-SM cold domain (vLLM per-SM costs)  1350/1185   3.8260   399.8   1529.6     +1.5%     +1.4%  BM128, 112 cold experts on 80 SMs
+
+  least energy, <= 1.00 x B0 latency
+                                                        clock MHz       ms       W       mJ  ms vs B0  mJ vs B0  best configuration
+  B0      queue kernel, stock governor                       1318   3.7703   400.0   1508.0     +0.0%     +0.0%  
+  B1      queue kernel, one clock                      cannot meet it
+  B2      persistent kernel, one clock                 cannot meet it
+  B3      pinned, one clock                            cannot meet it
+  B4      pinned, a clock per domain                   cannot meet it
+  B4@16   ... on a 16-SM cold domain                   cannot meet it
+  B4@32   ... on a 32-SM cold domain                   cannot meet it
+  B4@48   ... on a 48-SM cold domain                   cannot meet it
+  B4@64   ... on a 64-SM cold domain                   cannot meet it
+  B4@80   ... on a 80-SM cold domain                   cannot meet it
+  B3*     pinned, one clock (vLLM per-SM costs)        cannot meet it
+  B4*     pinned, a clock per domain (vLLM per-SM costs) cannot meet it
+  B4*@16  ... on a 16-SM cold domain (vLLM per-SM costs) cannot meet it
+  B4*@32  ... on a 32-SM cold domain (vLLM per-SM costs) cannot meet it
+  B4*@48  ... on a 48-SM cold domain (vLLM per-SM costs) cannot meet it
+  B4*@64  ... on a 64-SM cold domain (vLLM per-SM costs) cannot meet it
+  B4*@80  ... on a 80-SM cold domain (vLLM per-SM costs) cannot meet it
+
+  least energy, <= 1.02 x B0 latency
+                                                        clock MHz       ms       W       mJ  ms vs B0  mJ vs B0  best configuration
+  B0      queue kernel, stock governor                       1318   3.7703   400.0   1508.0     +0.0%     +0.0%  
+  B1      queue kernel, one clock                            1290   3.8372   378.3   1451.6     +1.8%     -3.7%  
+  B2      persistent kernel, one clock                 cannot meet it
+  B3      pinned, one clock                            cannot meet it
+  B4      pinned, a clock per domain                   cannot meet it
+  B4@16   ... on a 16-SM cold domain                   cannot meet it
+  B4@32   ... on a 32-SM cold domain                   cannot meet it
+  B4@48   ... on a 48-SM cold domain                   cannot meet it
+  B4@64   ... on a 64-SM cold domain                   cannot meet it
+  B4@80   ... on a 80-SM cold domain                   cannot meet it
+  B3*     pinned, one clock (vLLM per-SM costs)              1305   3.8151   388.7   1483.0     +1.2%     -1.7%  BM128, 96 cold experts on 64 SMs
+  B4*     pinned, a clock per domain (vLLM per-SM costs)  1305/1275   3.8413   377.2   1448.9     +1.9%     -3.9%  BM128, 80 cold experts on 48 SMs
+  B4*@16  ... on a 16-SM cold domain (vLLM per-SM costs)  1050/1335   3.8339   394.9   1514.1     +1.7%     +0.4%  BM128, 32 cold experts on 16 SMs
+  B4*@32  ... on a 32-SM cold domain (vLLM per-SM costs)  1155/1350   3.8316   394.2   1510.5     +1.6%     +0.2%  BM128, 56 cold experts on 32 SMs
+  B4*@48  ... on a 48-SM cold domain (vLLM per-SM costs)  1305/1275   3.8413   377.2   1448.9     +1.9%     -3.9%  BM128, 80 cold experts on 48 SMs
+  B4*@64  ... on a 64-SM cold domain (vLLM per-SM costs)  1305/1290   3.8167   385.1   1469.8     +1.2%     -2.5%  BM128, 96 cold experts on 64 SMs
+  B4*@80  ... on a 80-SM cold domain (vLLM per-SM costs)  1350/1125   3.8393   393.7   1511.4     +1.8%     +0.2%  BM128, 112 cold experts on 80 SMs
+
+  least energy, <= 1.05 x B0 latency
+                                                        clock MHz       ms       W       mJ  ms vs B0  mJ vs B0  best configuration
+  B0      queue kernel, stock governor                       1318   3.7703   400.0   1508.0     +0.0%     +0.0%  
+  B1      queue kernel, one clock                            1245   3.9521   347.6   1373.8     +4.8%     -8.9%  
+  B2      persistent kernel, one clock                 cannot meet it
+  B3      pinned, one clock                            cannot meet it
+  B4      pinned, a clock per domain                   cannot meet it
+  B4@16   ... on a 16-SM cold domain                   cannot meet it
+  B4@32   ... on a 32-SM cold domain                   cannot meet it
+  B4@48   ... on a 48-SM cold domain                   cannot meet it
+  B4@64   ... on a 64-SM cold domain                   cannot meet it
+  B4@80   ... on a 80-SM cold domain                   cannot meet it
+  B3*     pinned, one clock (vLLM per-SM costs)              1260   3.9278   354.5   1392.2     +4.2%     -7.7%  BM128, 96 cold experts on 64 SMs
+  B4*     pinned, a clock per domain (vLLM per-SM costs)  1260/1230   3.9581   346.8   1372.7     +5.0%     -9.0%  BM128, 80 cold experts on 48 SMs
+  B4*@16  ... on a 16-SM cold domain (vLLM per-SM costs)  1380/1230   3.9521   357.8   1413.9     +4.8%     -6.2%  BM128, 40 cold experts on 16 SMs
+  B4*@32  ... on a 32-SM cold domain (vLLM per-SM costs)  1125/1305   3.9393   359.3   1415.3     +4.5%     -6.1%  BM128, 56 cold experts on 32 SMs
+  B4*@48  ... on a 48-SM cold domain (vLLM per-SM costs)  1260/1230   3.9581   346.8   1372.7     +5.0%     -9.0%  BM128, 80 cold experts on 48 SMs
+  B4*@64  ... on a 64-SM cold domain (vLLM per-SM costs)  1260/1245   3.9296   352.3   1384.4     +4.2%     -8.2%  BM128, 96 cold experts on 64 SMs
+  B4*@80  ... on a 80-SM cold domain (vLLM per-SM costs)  1305/1095   3.9386   359.6   1416.5     +4.5%     -6.1%  BM128, 112 cold experts on 80 SMs
+
+  least energy, <= 1.10 x B0 latency
+                                                        clock MHz       ms       W       mJ  ms vs B0  mJ vs B0  best configuration
+  B0      queue kernel, stock governor                       1318   3.7703   400.0   1508.0     +0.0%     +0.0%  
+  B1      queue kernel, one clock                            1185   4.1201   312.2   1286.5     +9.3%    -14.7%  
+  B2      persistent kernel, one clock                 cannot meet it
+  B3      pinned, one clock                            cannot meet it
+  B4      pinned, a clock per domain                   cannot meet it
+  B4@16   ... on a 16-SM cold domain                   cannot meet it
+  B4@32   ... on a 32-SM cold domain                   cannot meet it
+  B4@48   ... on a 48-SM cold domain                   cannot meet it
+  B4@64   ... on a 64-SM cold domain                   cannot meet it
+  B4@80   ... on a 80-SM cold domain                   cannot meet it
+  B3*     pinned, one clock (vLLM per-SM costs)              1185   4.1363   311.3   1287.6     +9.7%    -14.6%  BM128, 96 cold experts on 64 SMs
+  B4*     pinned, a clock per domain (vLLM per-SM costs)  1185/1170   4.1384   308.9   1278.2     +9.8%    -15.2%  BM128, 96 cold experts on 64 SMs
+  B4*@16  ... on a 16-SM cold domain (vLLM per-SM costs)  1305/1155   4.1423   311.0   1288.2     +9.9%    -14.6%  BM128, 40 cold experts on 16 SMs
+  B4*@32  ... on a 32-SM cold domain (vLLM per-SM costs)  1290/1140   4.1416   314.6   1302.8     +9.8%    -13.6%  BM128, 64 cold experts on 32 SMs
+  B4*@48  ... on a 48-SM cold domain (vLLM per-SM costs)  1200/1170   4.1289   311.2   1284.9     +9.5%    -14.8%  BM128, 80 cold experts on 48 SMs
+  B4*@64  ... on a 64-SM cold domain (vLLM per-SM costs)  1185/1170   4.1384   308.9   1278.2     +9.8%    -15.2%  BM128, 96 cold experts on 64 SMs
+  B4*@80  ... on a 80-SM cold domain (vLLM per-SM costs)  1230/1035   4.1389   317.2   1312.7     +9.8%    -12.9%  BM128, 112 cold experts on 80 SMs
+
+  least energy, <= 1.25 x B0 latency
+                                                        clock MHz       ms       W       mJ  ms vs B0  mJ vs B0  best configuration
+  B0      queue kernel, stock governor                       1318   3.7703   400.0   1508.0     +0.0%     +0.0%  
+  B1      queue kernel, one clock                            1020   4.6908   246.9   1158.2    +24.4%    -23.2%  
+  B2      persistent kernel, one clock                       1320   4.7071   337.3   1587.9    +24.8%     +5.3%  BM128
+  B3      pinned, one clock                                  1335   4.6814   349.2   1634.9    +24.2%     +8.4%  BM128, 96 cold experts on 64 SMs
+  B4      pinned, a clock per domain                    1335/1305   4.7073   338.1   1591.4    +24.9%     +5.5%  BM128, 80 cold experts on 48 SMs
+  B4@16   ... on a 16-SM cold domain                    1050/1365   4.7125   353.6   1666.1    +25.0%    +10.5%  BM128, 32 cold experts on 16 SMs
+  B4@32   ... on a 32-SM cold domain                    1185/1380   4.6980   352.6   1656.6    +24.6%     +9.9%  BM128, 56 cold experts on 32 SMs
+  B4@48   ... on a 48-SM cold domain                    1335/1305   4.7073   338.1   1591.4    +24.9%     +5.5%  BM128, 80 cold experts on 48 SMs
+  B4@64   ... on a 64-SM cold domain                    1335/1305   4.6869   341.8   1601.9    +24.3%     +6.2%  BM128, 96 cold experts on 64 SMs
+  B4@80   ... on a 80-SM cold domain                    1380/1140   4.7061   350.9   1651.3    +24.8%     +9.5%  BM128, 112 cold experts on 80 SMs
+  B3*     pinned, one clock (vLLM per-SM costs)              1020   4.7102   246.2   1159.5    +24.9%    -23.1%  BM128, 96 cold experts on 64 SMs
+  B4*     pinned, a clock per domain (vLLM per-SM costs)  1035/1005   4.7097   246.1   1159.2    +24.9%    -23.1%  BM128, 80 cold experts on 48 SMs
+  B4*@16  ... on a 16-SM cold domain (vLLM per-SM costs)  1125/1005   4.7031   247.9   1166.0    +24.7%    -22.7%  BM128, 40 cold experts on 16 SMs
+  B4*@32  ... on a 32-SM cold domain (vLLM per-SM costs)   1110/990   4.7115   248.0   1168.5    +25.0%    -22.5%  BM128, 64 cold experts on 32 SMs
+  B4*@48  ... on a 48-SM cold domain (vLLM per-SM costs)  1035/1005   4.7097   246.1   1159.2    +24.9%    -23.1%  BM128, 80 cold experts on 48 SMs
+  B4*@64  ... on a 64-SM cold domain (vLLM per-SM costs)  1020/1020   4.7102   246.2   1159.5    +24.9%    -23.1%  BM128, 96 cold experts on 64 SMs
+  B4*@80  ... on a 80-SM cold domain (vLLM per-SM costs)   1065/930   4.6830   251.3   1176.7    +24.2%    -22.0%  BM128, 112 cold experts on 80 SMs
+
+wrote /home/xinting/aiconfigurator_overlap_exp/tools/moe_megakernel/sim/out/study_prefill.csv and /home/xinting/aiconfigurator_overlap_exp/tools/moe_megakernel/sim/out/study_prefill_fronts.csv

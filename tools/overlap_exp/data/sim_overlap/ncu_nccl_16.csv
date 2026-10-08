@@ -1,0 +1,12 @@
+==PROF== Connected to process 61991 (/usr/bin/python3.12)
+==PROF== Disconnected from process 61991
+"ID","Process ID","Process Name","Host Name","Kernel Name","Context","Stream","Block Size","Grid Size","Device","CC","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","61991","python3.12","127.0.0.1","ncclDevKernel_AllReduce_Sum_bf16_RING_LL(ncclDevKernelArgsStorage<4096>)","1","7","(544, 1, 1)","(16, 1, 1)","0","8.0","Command line profiler metrics","launch__block_size","","544"
+"0","61991","python3.12","127.0.0.1","ncclDevKernel_AllReduce_Sum_bf16_RING_LL(ncclDevKernelArgsStorage<4096>)","1","7","(544, 1, 1)","(16, 1, 1)","0","8.0","Command line profiler metrics","launch__grid_size","","16"
+"0","61991","python3.12","127.0.0.1","ncclDevKernel_AllReduce_Sum_bf16_RING_LL(ncclDevKernelArgsStorage<4096>)","1","7","(544, 1, 1)","(16, 1, 1)","0","8.0","Command line profiler metrics","launch__occupancy_limit_shared_mem","block","1"
+"0","61991","python3.12","127.0.0.1","ncclDevKernel_AllReduce_Sum_bf16_RING_LL(ncclDevKernelArgsStorage<4096>)","1","7","(544, 1, 1)","(16, 1, 1)","0","8.0","Command line profiler metrics","launch__registers_per_thread","register/thread","96"
+"0","61991","python3.12","127.0.0.1","ncclDevKernel_AllReduce_Sum_bf16_RING_LL(ncclDevKernelArgsStorage<4096>)","1","7","(544, 1, 1)","(16, 1, 1)","0","8.0","Command line profiler metrics","launch__shared_mem_config_size","byte","102400"
+"0","61991","python3.12","127.0.0.1","ncclDevKernel_AllReduce_Sum_bf16_RING_LL(ncclDevKernelArgsStorage<4096>)","1","7","(544, 1, 1)","(16, 1, 1)","0","8.0","Command line profiler metrics","launch__shared_mem_per_block_dynamic","byte/block","82240"
+"0","61991","python3.12","127.0.0.1","ncclDevKernel_AllReduce_Sum_bf16_RING_LL(ncclDevKernelArgsStorage<4096>)","1","7","(544, 1, 1)","(16, 1, 1)","0","8.0","Command line profiler metrics","launch__shared_mem_per_block_static","byte/block","7104"
+"0","61991","python3.12","127.0.0.1","ncclDevKernel_AllReduce_Sum_bf16_RING_LL(ncclDevKernelArgsStorage<4096>)","1","7","(544, 1, 1)","(16, 1, 1)","0","8.0","Command line profiler metrics","launch__thread_count","thread","8704"
+"0","61991","python3.12","127.0.0.1","ncclDevKernel_AllReduce_Sum_bf16_RING_LL(ncclDevKernelArgsStorage<4096>)","1","7","(544, 1, 1)","(16, 1, 1)","0","8.0","Command line profiler metrics","launch__waves_per_multiprocessor","","0.15"

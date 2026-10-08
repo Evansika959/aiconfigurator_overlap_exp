@@ -1,0 +1,22 @@
+world=4  8 runs x 1 CTA counts  (persistence was Disabled/Disabled/Disabled/Disabled)
+=== 16 CTA  [0 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 09:11:37.154934760 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  16CTA 1410/1410/1410/1200         wait_in_collective | T   14.524 ms  loop   14.481  108/105/100/324 W  clk 1410/1410/1410/1200
+  16CTA 1410/1410/1410/1200                  wait_idle | T   14.494 ms  loop   14.453  101/98/94/326 W  clk 1410/1410/1410/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA 1200/1200/1200/1200         wait_in_collective | T   14.538 ms  loop   14.501  91/88/82/331 W  clk 1200/1200/1200/1200
+  16CTA 1200/1200/1200/1200                  wait_idle | T   14.504 ms  loop   14.467  87/84/80/334 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA    900/900/900/1200         wait_in_collective | T   14.658 ms  loop   14.629  82/80/74/333 W  clk 900/900/900/1200
+  16CTA    900/900/900/1200                  wait_idle | T   14.618 ms  loop   14.581  79/77/74/334 W  clk 900/900/900/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA    510/510/510/1200         wait_in_collective | T   15.177 ms  loop   15.130  79/77/75/330 W  clk 510/510/510/1200
+  16CTA    510/510/510/1200                  wait_idle | T   15.115 ms  loop   15.083  77/75/75/329 W  clk 510/510/510/1200
+[clocks] restored
+
+DONE in 0.6 min -> data/sim_overlap/waiting_swap.csv  (32 rows)

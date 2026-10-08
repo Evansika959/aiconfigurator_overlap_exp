@@ -1,0 +1,32 @@
+run 0: 11 load segments, 32.7 s
+  seg  load tokens     s |                    measured |                   simulated |   d ms    d W  d MHz
+    1    p0   7744   1.9 |  4.5853 ms  247.9 W  1050 MHz |  4.5730 ms  256.7 W  1050 MHz |  -0.3%   +8.8     -0
+    2    d8    512   1.1 |  1.0715 ms  233.6 W  1050 MHz |  1.0703 ms  242.6 W  1050 MHz |  -0.1%   +9.0     +0
+    4  d128   8192   2.1 |  4.8336 ms  247.4 W  1050 MHz |  4.8131 ms  256.2 W  1050 MHz |  -0.4%   +8.8     -0
+    5   d16   1024   1.1 |  1.2508 ms  244.0 W  1050 MHz |  1.2513 ms  254.5 W  1050 MHz |  +0.0%  +10.5     -0
+    6   d48   3072   3.1 |  2.1917 ms  256.8 W  1050 MHz |  2.2342 ms  258.2 W  1050 MHz |  +1.9%   +1.5     -0
+    8   d24   1536   2.3 |  1.4770 ms  250.0 W  1050 MHz |  1.5143 ms  255.3 W  1050 MHz |  +2.5%   +5.3     +0
+    9    p0   7744   3.1 |  4.5854 ms  250.9 W  1050 MHz |  4.5730 ms  256.7 W  1050 MHz |  -0.3%   +5.7     -0
+   10    d8    512   1.6 |  1.0716 ms  235.0 W  1050 MHz |  1.0703 ms  242.6 W  1050 MHz |  -0.1%   +7.6     +0
+   12   d96   6144   1.9 |  3.7906 ms  249.6 W  1050 MHz |  3.7925 ms  256.5 W  1050 MHz |  +0.1%   +6.9     +0
+   13   d32   2048   2.9 |  1.7008 ms  256.9 W  1050 MHz |  1.7441 ms  257.2 W  1050 MHz |  +2.5%   +0.3     -0
+   15   d16   1024   2.2 |  1.2511 ms  244.4 W  1050 MHz |  1.2513 ms  254.5 W  1050 MHz |  +0.0%  +10.1     +0
+  whole run: energy 6358.1 J measured, 6505.1 J simulated (+2.3%); busy time 23.13 s measured, 23.30 s simulated (+0.7%)
+run 1: 11 load segments, 32.7 s
+  seg  load tokens     s |                    measured |                   simulated |   d ms    d W  d MHz
+    1    p0   7744   1.9 |  4.5879 ms  248.8 W  1050 MHz |  4.5730 ms  256.7 W  1050 MHz |  -0.3%   +7.9     -0
+    2    d8    512   1.1 |  1.0717 ms  233.7 W  1050 MHz |  1.0703 ms  242.6 W  1050 MHz |  -0.1%   +8.9     +0
+    4  d128   8192   2.1 |  4.8343 ms  247.3 W  1050 MHz |  4.8131 ms  256.2 W  1050 MHz |  -0.4%   +8.9     -0
+    5   d16   1024   1.1 |  1.2512 ms  244.8 W  1050 MHz |  1.2513 ms  254.5 W  1050 MHz |  +0.0%   +9.7     -0
+    6   d48   3072   3.1 |  2.1917 ms  256.8 W  1050 MHz |  2.2342 ms  258.2 W  1050 MHz |  +1.9%   +1.5     -0
+    8   d24   1536   2.3 |  1.4771 ms  252.6 W  1050 MHz |  1.5143 ms  255.3 W  1050 MHz |  +2.5%   +2.7     +0
+    9    p0   7744   3.1 |  4.5854 ms  250.9 W  1050 MHz |  4.5730 ms  256.7 W  1050 MHz |  -0.3%   +5.8     -0
+   10    d8    512   1.6 |  1.0715 ms  235.0 W  1050 MHz |  1.0703 ms  242.6 W  1050 MHz |  -0.1%   +7.6     +0
+   12   d96   6144   1.9 |  3.7906 ms  248.0 W  1050 MHz |  3.7925 ms  256.5 W  1050 MHz |  +0.1%   +8.5     +0
+   13   d32   2048   2.9 |  1.7010 ms  256.8 W  1050 MHz |  1.7441 ms  257.2 W  1050 MHz |  +2.5%   +0.5     -0
+   15   d16   1024   2.2 |  1.2511 ms  244.2 W  1050 MHz |  1.2513 ms  254.5 W  1050 MHz |  +0.0%  +10.3     +0
+  whole run: energy 6380.2 J measured, 6505.5 J simulated (+2.0%); busy time 23.13 s measured, 23.30 s simulated (+0.7%)
+
+lock1050: 22 segments over 2 runs -- latency rms 1.23% (worst +2.5%), power rms 3.04% (worst +4.3%), clock rms 0.0 MHz (worst +0); run energy +2.3%, +2.0%
+  the same window on both sides (from 150 ms into each segment): power rms 3.04%, clock rms 0.0 MHz (worst -0)
+  first 400 ms after a load step, replay by replay: load change 0.08% (n=778); short idle 0.16% (n=332); wake 0.31% (n=94); highest 100 ms reading 258 W simulated, 258 W measured

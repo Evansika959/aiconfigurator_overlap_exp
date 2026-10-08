@@ -1,0 +1,416 @@
+{
+"world": 4,
+"ctas": [
+16
+],
+"runs": [
+{
+"mode": "program",
+"name": "gap_gemm_4096_6ms",
+"clock": 1410,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "4096x4096x4096"
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 6.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm+ar_4096_6ms",
+"clock": 1410,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "4096x4096x4096"
+},
+{
+"op": "allreduce",
+"tag": "ar",
+"stream": "main",
+"mib": 16
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 6.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm_8192_12ms",
+"clock": 1410,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "8192x8192x8192"
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 12.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm+ar_8192_12ms",
+"clock": 1410,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "8192x8192x8192"
+},
+{
+"op": "allreduce",
+"tag": "ar",
+"stream": "main",
+"mib": 16
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 12.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_ar_12ms",
+"clock": 1410,
+"ops": [
+{
+"op": "allreduce",
+"tag": "ar",
+"stream": "main",
+"mib": 16
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 12.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm_4096_6ms",
+"clock": 1200,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "4096x4096x4096"
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 6.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm+ar_4096_6ms",
+"clock": 1200,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "4096x4096x4096"
+},
+{
+"op": "allreduce",
+"tag": "ar",
+"stream": "main",
+"mib": 16
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 6.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm_8192_12ms",
+"clock": 1200,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "8192x8192x8192"
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 12.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm+ar_8192_12ms",
+"clock": 1200,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "8192x8192x8192"
+},
+{
+"op": "allreduce",
+"tag": "ar",
+"stream": "main",
+"mib": 16
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 12.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_ar_12ms",
+"clock": 1200,
+"ops": [
+{
+"op": "allreduce",
+"tag": "ar",
+"stream": "main",
+"mib": 16
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 12.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm_4096_6ms",
+"clock": 900,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "4096x4096x4096"
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 6.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm+ar_4096_6ms",
+"clock": 900,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "4096x4096x4096"
+},
+{
+"op": "allreduce",
+"tag": "ar",
+"stream": "main",
+"mib": 16
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 6.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm_8192_12ms",
+"clock": 900,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "8192x8192x8192"
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 12.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm+ar_8192_12ms",
+"clock": 900,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "8192x8192x8192"
+},
+{
+"op": "allreduce",
+"tag": "ar",
+"stream": "main",
+"mib": 16
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 12.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_ar_12ms",
+"clock": 900,
+"ops": [
+{
+"op": "allreduce",
+"tag": "ar",
+"stream": "main",
+"mib": 16
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 12.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm_4096_6ms",
+"clock": 510,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "4096x4096x4096"
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 6.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm+ar_4096_6ms",
+"clock": 510,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "4096x4096x4096"
+},
+{
+"op": "allreduce",
+"tag": "ar",
+"stream": "main",
+"mib": 16
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 6.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm_8192_12ms",
+"clock": 510,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "8192x8192x8192"
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 12.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_gemm+ar_8192_12ms",
+"clock": 510,
+"ops": [
+{
+"op": "gemm",
+"tag": "g",
+"stream": "main",
+"shape": "8192x8192x8192"
+},
+{
+"op": "allreduce",
+"tag": "ar",
+"stream": "main",
+"mib": 16
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 12.0
+}
+]
+},
+{
+"mode": "program",
+"name": "gap_ar_12ms",
+"clock": 510,
+"ops": [
+{
+"op": "allreduce",
+"tag": "ar",
+"stream": "main",
+"mib": 16
+},
+{
+"op": "sleep",
+"tag": "z",
+"ms": 12.0
+}
+]
+}
+]
+}

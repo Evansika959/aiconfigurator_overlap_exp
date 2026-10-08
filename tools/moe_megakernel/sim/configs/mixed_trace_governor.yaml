@@ -1,0 +1,16 @@
+# A load that moves: batches of five sizes and the prefill batch, with idle gaps, under
+# the stock governor. The same script was run on the A100 (governor_trace.py --plan
+# trace); sim/validate_trace.py lays the two on one time axis.
+name: mixed_trace_governor
+model: qwen
+hardware:
+  domains: [{name: all, sms: 108}]
+  tdp_w: 400
+kernel: {type: queue, block_m: 128}
+controller: {type: governor}
+workload:
+  - {phase: decode, cells: 8, layers: [0], repeat: 1980, gap_ms: 0, at_ms: 2000}
+  - {phase: decode, cells: 32, layers: [0], repeat: 2000}
+  - {phase: prefill, rep: 0, layers: [0], repeat: 800}
+  - {phase: decode, cells: 16, layers: [0], repeat: 1700, at_ms: 12000}
+  - {phase: decode, cells: 64, layers: [0], repeat: 1300}

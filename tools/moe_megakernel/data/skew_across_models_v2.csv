@@ -1,0 +1,9 @@
+tag,role,model,experts,top_k,layers,repeats,conversations,tokens_per_expert,excess_gini,excess_gini_sd,excess_gini_min,excess_gini_max,max_over_mean,dataset
+granite,model,ibm-granite/granite-3.0-3b-a800m-instruct,40,8,32,24,1536,1708.3,0.3287,0.0091,0.3099,0.3496,3.083,"ShareGPT_V3 (first human turn, chat template)"
+olmoe,model,allenai/OLMoE-1B-7B-0924,64,8,16,24,1536,1175.2,0.2505,0.0348,0.1934,0.3222,3.004,"ShareGPT_V3 (first human turn, chat template)"
+olmoe_it,model,allenai/OLMoE-1B-7B-0924-Instruct,64,8,16,24,1536,1054.4,0.2664,0.0393,0.2096,0.3684,2.864,"ShareGPT_V3 (first human turn, chat template)"
+qwen3,model,Qwen/Qwen3-30B-A3B,128,8,48,24,1536,507.9,0.4274,0.0282,0.369,0.4648,4.525,"ShareGPT_V3 (first human turn, chat template)"
+qwen3next,model,Qwen/Qwen3-Next-80B-A3B-Instruct,512,10,48,24,768,78.4,0.5679,0.0363,0.4976,0.6346,10.96,"ShareGPT_V3 (first human turn, chat template)"
+gptoss,model,openai/gpt-oss-20b,32,4,24,24,1536,1406.5,0.4641,0.0264,0.4117,0.5102,4.334,"ShareGPT_V3 (first human turn, chat template)"
+gptoss_raw,control,openai/gpt-oss-20b,32,4,24,24,1536,1145.6,0.4349,0.0373,0.3493,0.474,3.768,"ShareGPT_V3 (first human turn, raw)"
+llama4,not compared,unsloth/Llama-4-Scout-17B-16E-Instruct,16,1,48,24,1536,504.3,0.3886,0.0174,0.3501,0.4233,2.89,"ShareGPT_V3 (first human turn, chat template)"

@@ -1,0 +1,9 @@
+# The simulator follows the repository's lint rules, with one exception.
+extend = "../../../pyproject.toml"
+
+[lint]
+extend-ignore = [
+    # Names follow the model's equations (rate.py, power.py) and the layer's dimensions:
+    # kP, kR, L0, BW, K, I, E, T, P. Lower-casing them would hide which symbol is which.
+    "N802", "N803", "N806", "N815",
+]

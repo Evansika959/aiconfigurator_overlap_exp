@@ -1,0 +1,92 @@
+world=4  40 runs x 2 CTA counts  (persistence was Disabled/Disabled/Disabled/Disabled)
+=== 8 CTA  [0 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 08:45:57.952446049 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+   8CTA                1200   16MiB                -     comm_only | T    0.371 ms  gemm   0.000  comm   0.345  102/99/100/98 W  clk 1200/1200/1200/1200
+   8CTA                1200   16MiB   8192x8192x8192    concurrent | T    4.796 ms  gemm   4.637  comm   0.582  359/337/363/338 W  clk 1200/1200/1200/1200
+   8CTA                1200   16MiB   2048x8192x8192    concurrent | T    1.370 ms  gemm   1.224  comm   0.401  327/315/329/306 W  clk 1200/1200/1200/1200
+   8CTA                1200   16MiB   4096x4096x4096    concurrent | T    0.892 ms  gemm   0.750  comm   0.406  280/270/278/261 W  clk 1200/1200/1200/1200
+   8CTA                1200   48MiB                -     comm_only | T    0.853 ms  gemm   0.000  comm   0.827  112/109/114/112 W  clk 1200/1200/1200/1200
+   8CTA                1200   48MiB   8192x8192x8192    concurrent | T    4.827 ms  gemm   4.670  comm   0.922  360/347/365/336 W  clk 1200/1200/1200/1200
+   8CTA                1200   48MiB   2048x8192x8192    concurrent | T    1.585 ms  gemm   1.441  comm   0.897  308/293/299/282 W  clk 1200/1200/1200/1200
+   8CTA                1200   48MiB   4096x4096x4096    concurrent | T    0.918 ms  gemm   0.770  comm   0.891  279/277/286/271 W  clk 1200/1200/1200/1200
+   8CTA                1200   64MiB                -     comm_only | T    1.087 ms  gemm   0.000  comm   1.061  115/111/117/115 W  clk 1200/1200/1200/1200
+   8CTA                1200   64MiB   8192x8192x8192    concurrent | T    4.828 ms  gemm   4.670  comm   1.146  361/352/369/342 W  clk 1200/1200/1200/1200
+   8CTA                1200   64MiB   2048x8192x8192    concurrent | T    1.588 ms  gemm   1.440  comm   1.128  310/302/314/297 W  clk 1200/1200/1200/1200
+   8CTA                1200   64MiB   4096x4096x4096    concurrent | T    1.140 ms  gemm   0.778  comm   1.115  253/247/255/244 W  clk 1200/1200/1200/1200
+   8CTA                1200   80MiB                -     comm_only | T    1.363 ms  gemm   0.000  comm   1.337  115/114/116/114 W  clk 1200/1200/1200/1200
+   8CTA                1200   80MiB   8192x8192x8192    concurrent | T    4.842 ms  gemm   4.688  comm   1.491  373/356/368/345 W  clk 1200/1200/1200/1200
+   8CTA                1200   80MiB   2048x8192x8192    concurrent | T    1.592 ms  gemm   1.444  comm   1.450  308/304/313/301 W  clk 1200/1200/1200/1200
+   8CTA                1200   80MiB   4096x4096x4096    concurrent | T    1.417 ms  gemm   0.775  comm   1.391  227/222/229/219 W  clk 1200/1200/1200/1200
+   8CTA                1200  112MiB                -     comm_only | T    1.842 ms  gemm   0.000  comm   1.816  116/113/118/117 W  clk 1200/1200/1200/1200
+   8CTA                1200  112MiB   8192x8192x8192    concurrent | T    5.010 ms  gemm   4.862  comm   2.001  362/345/361/344 W  clk 1200/1200/1200/1200
+   8CTA                1200  112MiB   2048x8192x8192    concurrent | T    1.941 ms  gemm   1.456  comm   1.915  276/271/278/267 W  clk 1200/1200/1200/1200
+   8CTA                1200  112MiB   4096x4096x4096    concurrent | T    1.892 ms  gemm   0.778  comm   1.866  199/196/202/196 W  clk 1200/1200/1200/1200
+   8CTA                1200  128MiB                -     comm_only | T    2.071 ms  gemm   0.000  comm   2.044  116/114/119/118 W  clk 1200/1200/1200/1200
+   8CTA                1200  128MiB   8192x8192x8192    concurrent | T    5.045 ms  gemm   4.898  comm   2.226  361/348/360/341 W  clk 1200/1200/1200/1200
+   8CTA                1200  128MiB   2048x8192x8192    concurrent | T    2.166 ms  gemm   1.445  comm   2.139  261/255/264/253 W  clk 1200/1200/1200/1200
+   8CTA                1200  128MiB   4096x4096x4096    concurrent | T    2.123 ms  gemm   0.776  comm   2.096  192/188/194/188 W  clk 1200/1200/1200/1200
+   8CTA                1200  160MiB                -     comm_only | T    2.581 ms  gemm   0.000  comm   2.554  116/114/118/117 W  clk 1200/1200/1200/1200
+   8CTA                1200  160MiB   8192x8192x8192    concurrent | T    5.055 ms  gemm   4.904  comm   2.824  365/344/361/342 W  clk 1200/1200/1200/1200
+   8CTA                1200  160MiB   2048x8192x8192    concurrent | T    2.665 ms  gemm   1.449  comm   2.638  236/229/236/227 W  clk 1200/1200/1200/1200
+   8CTA                1200  160MiB   4096x4096x4096    concurrent | T    2.621 ms  gemm   0.774  comm   2.597  178/176/178/172 W  clk 1200/1200/1200/1200
+   8CTA                1200  192MiB                -     comm_only | T    3.045 ms  gemm   0.000  comm   3.020  118/116/118/117 W  clk 1200/1200/1200/1200
+   8CTA                1200  192MiB   8192x8192x8192    concurrent | T    5.088 ms  gemm   4.948  comm   3.283  358/344/363/345 W  clk 1200/1200/1200/1200
+   8CTA                1200  192MiB   2048x8192x8192    concurrent | T    3.134 ms  gemm   1.452  comm   3.111  215/215/219/212 W  clk 1200/1200/1200/1200
+   8CTA                1200  192MiB   4096x4096x4096    concurrent | T    3.100 ms  gemm   0.773  comm   3.076  168/166/169/166 W  clk 1200/1200/1200/1200
+   8CTA                1200  224MiB                -     comm_only | T    3.541 ms  gemm   0.000  comm   3.518  118/116/117/117 W  clk 1200/1200/1200/1200
+   8CTA                1200  224MiB   8192x8192x8192    concurrent | T    5.264 ms  gemm   5.128  comm   3.914  347/339/353/336 W  clk 1200/1200/1200/1200
+   8CTA                1200  224MiB   2048x8192x8192    concurrent | T    3.646 ms  gemm   1.447  comm   3.622  205/200/206/197 W  clk 1200/1200/1200/1200
+   8CTA                1200  224MiB   4096x4096x4096    concurrent | T    3.602 ms  gemm   0.775  comm   3.578  164/160/162/158 W  clk 1200/1200/1200/1200
+   8CTA                1200  256MiB                -     comm_only | T    4.017 ms  gemm   0.000  comm   3.993  119/116/118/117 W  clk 1200/1200/1200/1200
+   8CTA                1200  256MiB   8192x8192x8192    concurrent | T    5.286 ms  gemm   5.154  comm   4.574  354/340/355/337 W  clk 1200/1200/1200/1200
+   8CTA                1200  256MiB   2048x8192x8192    concurrent | T    4.115 ms  gemm   1.449  comm   4.091  195/189/194/191 W  clk 1200/1200/1200/1200
+   8CTA                1200  256MiB   4096x4096x4096    concurrent | T    4.089 ms  gemm   0.774  comm   4.062  155/153/157/155 W  clk 1200/1200/1200/1200
+=== 16 CTA  [2 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 08:47:53.391695489 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  16CTA                1200   16MiB                -     comm_only | T 0.274/0.275/0.278/0.281 ms  gemm   0.000  comm   0.251  108/107/108/108 W  clk 1200/1200/1200/1200
+  16CTA                1200   16MiB   8192x8192x8192    concurrent | T    4.719 ms  gemm   4.581  comm   0.327  370/358/372/352 W  clk 1200/1200/1200/1200
+  16CTA                1200   16MiB   2048x8192x8192    concurrent | T    1.457 ms  gemm   1.323  comm   0.297  319/311/320/305 W  clk 1200/1200/1200/1200
+  16CTA                1200   16MiB   4096x4096x4096    concurrent | T    0.893 ms  gemm   0.758  comm   0.315  281/276/281/267 W  clk 1200/1200/1200/1200
+  16CTA                1200   48MiB                -     comm_only | T    0.554 ms  gemm   0.000  comm   0.532  127/125/122/121 W  clk 1200/1200/1200/1200
+  16CTA                1200   48MiB   8192x8192x8192    concurrent | T    4.807 ms  gemm   4.669  comm   0.670  366/345/368/345 W  clk 1200/1200/1200/1200
+  16CTA                1200   48MiB   2048x8192x8192    concurrent | T    1.570 ms  gemm   1.432  comm   0.597  309/300/311/292 W  clk 1200/1200/1200/1200
+  16CTA                1200   48MiB   4096x4096x4096    concurrent | T    0.906 ms  gemm   0.775  comm   0.628  290/285/294/281 W  clk 1200/1200/1200/1200
+  16CTA                1200   64MiB                -     comm_only | T    0.698 ms  gemm   0.000  comm   0.675  131/128/126/124 W  clk 1200/1200/1200/1200
+  16CTA                1200   64MiB   8192x8192x8192    concurrent | T    4.822 ms  gemm   4.679  comm   0.885  362/357/363/347 W  clk 1200/1200/1200/1200
+  16CTA                1200   64MiB   2048x8192x8192    concurrent | T    1.574 ms  gemm   1.445  comm   1.008  312/306/314/303 W  clk 1200/1200/1200/1200
+  16CTA                1200   64MiB   4096x4096x4096    concurrent | T    0.981 ms  gemm   0.848  comm   0.732  280/275/285/272 W  clk 1200/1200/1200/1200
+  16CTA                1200   80MiB                -     comm_only | T    0.848 ms  gemm   0.000  comm   0.825  133/129/130/127 W  clk 1200/1200/1200/1200
+  16CTA                1200   80MiB   8192x8192x8192    concurrent | T    4.822 ms  gemm   4.693  comm   0.896  364/350/364/344 W  clk 1200/1200/1200/1200
+  16CTA                1200   80MiB   2048x8192x8192    concurrent | T    1.578 ms  gemm   1.447  comm   1.096  316/309/315/302 W  clk 1200/1200/1200/1200
+  16CTA                1200   80MiB   4096x4096x4096    concurrent | T    1.021 ms  gemm   0.889  comm   0.986  281/278/285/274 W  clk 1200/1200/1200/1200
+  16CTA                1200  112MiB                -     comm_only | T    1.118 ms  gemm   0.000  comm   1.094  134/131/132/131 W  clk 1200/1200/1200/1200
+  16CTA                1200  112MiB   8192x8192x8192    concurrent | T    5.030 ms  gemm   4.895  comm   1.253  360/345/361/337 W  clk 1200/1200/1200/1200
+  16CTA                1200  112MiB   2048x8192x8192    concurrent | T    1.619 ms  gemm   1.490  comm   1.144  314/302/322/305 W  clk 1200/1200/1200/1200
+  16CTA                1200  112MiB   4096x4096x4096    concurrent | T    1.151 ms  gemm   0.905  comm   1.128  269/263/271/261 W  clk 1200/1200/1200/1200
+  16CTA                1200  128MiB                -     comm_only | T    1.249 ms  gemm   0.000  comm   1.225  135/132/133/132 W  clk 1200/1200/1200/1200
+  16CTA                1200  128MiB   8192x8192x8192    concurrent | T    5.032 ms  gemm   4.901  comm   1.312  360/348/361/345 W  clk 1200/1200/1200/1200
+  16CTA                1200  128MiB   2048x8192x8192    concurrent | T    1.748 ms  gemm   1.621  comm   1.273  305/299/309/295 W  clk 1200/1200/1200/1200
+  16CTA                1200  128MiB   4096x4096x4096    concurrent | T    1.292 ms  gemm   0.895  comm   1.269  256/251/257/248 W  clk 1200/1200/1200/1200
+  16CTA                1200  160MiB                -     comm_only | T    1.571 ms  gemm   0.000  comm   1.547  134/130/132/131 W  clk 1200/1200/1200/1200
+  16CTA                1200  160MiB   8192x8192x8192    concurrent | T    5.092 ms  gemm   4.957  comm   1.658  356/347/362/343 W  clk 1200/1200/1200/1200
+  16CTA                1200  160MiB   2048x8192x8192    concurrent | T    1.817 ms  gemm   1.677  comm   1.782  304/298/306/294 W  clk 1200/1200/1200/1200
+  16CTA                1200  160MiB   4096x4096x4096    concurrent | T    1.616 ms  gemm   0.896  comm   1.593  230/226/231/224 W  clk 1200/1200/1200/1200
+  16CTA                1200  192MiB                -     comm_only | T    1.851 ms  gemm   0.000  comm   1.828  135/132/133/131 W  clk 1200/1200/1200/1200
+  16CTA                1200  192MiB   8192x8192x8192    concurrent | T    5.259 ms  gemm   5.126  comm   2.126  354/343/353/338 W  clk 1200/1200/1200/1200
+  16CTA                1200  192MiB   2048x8192x8192    concurrent | T    1.931 ms  gemm   1.683  comm   1.907  295/290/297/286 W  clk 1200/1200/1200/1200
+  16CTA                1200  192MiB   4096x4096x4096    concurrent | T    1.892 ms  gemm   0.897  comm   1.869  218/214/217/211 W  clk 1200/1200/1200/1200
+  16CTA                1200  224MiB                -     comm_only | T    2.128 ms  gemm   0.000  comm   2.104  136/133/134/132 W  clk 1200/1200/1200/1200
+  16CTA                1200  224MiB   8192x8192x8192    concurrent | T    5.279 ms  gemm   5.149  comm   2.403  349/345/356/342 W  clk 1200/1200/1200/1200
+  16CTA                1200  224MiB   2048x8192x8192    concurrent | T    2.198 ms  gemm   1.678  comm   2.174  276/271/278/267 W  clk 1200/1200/1200/1200
+  16CTA                1200  224MiB   4096x4096x4096    concurrent | T    2.175 ms  gemm   0.899  comm   2.152  207/204/208/202 W  clk 1200/1200/1200/1200
+  16CTA                1200  256MiB                -     comm_only | T    2.395 ms  gemm   0.000  comm   2.372  136/133/135/134 W  clk 1200/1200/1200/1200
+  16CTA                1200  256MiB   8192x8192x8192    concurrent | T    5.289 ms  gemm   5.156  comm   2.496  352/344/360/339 W  clk 1200/1200/1200/1200
+  16CTA                1200  256MiB   2048x8192x8192    concurrent | T    2.465 ms  gemm   1.684  comm   2.442  261/257/264/255 W  clk 1200/1200/1200/1200
+  16CTA                1200  256MiB   4096x4096x4096    concurrent | T    2.438 ms  gemm   0.894  comm   2.415  199/196/202/196 W  clk 1200/1200/1200/1200
+[clocks] restored
+
+DONE in 3.8 min -> data/sim_overlap/endphase.csv  (320 rows)

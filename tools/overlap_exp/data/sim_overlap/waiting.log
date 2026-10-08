@@ -1,0 +1,58 @@
+world=4  8 runs x 3 CTA counts  (persistence was Disabled/Disabled/Disabled/Disabled)
+=== 4 CTA  [0 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 09:08:25.532882600 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+   4CTA 1200/1410/1410/1410         wait_in_collective | T   16.941 ms  loop   16.939  316/102/105/101 W  clk 1200/1410/1410/1410
+   4CTA 1200/1410/1410/1410                  wait_idle | T   16.901 ms  loop   16.900  330/96/100/96 W  clk 1200/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   4CTA 1200/1200/1200/1200         wait_in_collective | T   16.975 ms  loop   16.975  327/85/86/86 W  clk 1200/1200/1200/1200
+   4CTA 1200/1200/1200/1200                  wait_idle | T   16.941 ms  loop   16.949  320/83/82/82 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   4CTA    1200/900/900/900         wait_in_collective | T   17.761 ms  loop   17.766  317/77/78/77 W  clk 1200/900/900/900
+   4CTA    1200/900/900/900                  wait_idle | T   17.663 ms  loop   17.654  309/76/76/74 W  clk 1200/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   4CTA    1200/510/510/510         wait_in_collective | T   20.438 ms  loop   20.431  271/71/71/70 W  clk 1200/510/510/510
+   4CTA    1200/510/510/510                  wait_idle | T   20.375 ms  loop   20.377  286/71/72/70 W  clk 1200/510/510/510
+=== 16 CTA  [1 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 09:09:01.437962830 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  16CTA 1200/1410/1410/1410         wait_in_collective | T   14.506 ms  loop   14.511  351/105/107/97 W  clk 1200/1410/1410/1410
+  16CTA 1200/1410/1410/1410                  wait_idle | T   14.475 ms  loop   14.462  355/98/100/92 W  clk 1200/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA 1200/1200/1200/1200         wait_in_collective | T   14.518 ms  loop   14.538  348/88/90/81 W  clk 1200/1200/1200/1200
+  16CTA 1200/1200/1200/1200                  wait_idle | T   14.489 ms  loop   14.500  350/84/86/79 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA    1200/900/900/900         wait_in_collective | T   14.610 ms  loop   14.622  352/80/81/73 W  clk 1200/900/900/900
+  16CTA    1200/900/900/900                  wait_idle | T   14.589 ms  loop   14.593  349/77/78/73 W  clk 1200/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA    1200/510/510/510         wait_in_collective | T   15.144 ms  loop   15.159  346/76/77/76 W  clk 1200/510/510/510
+  16CTA    1200/510/510/510                  wait_idle | T   15.080 ms  loop   15.091  347/75/76/73 W  clk 1200/510/510/510
+=== 32 CTA  [1 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 09:09:36.524623217 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  32CTA 1200/1410/1410/1410         wait_in_collective | T   14.321 ms  loop   14.316  360/105/109/93 W  clk 1200/1410/1410/1410
+  32CTA 1200/1410/1410/1410                  wait_idle | T   14.313 ms  loop   14.313  360/95/98/89 W  clk 1200/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  32CTA 1200/1200/1200/1200         wait_in_collective | T   14.332 ms  loop   14.327  357/87/90/77 W  clk 1200/1200/1200/1200
+  32CTA 1200/1200/1200/1200                  wait_idle | T   14.323 ms  loop   14.324  351/80/83/73 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  32CTA    1200/900/900/900         wait_in_collective | T   14.430 ms  loop   14.433  355/81/81/69 W  clk 1200/900/900/900
+  32CTA    1200/900/900/900                  wait_idle | T   14.424 ms  loop   14.426  353/77/75/67 W  clk 1200/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  32CTA    1200/510/510/510         wait_in_collective | T   14.865 ms  loop   14.865  342/77/78/69 W  clk 1200/510/510/510
+  32CTA    1200/510/510/510                  wait_idle | T   14.807 ms  loop   14.808  345/72/72/69 W  clk 1200/510/510/510
+[clocks] restored
+
+DONE in 1.8 min -> data/sim_overlap/waiting.csv  (96 rows)

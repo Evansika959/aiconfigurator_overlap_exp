@@ -1,0 +1,12 @@
+# B0 -- what the box does today: vLLM's queue kernel, one V/f domain, the stock governor.
+# A 2048-token decode batch is the smallest the 400 W wall binds
+# (data/decode_governor_qwen.csv: 1340 MHz at 397 W, 1.470 ms per layer).
+name: decode2048_b0
+model: qwen
+hardware:
+  domains: [{name: all, sms: 108}]
+  tdp_w: 400
+kernel: {type: queue, block_m: 128}
+controller: {type: governor}
+workload:
+  - {phase: decode, cells: 32, layers: [0], repeat: 3000}

@@ -1,0 +1,78 @@
+world=4  19 runs x 2 CTA counts  (persistence was Disabled/Disabled/Disabled/Disabled)
+=== 6 CTA  [0 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 10:36:08.317281481 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+   6CTA                1350       ddp_overlap_b3072_L4 | T   21.407 ms  loop   21.562  391/385/384/383 W  clk 1275/1305/1275/1320
+   6CTA                1350        ddp_serial_b3072_L4 | T   27.325 ms  loop   27.321  348/346/363/345 W  clk 1335/1350/1350/1350
+   6CTA                1350                tp_b3072_L4 | T   11.659 ms  loop   11.650  330/312/320/312 W  clk 1350/1350/1350/1350
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   6CTA                 975       ddp_overlap_b3072_L4 | T   28.201 ms  loop   28.146  237/227/235/223 W  clk 975/975/975/975
+   6CTA                 975        ddp_serial_b3072_L4 | T   36.974 ms  loop   36.866  197/191/195/188 W  clk 975/975/975/975
+   6CTA                 975                tp_b3072_L4 | T   15.746 ms  loop   15.754  188/181/187/177 W  clk 975/975/975/975
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   6CTA                   0       ddp_overlap_b3072_L4 | T   21.548 ms  loop   21.650  404/407/402/415 W  clk 1275/1305/1275/1305
+   6CTA                   0        ddp_serial_b3072_L4 | T   27.073 ms  loop   27.070  375/390/382/370 W  clk 1320/1350/1320/1350
+   6CTA                   0                tp_b3072_L4 | T   11.393 ms  loop   11.379  361/367/359/365 W  clk 1410/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   6CTA 1350/1350/1350/1350 ddp_overlap_b6144+3x1536_L4 | T   39.022 ms  loop   39.040  392/168/188/170 W  clk 1230/1350/1350/1350
+   6CTA 1350/1350/1350/1350 ddp_serial_b6144+3x1536_L4 | T   44.176 ms  loop   44.314  367/159/158/141 W  clk 1260/1350/1350/1350
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   6CTA    1350/975/975/975 ddp_overlap_b6144+3x1536_L4 | T   39.396 ms  loop   39.481  384/129/136/135 W  clk 1230/975/975/975
+   6CTA    1350/975/975/975 ddp_serial_b6144+3x1536_L4 | T   46.329 ms  loop   46.288  391/121/114/119 W  clk 1260/975/975/975
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   6CTA    1350/810/810/810 ddp_overlap_b6144+3x1536_L4 | T   39.978 ms  loop   40.005  385/130/140/134 W  clk 1245/810/810/810
+   6CTA    1350/810/810/810 ddp_serial_b6144+3x1536_L4 | T   48.019 ms  loop   48.118  394/121/126/122 W  clk 1275/810/810/810
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   6CTA    1125/600/600/600 ddp_overlap_b6144+3x1536_L4 | T   45.155 ms  loop   45.295  297/128/132/124 W  clk 1125/600/600/600
+   6CTA    1125/600/600/600 ddp_serial_b6144+3x1536_L4 | T   58.616 ms  loop   58.559  261/97/103/99 W  clk 1125/600/600/600
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+   6CTA                   0 ddp_overlap_b6144+3x1536_L4 | T   38.814 ms  loop   38.998  399/180/197/187 W  clk 1230/1410/1410/1410
+   6CTA                   0 ddp_serial_b6144+3x1536_L4 | T   44.070 ms  loop   44.204  384/159/170/173 W  clk 1260/1410/1410/1410
+=== 24 CTA  [2 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 10:37:41.901594317 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  24CTA                1350       ddp_overlap_b3072_L4 | T   20.321 ms  loop   20.545  400/402/398/403 W  clk 1260/1305/1275/1305
+  24CTA                1350        ddp_serial_b3072_L4 | T   22.384 ms  loop   22.419  403/392/403/393 W  clk 1305/1320/1290/1320
+  24CTA                1350                tp_b3072_L4 | T    8.948 ms  loop    8.928  398/375/392/375 W  clk 1335/1350/1350/1350
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  24CTA                 975       ddp_overlap_b3072_L4 | T   26.672 ms  loop   26.853  241/233/240/227 W  clk 975/975/975/975
+  24CTA                 975        ddp_serial_b3072_L4 | T   29.733 ms  loop   29.662  224/218/223/216 W  clk 975/975/975/975
+  24CTA                 975                tp_b3072_L4 | T   12.048 ms  loop   12.039  215/207/213/204 W  clk 975/975/975/975
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  24CTA                   0       ddp_overlap_b3072_L4 | T   20.314 ms  loop   20.602  399/400/400/400 W  clk 1260/1290/1260/1290
+  24CTA                   0        ddp_serial_b3072_L4 | T   22.415 ms  loop   22.467  402/390/394/394 W  clk 1290/1320/1290/1320
+  24CTA                   0                tp_b3072_L4 | T    8.847 ms  loop    8.893  400/401/397/399 W  clk 1335/1350/1335/1350
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  24CTA 1350/1350/1350/1350 ddp_overlap_b6144+3x1536_L4 | T   37.749 ms  loop   38.049  398/174/187/172 W  clk 1245/1350/1350/1350
+  24CTA 1350/1350/1350/1350 ddp_serial_b6144+3x1536_L4 | T   39.827 ms  loop   39.686  404/172/165/161 W  clk 1260/1350/1350/1350
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  24CTA    1350/975/975/975 ddp_overlap_b6144+3x1536_L4 | T   37.831 ms  loop   38.090  397/135/146/131 W  clk 1245/975/975/975
+  24CTA    1350/975/975/975 ddp_serial_b6144+3x1536_L4 | T   40.330 ms  loop   40.350  350/137/124/120 W  clk 1260/975/975/975
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  24CTA    1350/810/810/810 ddp_overlap_b6144+3x1536_L4 | T   37.960 ms  loop   38.313  395/133/143/129 W  clk 1245/810/810/810
+  24CTA    1350/810/810/810 ddp_serial_b6144+3x1536_L4 | T   40.684 ms  loop   40.749  411/122/126/117 W  clk 1260/810/810/810
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  24CTA    1125/600/600/600 ddp_overlap_b6144+3x1536_L4 | T   42.758 ms  loop   42.868  308/131/133/131 W  clk 1125/600/600/600
+  24CTA    1125/600/600/600 ddp_serial_b6144+3x1536_L4 | T   47.478 ms  loop   47.390  291/105/106/107 W  clk 1125/600/600/600
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  24CTA                   0 ddp_overlap_b6144+3x1536_L4 | T   37.626 ms  loop   37.895  400/188/197/178 W  clk 1245/1410/1410/1410
+  24CTA                   0 ddp_serial_b6144+3x1536_L4 | T   39.848 ms  loop   39.545  387/172/177/175 W  clk 1260/1410/1410/1410
+[clocks] restored
+
+DONE in 3.1 min -> data/sim_overlap/blind_train.csv  (152 rows)

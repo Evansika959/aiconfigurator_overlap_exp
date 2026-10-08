@@ -1,0 +1,1047 @@
+{
+"world": 4,
+"ctas": [
+3,
+6,
+10,
+24,
+40
+],
+"runs": [
+{
+"mode": "gemm_only",
+"clock": 1350,
+"shape": "768x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1350,
+"shape": "3072x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1350,
+"shape": "6144x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1350,
+"shape": "1536x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1350,
+"shape": "3072x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1350,
+"shape": "6144x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1350,
+"shape": "4096x12288x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1350,
+"shape": "2048x2048x8192",
+"once": true
+},
+{
+"mode": "comm_only",
+"clock": 1350,
+"mib": 32
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 32,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 32,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 32,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 32,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 32,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 32,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 32,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 32,
+"shape": "2048x2048x8192"
+},
+{
+"mode": "comm_only",
+"clock": 1350,
+"mib": 96
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 96,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 96,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 96,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 96,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 96,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 96,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 96,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 96,
+"shape": "2048x2048x8192"
+},
+{
+"mode": "comm_only",
+"clock": 1350,
+"mib": 384
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 384,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 384,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 384,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 384,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 384,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 384,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 384,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1350,
+"mib": 384,
+"shape": "2048x2048x8192"
+},
+{
+"mode": "gemm_only",
+"clock": 1125,
+"shape": "768x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1125,
+"shape": "3072x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1125,
+"shape": "6144x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1125,
+"shape": "1536x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1125,
+"shape": "3072x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1125,
+"shape": "6144x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1125,
+"shape": "4096x12288x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 1125,
+"shape": "2048x2048x8192",
+"once": true
+},
+{
+"mode": "comm_only",
+"clock": 1125,
+"mib": 32
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 32,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 32,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 32,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 32,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 32,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 32,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 32,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 32,
+"shape": "2048x2048x8192"
+},
+{
+"mode": "comm_only",
+"clock": 1125,
+"mib": 96
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 96,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 96,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 96,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 96,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 96,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 96,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 96,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 96,
+"shape": "2048x2048x8192"
+},
+{
+"mode": "comm_only",
+"clock": 1125,
+"mib": 384
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 384,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 384,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 384,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 384,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 384,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 384,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 384,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 1125,
+"mib": 384,
+"shape": "2048x2048x8192"
+},
+{
+"mode": "gemm_only",
+"clock": 975,
+"shape": "768x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 975,
+"shape": "3072x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 975,
+"shape": "6144x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 975,
+"shape": "1536x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 975,
+"shape": "3072x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 975,
+"shape": "6144x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 975,
+"shape": "4096x12288x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 975,
+"shape": "2048x2048x8192",
+"once": true
+},
+{
+"mode": "comm_only",
+"clock": 975,
+"mib": 32
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 32,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 32,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 32,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 32,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 32,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 32,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 32,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 32,
+"shape": "2048x2048x8192"
+},
+{
+"mode": "comm_only",
+"clock": 975,
+"mib": 96
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 96,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 96,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 96,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 96,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 96,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 96,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 96,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 96,
+"shape": "2048x2048x8192"
+},
+{
+"mode": "comm_only",
+"clock": 975,
+"mib": 384
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 384,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 384,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 384,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 384,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 384,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 384,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 384,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 975,
+"mib": 384,
+"shape": "2048x2048x8192"
+},
+{
+"mode": "gemm_only",
+"clock": 810,
+"shape": "768x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 810,
+"shape": "3072x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 810,
+"shape": "6144x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 810,
+"shape": "1536x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 810,
+"shape": "3072x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 810,
+"shape": "6144x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 810,
+"shape": "4096x12288x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 810,
+"shape": "2048x2048x8192",
+"once": true
+},
+{
+"mode": "comm_only",
+"clock": 810,
+"mib": 32
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 32,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 32,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 32,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 32,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 32,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 32,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 32,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 32,
+"shape": "2048x2048x8192"
+},
+{
+"mode": "comm_only",
+"clock": 810,
+"mib": 96
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 96,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 96,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 96,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 96,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 96,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 96,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 96,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 96,
+"shape": "2048x2048x8192"
+},
+{
+"mode": "comm_only",
+"clock": 810,
+"mib": 384
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 384,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 384,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 384,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 384,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 384,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 384,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 384,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 810,
+"mib": 384,
+"shape": "2048x2048x8192"
+},
+{
+"mode": "gemm_only",
+"clock": 600,
+"shape": "768x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 600,
+"shape": "3072x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 600,
+"shape": "6144x4096x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 600,
+"shape": "1536x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 600,
+"shape": "3072x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 600,
+"shape": "6144x8192x8192",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 600,
+"shape": "4096x12288x4096",
+"once": true
+},
+{
+"mode": "gemm_only",
+"clock": 600,
+"shape": "2048x2048x8192",
+"once": true
+},
+{
+"mode": "comm_only",
+"clock": 600,
+"mib": 32
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 32,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 32,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 32,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 32,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 32,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 32,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 32,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 32,
+"shape": "2048x2048x8192"
+},
+{
+"mode": "comm_only",
+"clock": 600,
+"mib": 96
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 96,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 96,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 96,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 96,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 96,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 96,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 96,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 96,
+"shape": "2048x2048x8192"
+},
+{
+"mode": "comm_only",
+"clock": 600,
+"mib": 384
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 384,
+"shape": "768x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 384,
+"shape": "3072x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 384,
+"shape": "6144x4096x4096"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 384,
+"shape": "1536x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 384,
+"shape": "3072x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 384,
+"shape": "6144x8192x8192"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 384,
+"shape": "4096x12288x4096"
+},
+{
+"mode": "concurrent",
+"clock": 600,
+"mib": 384,
+"shape": "2048x2048x8192"
+}
+]
+}

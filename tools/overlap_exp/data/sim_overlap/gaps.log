@@ -1,0 +1,34 @@
+world=4  20 runs x 1 CTA counts  (persistence was Disabled/Disabled/Disabled/Disabled)
+=== 16 CTA  [0 min elapsed] ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W1008 09:16:28.951032020 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+  16CTA                1410          gap_gemm_4096_6ms | T    0.608 ms  loop    6.299  114/112/114/108 W  clk 1410/1410/1410/1410
+  16CTA                1410       gap_gemm+ar_4096_6ms | T 0.837/0.887/1.235/2.695 ms  loop    6.456  128/130/135/131 W  clk 1410/1410/1410/1410
+  16CTA                1410         gap_gemm_8192_12ms | T    3.883 ms  loop   12.340  226/228/224/217 W  clk 1410/1410/1410/1410
+  16CTA                1410      gap_gemm+ar_8192_12ms | T 4.131/4.992/4.592/4.816 ms  loop   12.466  250/245/233/239 W  clk 1410/1410/1410/1410
+  16CTA                1410                gap_ar_12ms | T 0.369/0.790/0.779/0.763 ms  loop   12.332  94/100/98/99 W  clk 1410/1410/1410/1410
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA                1200          gap_gemm_4096_6ms | T    0.697 ms  loop    6.328  90/89/90/87 W  clk 1200/1200/1200/1200
+  16CTA                1200       gap_gemm+ar_4096_6ms | T 0.949/1.345/1.089/2.904 ms  loop    6.433  111/108/108/109 W  clk 1200/1200/1200/1200
+  16CTA                1200         gap_gemm_8192_12ms | T    4.495 ms  loop   12.251  170/162/170/160 W  clk 1200/1200/1200/1200
+  16CTA                1200      gap_gemm+ar_8192_12ms | T 4.982/5.000/5.056/4.795 ms  loop   12.451  181/184/187/168 W  clk 1200/1200/1200/1200
+  16CTA                1200                gap_ar_12ms | T 2.500/0.361/0.593/1.121 ms  loop   12.362  81/83/85/85 W  clk 1200/1200/1200/1200
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA                 900          gap_gemm_4096_6ms | T    0.898 ms  loop    6.332  81/79/80/78 W  clk 900/900/900/900
+  16CTA                 900       gap_gemm+ar_4096_6ms | T 1.270/1.798/1.269/2.654 ms  loop    6.464  95/98/99/96 W  clk 900/900/900/900
+  16CTA                 900         gap_gemm_8192_12ms | T    5.957 ms  loop   12.327  142/137/140/136 W  clk 900/900/900/900
+  16CTA                 900      gap_gemm+ar_8192_12ms | T 6.315/6.997/6.945/6.574 ms  loop   12.425  165/151/158/154 W  clk 900/900/900/900
+  16CTA                 900                gap_ar_12ms | T 3.127/0.438/0.590/1.768 ms  loop   12.302  79/74/72/77 W  clk 900/900/900/900
+/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+  16CTA                 510          gap_gemm_4096_6ms | T    1.501 ms  loop    6.315  78/77/78/75 W  clk 510/510/510/510
+  16CTA                 510       gap_gemm+ar_4096_6ms | T 2.003/2.000/2.326/3.842 ms  loop    6.456  93/94/96/93 W  clk 510/510/510/510
+  16CTA                 510         gap_gemm_8192_12ms | T   10.422 ms  loop   12.339  142/136/141/135 W  clk 510/510/510/510
+  16CTA                 510      gap_gemm+ar_8192_12ms | T 10.925/11.189/11.169/11.718 ms  loop   12.467  153/155/158/143 W  clk 510/510/510/510
+  16CTA                 510                gap_ar_12ms | T 0.601/0.944/0.943/0.678 ms  loop   12.358  71/74/75/70 W  clk 510/510/510/510
+[clocks] restored
+
+DONE in 1.2 min -> data/sim_overlap/gaps.csv  (80 rows)
